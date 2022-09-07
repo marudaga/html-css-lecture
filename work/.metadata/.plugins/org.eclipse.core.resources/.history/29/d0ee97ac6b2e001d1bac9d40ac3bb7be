@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>table 태그</h3>
+
+	<pre>
+	- caption :표의 제목
+	- thead : 테이블 머리말 부분
+	- tbody : 테이블 의 본문
+	- thead, body tfoot에 해당하지 않는 tr,th은 tbody에 
+	- tfoot: 테이블 꼬립 부ㅜㄴ
+</pre>
+	<table border="1"
+		style="width: 500px; margin: 10px auto; border-collapse: collapse;">
+		<caption>성적처리</caption>
+		<thead>
+			<tr>
+				<th width="100">이름</th>
+				<th width="90">날짜</th>
+				<th width="90">국어</th>
+				<th width="90">영어</th>
+				<th width="90">수학</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr align="center">
+				<td>천재</td>
+				<td>2020-10-10</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+			<tr align="center">
+				<td>바보</td>
+				<td>2020-10-10</td>
+				<td>30</td>
+				<td>30</td>
+				<td>30</td>
+			</tr>
+			<tr align="center">
+				<td>박보통</td>
+				<td>2020-10-10</td>
+				<td>80</td>
+				<td>80</td>
+				<td>80</td>
+			</tr>
+
+		</tbody>
+		<tfoot>
+			<tr>
+			<td colspan="2">평균</td>
+			<td>100</td>
+			<td>90</td>
+			<td>95</td>
+		</tfoot>
+	</table>
+
+</body>
+</html>

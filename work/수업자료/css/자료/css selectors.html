@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style type="text/css">
+	* {font-family:'malgun gothic'; font-size:10pt;}
+	#wrap {width:90%; margin:0 auto;}
+	h1 {font-size:1.5em; border-bottom:2px double red; width:140px;}
+	th {border-bottom:1px double black; font-size:1.1em;}
+	td {border-bottom:1px dotted black; border-right:1px solid black; padding:3px;}
+	td:first-child {color:blue;}
+	td:last-child {border-right:0px solid black; text-align:center;}
+	table {border:2px solid #ccc; width:740px;}
+  </style>
+ </head>
+
+ <body>
+ <div id="wrap">
+	  <h1>CSS Selectors</h1>
+	  <br />
+	  <table>
+		<thead>
+			<tr>
+				<th>Selector</th>
+				<th>Example</th>
+				<th>Example description</th>
+				<th>Version</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.class</td>
+				<td>.intro</td>
+				<td>클래스가 "intro"인 모든 요소를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>#id</td>
+				<td>#firstname</td>
+				<td>ID "firstname"인 모든 요소를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>*</td>
+				<td>*</td>
+				<td>모든 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>element</td>
+				<td>p</td>
+				<td>모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>element,element</td>
+				<td>div,p</td>
+				<td>모든 &lt;div&gt;, &lt;p&gt; 요소를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>element element</td>
+				<td>div p</td>
+				<td>&lt;div&gt;에 있는 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>element>element</td>
+				<td>div>p</td>
+				<td>부모가 &lt;div&gt;요소인 &lt;p&gt; 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>element+element</td>
+				<td>div+p</td>
+				<td>&lt;div&gt;요소 바로 다음에 추가되는 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>[attribute]</td>
+				<td>[target]</td>
+				<td>target 속성이 있는 모든 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>[attribute=value]</td>
+				<td>[taget=_blank]</td>
+				<td>target 속성의 속성 값이 "_blank"인 모든 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>[attritube~=value]</td>
+				<td>[title~=flower]</td>
+				<td>title 속성의 속성 값이 "flower" 단어가 포함되는 모든 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>[attribute|=value]</td>
+				<td>[lang|=en]</td>
+				<td>lang 속성의 속성 값이 "en"으로 시작되는 모든 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>:link</td>
+				<td>a:link</td>
+				<td>방문하지 않은 모든 링크를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:visited</td>
+				<td>a:visited</td>
+				<td>방문한 모든 링크를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:active</td>
+				<td>a:active</td>
+				<td>활성화 중인 모든 링크를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:hover</td>
+				<td>a:hover</td>
+				<td>마우스 오버 중인 모든 링크를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:focus</td>
+				<td>input:focus</td>
+				<td>포커스가 있는 입력 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>:first-letter</td>
+				<td>p:first-letter</td>
+				<td>모든 &lt;p&gt; 요소의 첫 글자를 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:first-line</td>
+				<td>p:first-line</td>
+				<td>모든 &lt;p&gt; 요소의 첫 번째 행을 선택한다</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>:first-child</td>
+				<td>p:first-child</td>
+				<td>그 부모의 첫 번째 자식인 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>:before</td>
+				<td>p:before</td>
+				<td>모든 &lt;p&gt; 요소의 컨텐츠 전에 내용을 삽입한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>:after</td>
+				<td>p:after</td>
+				<td>모든 &lt;p&gt; 요소의 컨텐츠 다음에 내용을 삽입한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>:lang(language)</td>
+				<td>p:lang(it)</td>
+				<td>lang 속성의 속성 값이 "it"으로 시작되는 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>element1~element2</td>
+				<td>p~ul</td>
+				<td>&lt;p&gt; 요소 이후에 나오는 모든  &lt;ul&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>[attribute^=value]</td>
+				<td>a[src^="https"]</td>
+				<td>&lt;a&gt; 요소 중 src 속성의 속성 값이 "https"로 시작되는 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>[attribute$=value]</td>
+				<td>a[src$=".pdf"]</td>
+				<td>&lt;a&gt; 요소 중 src 속성의 속성 값이 ".pdf"로 끝나는 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>[attribute*=value]</td>
+				<td>a[src*="w3schools"]</td>
+				<td>&lt;a&gt; 요소 중 src 속성의 속성 값이 "w3schools"가 포함되는 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:first-of-type</td>
+				<td>p:first-of-type</td>
+				<td>그 부모의 모든 첫 번째 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:last-of-type</td>
+				<td>p:last-of-type</td>
+				<td>그 부모의 모든 마지막 번째 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:only-of-type</td>
+				<td>p:only-of-typ</td>
+				<td>첫 번째 부모의 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:only-child</td>
+				<td>p:only-child</td>
+				<td>&lt;p&gt; 요소만 유일하게 갖는 부모의 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:nth-child(n)</td>
+				<td>p:nth-child(2)</td>
+				<td>그 부모의 &lt;p&gt; 요소 중 모든 두 번째(상단부터) &lt;p&gt; 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:nth-last-child(n)</td>
+				<td>p:nth-last-child(2)</td>
+				<td>그 부모의 &lt;p&gt; 요소 중 모든 두 번째(하단부터) &lt;p&gt; 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:nth-of-type(n)</td>
+				<td>p:nth-of-type(2)</td>
+				<td>p:nth-child(2)과 동일한 기능을 한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:nth-last-of-type(n)</td>
+				<td>p:nth-last-of-type(2)</td>
+				<td>p:nth-last-child(2)과 동일한 기능을 한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:last-child</td>
+				<td>p:last-child</td>
+				<td>그 부모의 마지막 번째 자식인 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:root</td>
+				<td>:root</td>
+				<td>문서의 루트 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:empty</td>
+				<td>p:empty</td>
+				<td>자식이 없는(텍스트 노드 포함) 모든 &lt;p&gt; 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:target</td>
+				<td>#news:target</td>
+				<td>현재 활성화 된 #news 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:enabled</td>
+				<td>input:enabled</td>
+				<td>input 요소의 disabled 속성이 enabled(default 값)로 된 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:disabled</td>
+				<td>input:disabled</td>
+				<td>input 요소의 disabled 속성이 disabled로 된 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:checked</td>
+				<td>input:checked</td>
+				<td>input 요소의 checked 속성이 된 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>:not(selector)</td>
+				<td>:not(p)</td>
+				<td>&lt;p&gt; 요소가 아닌 모든 요소를 선택한다</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>::selection</td>
+				<td>::selection</td>
+				<td>사용자에 의해 선택된 요소의 부분을 선택한다</td>
+				<td>3</td>
+			</tr>
+		</tbody>
+	</div>
+ </body>
+</html>

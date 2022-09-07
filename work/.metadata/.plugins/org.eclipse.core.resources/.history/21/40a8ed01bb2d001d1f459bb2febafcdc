@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type = "text/css">
+.box{/*line-height: 줄간격 */
+	width: 150px;height: 50px; line-height: 50px; text-align: center;
+	font-weight : 600;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+<h3> div 태그</h3>
+<hr>
+<pre>
+	-스타일 float 속성 : 자신을 감싸고 있는 컨테이너의 왼쪽, 오른쪽 등에 배치하도록 설정
+</pre>
+
+<div>
+	<div class="box" style="background: navy; float: left;">A</div>
+	<div class="box" style="background: orange;float: left;">B</div>
+	<div class="box" style="background: purple; float: left;">C</div>
+</div>
+<!-- 위 float :left;로 인하여 아래 D는 사라짐 -->
+<!-- clear:both; : 가장 가까운 float속성해제 -->
+<div class="box" style="background: red; clear:both;">D</div>
+
+<div style="background: gray;">
+	<div class="box" style="float: left; border: 10px 5px 1px 16px solid black;" >A</div>
+	<div class="box">B</div>
+	<div class="box">C</div>
+</div>
+
+</body>
+</html>

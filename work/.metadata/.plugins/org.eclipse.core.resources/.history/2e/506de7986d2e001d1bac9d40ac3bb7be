@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3> table</h3>
+<pre>
+	- col : 각 열의 속성을 정의
+	- colgroup : 서식 지정을 위해 하나 이상의 열을 그룹으로 묶을때 사용
+</pre>
+
+
+
+</body>
+</html>

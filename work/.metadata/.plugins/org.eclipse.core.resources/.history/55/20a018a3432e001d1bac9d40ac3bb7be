@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>span : inline 태그</h3>
+
+<div style="background: yellow; width: 100px; height: 100px;"></div>
+</body>
+</html>

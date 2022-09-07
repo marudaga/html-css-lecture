@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>메인 화면</h2>
+
+<section></section>
+<aside style="float: right; width: 30%;">
+</aside>
+<div style="clear: both;"></div>
+
+<article>
+	<h3>main 태그</h3>
+	<p> 해당문서의 주 컨텐츠</p>
+</article>
+<article>
+	<h3>article 태그</h3>
+	<p> 문서, 페이지, 어플리케이션 포함 그자체로 독립적으로 완성된 내용</p>
+	
+</article>
+
+<article>
+	<h3>session 태그</h3>
+	<p> 문서의 세션을 담고있음.</p>
+</article>
+<article>
+	<h3>div 태그</h3>
+	<p> 여러 태그를 묶을때 사용</p>
+</article>
+</body>
+</html>

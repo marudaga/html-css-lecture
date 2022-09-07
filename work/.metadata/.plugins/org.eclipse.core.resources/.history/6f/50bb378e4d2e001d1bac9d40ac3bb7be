@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	margin: 1px 5px;
+	padding: 0;
+}
+
+body {
+	font-size: 14px;
+	font-family: 맑은 고딕;
+}
+
+header, main, footer {
+	width: 1100px;
+	margin: 0 auto; /* margin: 0 auto 좌우 대칭*/
+}
+
+header {
+	background: #d4f4fa;
+	margin-top: 30px;
+	padding: 20px;
+	text-align: center;
+	font-weight: 600px;
+}
+</style>
+
+</head>
+<body>
+	<header>
+		<h3>헤드 태그</h3>
+		<nav>메뉴입니다.</nav>
+	</header>
+	<main>
+		<h2>메인 화면</h2>
+
+		<section style="float: left; width: 65%;">
+			<article>
+				<h3>header 태그</h3>
+				<p>머릿글 태그, 소개</p>
+			</article>
+
+			<article>
+				<h3>nav 태그</h3>
+				<p>외부 페이지로 연결되는 링크모임, 메뉴구현</p>
+			</article>
+		</section>
+		<aside style="float: right; width: 30%;"></aside>
+		<div style="clear: both;"></div>
+
+		<article>
+			<h3>main 태그</h3>
+			<p>해당문서의 주 컨텐츠</p>
+		</article>
+		<article>
+			<h3>article 태그</h3>
+			<p>문서, 페이지, 어플리케이션 포함 그자체로 독립적으로 완성된 내용</p>
+
+		</article>
+
+		<article>
+			<h3>session 태그</h3>
+			<p>문서의 세션을 담고있음.</p>
+		</article>
+		<article>
+			<h3>div 태그</h3>
+			<p>여러 태그를 묶을때 사용</p>
+		</article>
+	</main>
+	<footer>
+		<h3>footer태그</h3>
+		<p>마지막, 주소, 권리 등 copyright등이 오는 위치
+	</footer>
+</body>
+</html>

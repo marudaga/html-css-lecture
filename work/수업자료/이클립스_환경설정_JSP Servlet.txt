@@ -1,0 +1,113 @@
+■ JDK 설치
+   ο JDK(jdk1.8.331) 다운로드 및 설치 - JavaSE
+       http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+       Windows 7, 8, 10(64Bit) : Windows x64(jdk-8u331-windows-x64)
+
+
+   ο 환경 변수 설정 - JAVA_HOME 시스템 변수 추가(JSP 에서는 설정하지 않아도 상관없다.)
+      (1) 윈도우즈의 시작 메뉴
+           [제어판] - [시스템 및 보안] - 우측 화면의 [시스템] - 좌측 화면의 [고급 시스템 설정] - [고급 탭] - [환경변수]
+              또는
+           [내컴퓨터] - 마우스우측 - [속성] - [고급 시스템 설정] - [고급 탭] - [환경변수]
+
+      (2) JAVA_HOME 시스템 변수 추가
+          [새로 만들기]
+          변수 이름 : JAVA_HOME
+          변수 값 : C:\Program File\Java\jdk1.8.0_331
+                      (JDK가 설치 된 경로)
+
+       [주의] war 파일을 Tomcat 을 이용하여 배포하는 경우 JRE_HOME이 환경 변수에 설정되어 있어야 한다.
+          (3) JRE_HOME 시스템 변수 추가
+              [새로 만들기]
+              변수 이름 : JRE_HOME
+              변수 값 : C:\Program File\Java\jre1.8.0_331
+                      (JRE가 설치 된 경로)
+
+
+■ 자카르타 톰캣 설치 및 환경 설정 - 웹 컨테이너(Web Container)
+   ο Apache Tomcat 8.5.76 다운 로드  : JDK 8은 Tomcat 8을 다운로드 한다.
+      - 사이트 : https://tomcat.apache.org/download-80.cgi
+                    http://www.apache.org
+      - apache-tomcat-8.x.x.zip 를 다운로드한다.
+
+
+   ο Apache Tomcat 8.x.x 설치
+     apache-tomcat-8.x.x.zip 를 적당한 폴더에 압축을 해제한다.
+
+
+   ο 한글 인코딩 지정
+      - 『톰캣_루트\conf』 폴더의 『server.xml』 파일 69 라인의 Connector 태그에 다음과 같이 URIEncoding="UTF-8"을 추가 한다.
+      - 오라클이 설치된 경우 8080 포트번호를 오라클에서 사용하므로 포트도 변경 한다.
+
+         <Connector port="9090" protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" 
+               URIEncoding="UTF-8"/>
+
+
+■ 이클립스 설치 및 환경 설정
+   ο 설치 파일 다운로드
+      https://www.eclipse.org/downloads/packages/ 에서 최신의 이클립스를 다운로드하여 압축을 해제 한다.
+      반드시 Eclipse IDE for Enterprise Java and Web Developers 를 다운로드한다.
+
+
+   ο 웹 프로젝트 생성
+     1. 프로젝트 생성
+       1) [File] → [New] → [Dynamic Web Project]
+       2) 새 프로젝트 창
+          - Project name : 프로젝트 이름을 입력 한다. - "study"
+          - Target Runtime : 톰캣을 설정 한다.
+             (1) [New Runtime...] - "Apche Tomcat v8.5" 선택, Create a new server 선택 - [Next]
+             (2) Tomcat installation directory 의 [Browse...] 버튼 클릭 - 톰캣이 설치 된 root 경로 선택
+                  (예 - C:\web\apache-tomcat-8.5.76)
+                  [Finish] - [Finish]
+       3) 오른쪽 아래의 서버 창에서 프로젝트를 서버에 추가 한다.
+           서버 창에서 마우스 우측 - Add and Remove Project ... - 프로젝트명 선택
+
+     2. Server 생성 : 위 2)-(1)) 번에서 Create a new server 을 선택 하지 않은 경우
+        1) 이클립스 아래 부분의 "Server" 탭을 클릭
+        2) 마우스 우측 - [New] - [Server]
+        3) "Tomcat v8.5 Server"를 선택 - [Next]
+        4) 좌측에서 프로젝트명(예 : study) 선택 - [Add]
+
+  
+   ο 자바 버전을 1.8로 변경
+      1. 프로젝트명(예:study)에서 마우스 우측 버튼 - Properties
+      2. 좌측에서 "Project Facets" 선택 - 우측에서 "Java" 버전을 1.8으로 변경
+      3. [Apply and Close]
+
+
+   ο 자바 JRE를 PC에 설치된 JRE로 변경 : 반드시 변경할 필요는 없다.
+      1. 프로젝트명(예:study)에서 마우스 우측 버튼 - Build Path - Configure Build Path ...
+      2. Java Build Path 창 - "Libraries" 탭
+          1) JRE System Library [JavaSE-1.8] 선택 - 우측 [Edit]
+          2) Alternate JRE: 우측의 "Installed JREs..." 버튼 클릭
+          3) Installed JREs 창의 우측의 [Add] 버튼 클릭
+          4) Standard VM 선택 - [Next] 
+          5) JRE Definition 창
+              (1) JRE home : 우측의 [Directory..] 버튼 클릭
+              (2) JRE가 설치된 경로 선택 - [Finish]
+                  예 : C:\Program Files\Java\jre1.8.0_331
+          6) Installed JREs 창에서 등록된 "jre1.8.0_331" 선택 - [Apply and Close]
+          7) JRE System Library 창에서 Workspace default JRE(jre1.8.0_331) 선택 - [Finish]
+
+
+   ο 기타 환경 설정 변경 방법
+      1. 이클립스 인코딩을 UTF-8로 변경
+          1) 메뉴 : [Window] - [Perferences]
+          2) 좌측의 "General" - "Workspace"
+          3) 아래부분의 Text file encoding
+              Other : UTF-8
+              [Apply and Close]
+
+      2. JSP / HTML 한글 인코딩을 UTF-8로 변경
+          [Window] - [Preferences...] - Web - CSS Files
+          와
+          [Window] - [Preferences...] - Web - Jsp Files
+          와
+          [Window] - [Preferences...] - Web - HTML Files
+          를 선택하여
+
+          우측 화면의 Encoding 에 "ISO 10646/Unicode(UTF-8)" 로 변경 후 [Ok] 버튼 클릭
+

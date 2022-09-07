@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><!--  기본meta태그: ISO-8859_1, 한글이 깨짐 -->
+<meta http-equiv ="refresh" content = "10; url = https://www.naver.com">
+	<!--  http-equiv : http 응답 메서지 헤더에 대한 정보 제공 -->
+<title>자바 서버 페이징</title>
+</head>
+<body>
+
+<h3> meta 태그</h3>
+<p3>10초 후 이동합니다</p3>
+</body>
+</html>

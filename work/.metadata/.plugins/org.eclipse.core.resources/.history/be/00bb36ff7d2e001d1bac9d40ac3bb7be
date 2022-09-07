@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title >Insert title here</title>
+
+</head>
+<body>
+<div class="body-container">
+<div >| 계시판</div>
+<table>
+  <tr style="text-align: center;">
+    <th>번호</th>
+    <th style="width: 150px;">제목</th>
+    <th>작성자</th>
+    <th>작성일</th>
+    <th>조회수</th>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>테스트 제목3..</td>
+    <td>홍길동</td>
+    <td>2000-10-10</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>테스트 제목2..</td>
+    <td>자바다</td>
+    <td>2000-10-10</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>테스트 제목1..</td>
+    <td>스프링</td>
+    <td>2000-10-10</td>
+    <td>1</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!--  외부 css 파일 -->
+<link rel="stylesheet"  href = "test.css" type= "test/css">
+
+</head>
+<body>
+
+<h3>css - 외부 css 파일 포함하기</h3>
+
+<div>과목- 프로그래밍</div>
+</body>
+</html>

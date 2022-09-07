@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이상한 그림</title>
+<style type="text/css">
+.box { /*line-height: 줄간격 */
+	width: 450px;
+	line-height: 0px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div style=" height: 450px; width:450px; line-height: 0px; margin: 0 auto;">
+		<div class="box"
+			style="background: black; height: 60px; ;"></div>
+		<div class="box">
+			<div
+				style="background: orange; float: left; width: 100px; height: 25px;"></div>
+			<div
+				style="background: yellow; float: right; width: 350px; height: 25px; "></div>
+		</div>
+		<div class="box" style="text-align: center;">
+			<div
+				style="background: red; float: left; width: 100px; height: 75px;"></div>
+			<div
+				style="background: gray; float: right; width: 350px; height: 75px; text-align: center;"></div>
+		</div>
+		<div class="box">
+			<div
+				style="background: purple; float: left; width: 100px; height: 250px;"></div>
+			<div
+				style="background: gray; float: right; width: 350px; height: 250px;"></div>
+		</div>
+		<div class="box" style="background: blue; height: 50px; clear: both;"></div>
+	</div>
+</body>
+</html>

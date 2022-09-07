@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3> table</h3>
+<pre>
+	- col : 각 열의 속성을 정의
+	- colgroup : 서식 지정을 위해 하나 이상의 열을 그룹으로 묶을때 사용
+</pre>
+
+<table border="1" style="width: 400px; margin: 20px auto;">
+	<col style="background: #eee;">
+	<col span="3" style="background: yellow;">
+  <tr>
+    <td>이름</td>
+    <td>국어</td>
+    <td>영어</td>
+    <td>수학</td>
+  </tr>
+  
+  <tr>
+    <td>김바바</td>
+    <td>90</td>
+    <td>90</td>
+    <td>80</td>
+  </tr>
+  
+  <tr>
+    <td>다다다</td>
+    <td>90</td>
+    <td>80</td>
+    <td>90</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>vertical-align : 인라인태그, table-cell의 box에서의 수직 정렬</h3>
+
+<div>
+	<div style="background: yellow;width: 100px; display: inline-block; height: 100px;">A</div>
+</div>
+
+</body>
+</html>

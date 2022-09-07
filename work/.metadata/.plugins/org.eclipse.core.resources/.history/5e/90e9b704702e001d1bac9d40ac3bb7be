@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+.table, .table2 {
+width:  400px; margin: 20px auto;}
+
+.table1 {
+	border-spacing: 0;
+}
+.table2 {
+	border-spacing: 10px;
+}
+table td {
+	border-top: 3px solid red;
+	border-bottom: 3px solid red;
+	border-left: 3px solid blue;
+	border-right: 3px solid blue;
+	width: 120px;
+	height: 35px;
+	text-align: center;
+}
+</style>
+<body>
+<h3>table - css</h3>
+<table >
+  <tr>
+    <td>이름</td>
+    <td>국어</td>
+    <td>영어</td>
+    <td>수학</td>
+  </tr>
+  
+  <tr>
+    <td>김바바</td>
+    <td>90</td>
+    <td>90</td>
+    <td>80</td>
+  </tr>
+  
+  <tr>
+    <td>다다다</td>
+    <td>90</td>
+    <td>80</td>
+    <td>90</td>
+  </tr>
+  
+</table>
+<table class="table1">
+  <tr>
+    <td>이름</td>
+    <td>국어</td>
+    <td>영어</td>
+    <td>수학</td>
+  </tr>
+  
+  <tr>
+    <td>김바바</td>
+    <td>90</td>
+    <td>90</td>
+    <td>80</td>
+  </tr>
+  
+  <tr>
+    <td>다다다</td>
+    <td>90</td>
+    <td>80</td>
+    <td>90</td>
+  </tr>
+  
+</table>
+
+<table class="table2">
+  <tr>
+    <td>이름</td>
+    <td>국어</td>
+    <td>영어</td>
+    <td>수학</td>
+  </tr>
+  
+  <tr>
+    <td>김바바</td>
+    <td>90</td>
+    <td>90</td>
+    <td>80</td>
+  </tr>
+  
+  <tr>
+    <td>다다다</td>
+    <td>90</td>
+    <td>80</td>
+    <td>90</td>
+  </tr>
+  
+</table>
+</body>
+</html>

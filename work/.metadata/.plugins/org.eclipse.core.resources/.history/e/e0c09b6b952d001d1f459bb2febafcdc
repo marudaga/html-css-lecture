@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3> 기본 태그</h3>
+
+<div>
+	 - p 태그 :   문단태그. 단락을 정의하여 한문단을 나타내는데 사용<br>
+	 p태그는 br태그 두번한 것과 유사한 정도의 간격이 생긴다.
+	 - br 태그 : 줄바꿈 태그. html에서의 엔터역할 공백도 한칸만 표시<br>
+	 - hr 태그 : 수평선 태그. 수평선을 그어주는 태그
+<p>태그</p>
+<p>태그2</p>
+<hr color="blue">
+<hr width =  " 50%" align = "center">
+<hr size = "5" width = "50%"  align = "right">
+<hr noshade = "noshade" size = "5" width="100%">
+</div>
+</body>
+</html>

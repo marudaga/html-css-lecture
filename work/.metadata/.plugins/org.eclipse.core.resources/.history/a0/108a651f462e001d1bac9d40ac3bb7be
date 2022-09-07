@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>span</h3>
+
+<!-- 인라인 태그는 공백, 탭, 엔터는 4px 여백 발생 -->
+<span style="background: gray;">HTML</span>
+<span style="background: gold;">HTML</span>
+<span style="background: fuchsia;">HTML</span>
+<hr><br>
+
+<span style="background: gray;">HTML</span><span style="background: gold;">HTML</span>
+<hr><br>
+
+<!--  인라인 태그를 블록태그로 -->
+<span style="background: gold; display: block;width:100px;">HTML</span>
+<span style="background: fuchsia; display: block; width: 100px;">HTML</span>
+<hr><br>
+
+<!--  인라인 태그를 인라인 블록으로태그로 -->
+<span style="background: gold; display: inlne-block;width:100px;">HTML</span>
+<span style="background: fuchsia; display: inlne-block; width: 100px;">HTML</span>
+<hr><br>
+</body>
+</html>

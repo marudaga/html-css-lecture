@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+/* 외부 css*/
+div{
+	font-size: 17px;
+	font-weight:600;
+}
+
+.web{
+	color : blue;
+}

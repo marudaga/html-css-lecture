@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+<style type="text/css">
+	
+	@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;400;500;700;900&family=Open+Sans:wght@400;600&display=swap");
+	* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR",sans-serif;
+}
+.pic{
+	width: 200px;
+    height: 200px; 
+    border-radius: 70%;
+	margin: 40px 70px;
+	padding:0;
+	border:2px solid rgba(255, 255, 255, 0.525);
+	float: left;
+}
+.nav{
+	width: 1000px;
+	height: 300px;
+}
+.background {
+	position:absolute;
+	background-color: rgba(8, 62, 171, 0.937);
+	width: 350px;
+	height: 100vh;
+	z-index: -1;
+	float: left;
+}
+.bigtitle {
+	font-size: 25px;
+	display: inline-block;
+	margin: 100px 0px 0px 50px;
+	width:400px;
+	height: 100px;
+	color: rgb(30, 136, 222);
+}
+.bigtitle b{
+	font-size: 33px;
+}
+.table{
+	border-collapse: collapse;
+	margin-top: 80px;
+	margin-left: 40px;
+	width: 900px;
+}	
+.table tr td:nth-child(1) {
+	padding:5px;
+	color: white;
+	width:350px;
+}
+.table tr:nth-child(2) td:nth-child(1){
+	color: rgba(255, 255, 255, 0.453);
+}
+.table tr:nth-child(1) td:nth-child(n+2){
+	border-top: 1px solid rgba(92, 92, 92, 0.579);
+}
+.table tr:nth-child(2n-1) td:nth-child(2){
+	font-size: larger;
+}
+.table tr:nth-child(2n) td:nth-child(2){
+	padding-bottom: 30px;
+}
+.tbrow1{
+	font-size: 27px;
+	border-top: 1px solid rgba(255, 255, 255, 0.525);
+}
+.table td{
+	padding: 3px 15px;
+}
+.table td:nth-child(3){
+	color: rgba(110, 110, 110, 0.553);
+}
+i{
+	margin-right: 15px;
+}
+</style>
+</head>
+<body>
+	<div class="background"></div>
+	<div class="nav">
+		<img class="pic" src="lee.jpg">
+		<div class="bigtitle">
+			<div>안녕하세요! <b>런닝맨</b>을 그만둔</div>
+			<div><b>이광수</b>입니다.</div>
+		</div>
+	</div>
+
+	
+	<table class="table" style="margin-top:0 ;">
+		<tr>
+			<td class="tbrow1">기본사항</td>
+			<td><i style="color: rgba(8, 62, 171, 0.937);" class="fa-solid fa-user"></i>1985.07.14(만37세) 키193cm </td>
+		</tr>
+		<tr style="font-size: larger;">
+			<td>personal information</td>
+			<td style="padding-bottom: 3px;"><i style="color: rgba(8, 62, 171, 0.937);" class="fa-solid fa-phone"></i>010-1548-7542 | giraff@naver.com</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><i style="color: rgba(8, 62, 171, 0.937);" class="fa-solid fa-location-dot"></i>서울특별시 구로구 구로디지털로 23번길 21</td>
+		</tr>
+	</table>
+
+	<table class="table">
+		<tr>
+			<td class="tbrow1">학력사항</td>
+			<td>토평고등학교</td>
+			<td >...................................</td>
+			<td>2010.10</td>
+		</tr>
+		<tr>
+			<td>Education</td>
+			<td>인문계열 | 서울</td>
+			<td >...................................</td>
+			<td>2010.10</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>동아방송예술대학교</td>
+			<td >...................................</td>
+			<td>2013.12</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>방송연예학</td>
+			<td >...................................</td>
+			<td>2016.12</td>
+		</tr>
+	</table>
+
+	<table class="table">
+		<tr>
+			<td class="tbrow1">수상경력</td>
+			<td>SAF 연예대상 버라이어티 부문 최우수상</td>
+			<td >............</td>
+			<td>2016</td>
+		</tr>
+		<tr>
+			<td>Education</td>
+			<td>제7회 대중문화예술상 국무총리표창</td>
+			<td >.............</td>
+			<td>2016</td>
+		</tr>
+
+	</table>
+	
+	
+
+</body>
+</html>

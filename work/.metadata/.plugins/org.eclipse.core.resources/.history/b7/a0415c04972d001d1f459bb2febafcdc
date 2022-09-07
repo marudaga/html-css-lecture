@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>block 과 inline 태그 </h3>
+<hr>
+<h3>block 태그</h3>
+<p style="background: lime; color: white;">block 태그 </p>
+<p style="background: yellow;">스프링</p>
+<p style="background: green;">웹</p>
+<p>css</p>
+
+<hr>
+
+<h3>inline 태그</h3>
+<span style="background: gray">안드로이드</span>
+<span style="background: tomato">자바</span>
+<span style="background: whiteblue">서블릿</span>
+
+</body>
+</html>

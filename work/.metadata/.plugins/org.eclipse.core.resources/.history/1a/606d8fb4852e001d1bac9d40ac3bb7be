@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{	margin:0;
+	padding:0;}
+.background {
+	background-color: blue;
+	width: 25%;
+	height: 100vh;
+}
+.table tr td:nth-child(1),span {
+border-bottom:white;
+border-top:white;
+color: white;
+width: 25%;
+}
+.table
+</style>
+</head>
+<body>
+	<div class="background">
+	<span class="사진">
+	<img src="">
+	</span>
+	<span id="bigtitle"><b>다리</b>보다 목이 긴</span>
+	<span id="bigtitle"><b>이광수</b>입니다.</span>
+		<table class="table">
+			<tr>
+				<td>기본사항</td>
+				<td>1993.01.15(만30세)</td>
+			</tr>
+			<tr>
+				<td>personal information</td>
+				<td>010-1548-7542 | giraff@naver.com</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>서울특별시 구로구 구로디지털로 23번길 21</td>
+			</tr>
+		</table>
+		<table class="table">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+
+	</div>
+</body>
+</html>

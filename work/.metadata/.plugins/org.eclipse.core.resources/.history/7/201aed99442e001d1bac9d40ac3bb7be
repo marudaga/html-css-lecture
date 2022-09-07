@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>span : inline 태그</h3>
+
+<div style="background: yellow; width: 100px; height: 100px;">예제</div>
+
+<!-- 인라인 태그는 줄바꿈이 일어나지 않는다. -->
+<!--  인라인 태그는 엔터, 공백이 있으면 약 4px 정도의 여백이 생긴다. -->
+<!-- 인라인 태그는 width,height는 무시, margin,padding은 좌우 적용 상하는 무시 -->
+<!-- 인라인 태그의 폭: content 폭 -->
+
+<span style="background: tomato;">HTML</span>
+<span style="background: gray; width: 400px; height: 100px;">CSS</span>
+</body>
+</html>
