@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 14px;
+	color: #222;
+}
+
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+
+a {
+	color: #222;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:active, a:hover {
+	color: #f28011;
+	font-weight: bold;
+}
+
+.btn {
+	color: #333;
+	border: 1px solid #999;
+	background-color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: "Noto Sans KR", sans-serif;
+	vertical-align: baseline;
+}
+
+.btn:active, btn:hover, btn:focus {
+	background-color: #f8f9fa;
+}
+
+.form-select {
+            border: 1px solid #999; border-radius: 4px; background-color: #fff;
+            padding: 4px 5px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+.form-select[readonly]{
+            background-color: #f8f9fa;
+        }
+textarea:focus, input:focus {
+	border-color: #f28011;
+	outline: none;
+}
+/*outline있으면 border의 색상보다 우선해서 변경안됨
+        readonly: 변경불가
+        [] 
+        100%는 해당 class의 아버지기준으로 100퍼센트
+        nowrap: 줄넘어가지 않게 막기
+        align-item flex에서만  가능 한 것
+        vertial-align 일반적으로 수직 정렬할때 사용
+        select(name="condition" )안에 option
+        클릭하면 선택가능하도록
+        */
+input[type=checkbox], input[type=radio] {
+	vertical-align: middle;
+}
+
+.board {
+	margin: 30px auto;
+	width: 700px;
+}
+
+.title {
+	width: 100%;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 10px 0;
+}
+
+.page-box {
+	clear: both;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.paginate {
+	text-align: center;
+	white-space: nowrap;
+	font-size: 14px;
+}
+
+.paginate a {
+	border: 1px solid #ccc;
+	color: #000;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 3px 7px;
+	margin-left: 3px;
+	vertical-align: middle;
+}
+
+.paginate a:hover, .paginate a:active {
+	color: #6771ff;
+}
+
+.paginate div {
+	border: 1px solid #e28d8d;
+	color: #e28d8d;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 3px 7px;
+	margin-left: 3px;
+	vertical-align: middle;
+}
+
+.paginate :first-child {
+	margin-left: 0;
+}
+
+/*-------------------------------------*/
+ul {
+	list-style: none;
+	text-align: center;
+	
+}
+
+ul li:last-child {
+	clear: both;
+}
+ul li:nth-child(n){
+	width:50px;
+}
+
+
+/*table*/
+.table{
+            width: 100%; border-spacing: 0; border-collapse: collapse;
+        }
+        .table li{	
+		float: left;
+		text-align: center;
+        padding-top:10px; padding-bottom: 10px;
+		
+        }
+
+        .table-border ul:first-child{
+            border-top: 2px solid #212529; border-bottom: 1px solid #ced4da;
+        }
+
+        .table-border ul:nth-child(n+2) {border-bottom: 1px solid #ced4da;}
+        .table-border ul:last-child {border-bottom: 1px solid #ced4da;}
+
+        .board{
+            margin: 30px auto; width: 700px;
+        }
+        .title{
+            width: 100%; font-size: 16px;font-weight: 600; padding: 10px 0;
+        }
+
+        .table-list li:first-child{
+            background-color: #f8f9fa;
+        }
+        .table-list li{
+            text-align: center;
+        }
+        .table-list li:nth-child(5n+2){
+            text-align: left; padding:  5px;
+        }
+        .table-list .num{
+            width:60px; color: #787878;
+        }
+        .table-list .subject{ color: #787878;}
+        .table-list .name{ width: 100px; color: #787878;}
+        .table-list .date{ width: 100px; color: #787878;}
+        .table-list .hit{ width: 70px; color: #787878;}
+
+
+</style>
+
+</head>
+<body>
+	<!--div,ul, li로 bbslist만들기-->
+	<div class="board">
+		<div class="title">
+			<div>| 게시판</div>
+		</div>
+
+		<div>25개(1/2페이지)</div>
+	
+		<div class="table table-border table-list">
+	<ul>
+		<li class="num" >번호</li>
+		<li class="subject">제목</li>
+		<li class="name">이름</li>
+		<li class="date">작성일</li>
+		<li class="hit" >조회수</li>
+	</ul>
+	<ul>
+		<li >3</li>
+		<li>안녕하세요...</li>
+		<li>이자바</li>
+		<li>2022-09-08</li>
+		<li>10</li>
+	</ul>
+	<ul>
+		<li>2</li>
+		<li>HTML안녕하세요...</li>
+		<li>박웹</li>
+		<li>2022-09-07</li>
+		<li>55</li>
+	</ul>
+	<ul>
+		<li>1</li>
+		<li>자바가 뭔가요?...</li>
+		<li>나주거</li>
+		<li>2022-09-06</li>
+		<li>1</li>
+	</ul>
+	</div>	
+	
+	<div class="page-box">
+		<div class="paginate">
+			<div style="display: inline;">1</div>
+			<a href="#">2</a>
+			<a href="#">3</a>
+		</div>
+	</div>
+
+	<ul>
+		<li style="width: 20%" >
+			<button type="button" class="btn">새로고침</button>
+		</li>
+			<li style=" text-align: center; width: 60%; ">
+				<select name="condition" class="form-select">
+					<option value="all">제목+내용</option>
+					<option value="name">작성자</option>
+					<option value="subject">제목</option>
+					<option value="content">내용</option>
+					<option value="reg_date">등록일</option>
+			</select> 
+			<input type="text" name="keyword" class="form-control">
+			<button type="button" class="btn">검색</button></li>
+
+		
+		<li style="width:20%; text-align: right;" >
+			<button type="button" class="btn"
+				onclick="location.href='bbs_write.html';">글올리기</button>
+		</li>
+	</ul>
+    
+</div>
+
+</body>
+</html>

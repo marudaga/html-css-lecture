@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*
+        valign="top"
+        */
+        @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;400;500;700;900&family=Open+Sans:wght@400;600&display=swap");
+	* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR",sans-serif;
+}
+        *, ::after, ::before{ box-sizing: border-box;}
+
+        body{
+            font-family: "Noto Sans KR",sans-serif; font-size: 14px;color: #222;
+        }
+
+        a{
+            color: #222; text-decoration: none; cursor: pointer;
+        }
+        a:active, a:hover{ color:#f28011; font-weight: bold;}
+        .btn{
+            color:#333;
+            border: 1px solid #999;
+            background-color:#fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .btn:active,btn:hover,btn:focus{
+            background-color: #f8f9fa;
+        }
+        .form-control {
+            border: 1px solid #999; border-radius: 4px; background-color: #fff;
+            padding: 5px 5px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .form-control[read-only]{
+            background-color: #f8f9fa;
+        }
+        textarea .form-control{
+            height:170px; resize: none;
+        }
+        .form-select {
+            border: 1px solid #999; border-radius: 4px; background-color: #fff;
+            padding: 4px 5px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .form-select[readonly]{
+            background-color: #f8f9fa;
+        }
+        
+        textarea:focus, input:focus{
+         border-color:  #f28011;
+            outline:none;
+        }
+        input[type=checkbox], input[type=radio]{
+            vertical-align: middle;
+        }
+        .table{
+            width: 100%; border-spacing: 0; border-collapse: collapse;
+        }
+        .table th, .table td{
+            padding-top:10px; padding-bottom: 10px;
+        }
+
+        .table-border thead > tr{
+            border-top: 2px solid #212529; border-bottom: 1px solid #ced4da;
+        }
+
+        .table-border tbody > tr {border-bottom: 1px solid #ced4da;}
+        .table-border tfoot > tr {border-bottom: 1px solid #ced4da;}
+
+        .board{
+            margin: 30px auto; width: 700px;
+        }
+        .title{
+            width: 100%; font-size: 16px;font-weight: 600; padding: 10px 0;
+        }
+
+        .table-form{ margin-top: 20px;}
+        .table-form td{ padding: 7px 0;}
+        .table-form tr:first-child{ border-top: 2px solid #212529;}
+        .table-form tr > td:first-child{
+            width: 110px; text-align: center; background-color: #f8f9fa;
+        }
+        .table-form tr > td:nth-child(2) {
+            padding-left: 10px;
+        }
+        .table-form input[type=text], .table-form input[type=file], .table-form textarea {
+            width:97%;}
+        .table-form input[type=file] {
+            width:50%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="board">
+        <div class="title">
+            <h3><span>|</span> 게시판</h3>
+        </div>
+
+        <form>
+            <table class="table table-border table-form">
+                <tr>
+                    <td>제  목</td>
+                    <td>
+                        <input type="text" name="subject" maxlength="70" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이  름</td>
+                    <td>
+                        <input type="text" name="name" maxlength="10" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td >내 용</td>
+                    <td>
+                        <textarea  name="content" class="form-control"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>패스워드</td>
+                    <td>
+                        <input type="password" name="pwd" maxlength="10" class="form-control">
+                        (게시글 수정 및 삭제시 필요)
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr>
+                    <td align="center">
+                        <button type="button" class="btn">등록하기</button>
+                        <button type="reset" class="btn">다시입력</button>
+                        <button type="button" class="btn">등록취소</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

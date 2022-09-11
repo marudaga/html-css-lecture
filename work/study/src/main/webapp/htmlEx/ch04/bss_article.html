@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--align는 넓이를 기준으로 하고
+    valign는 높이를 기준으로 합니다.-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;400;500;700;900&family=Open+Sans:wght@400;600&display=swap");
+	* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR",sans-serif;
+}
+        *, ::after, ::before{ box-sizing: border-box;}
+
+        body{
+            font-family: "Noto Sans KR",sans-serif; font-size: 14px;color: #222;
+        }
+
+        a{
+            color: #222; text-decoration: none; cursor: pointer;
+        }
+        a:active, a:hover{ color:#f28011; font-weight: bold;}
+        .btn{
+            color:#333;
+            border: 1px solid #999;
+            background-color:#fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .btn:active,btn:hover,btn:focus{
+            background-color: #f8f9fa;
+        }
+        .form-control {
+            border: 1px solid #999; border-radius: 4px; background-color: #fff;
+            padding: 5px 5px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .form-control[read-only]{
+            background-color: #f8f9fa;
+        }
+        textarea .form-control{
+            height:170px; resize: none;
+        }
+        .form-select {
+            border: 1px solid #999; border-radius: 4px; background-color: #fff;
+            padding: 4px 5px;
+            font-family: "Noto Sans KR",sans-serif; 
+            vertical-align: baseline;
+        }
+        .form-select[readonly]{
+            background-color: #f8f9fa;
+        }
+        
+        textarea:focus, input:focus{
+         border-color:  #f28011;
+            outline:none;
+        }
+        input[type=checkbox], input[type=radio]{
+            vertical-align: middle;
+        }
+        .table{
+            width: 100%; border-spacing: 0; border-collapse: collapse;
+        }
+        .table th, .table td{
+            padding-top:10px; padding-bottom: 10px;
+        }
+
+        .table-border thead > tr{
+            border-top: 2px solid #212529; border-bottom: 1px solid #ced4da;
+        }
+
+        .table-border tbody > tr {border-bottom: 1px solid #ced4da;}
+        .table-border tfoot > tr {border-bottom: 1px solid #ced4da;}
+
+        .board{
+            margin: 30px auto; width: 700px;
+        }
+        .title{
+            width: 100%; font-size: 16px;font-weight: 600; padding: 10px 0;
+        }
+        .table-article {margin-top: 20px;}
+        .table-article tr > td {
+            padding-left : 5px; padding-right: ;
+        }
+        .table-form tr>td:first-child {
+	width: 110px;
+	text-align: center;
+	background: #f8f9fa;
+}
+
+.table-form tr>td:first-child(2) {
+padding-left:10px;
+}
+.table-form input[type=text], table-form input[type=file], .table-form textarea{ width:97%;
+}
+table-form input[type=file]{
+width:50%;
+}
+    </style>
+</head>
+<body>
+
+    <div class="board">
+        <div class="title">
+            <h3><span>|</span> 게시판</h3>
+        </div>
+
+        <table class="table table-border table-article">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        제목입니다.
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td width="50%">
+                        이름:김자바
+                    </td>
+                    <td width="50%" align="right">
+                        2022-09-08 | 조회 5
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" valign="top" height="200">
+                        글 내용입니다.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        이전글 :
+                        <a href='#'>다음글 입니다.</a>
+                    </td>
+                </tr>
+                <tr style="border-bottom: none;">
+                    <td colspan="2" align="right" style="padding-top: 3px;">
+                        127.0.0.1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tr>
+                <td width="50%">
+                    <button type="button" class="btn">수정</button>
+                    <button type="button" class="btn">삭제</button>
+                </td>
+                <td width="50%" align="right">
+                    <button type="button" class="btn">리스트</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+</body>
+</html>
