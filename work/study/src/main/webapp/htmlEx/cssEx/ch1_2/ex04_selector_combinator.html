@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*인접 형제 결합자(+)  : label의 코드 위치상 바로 밑에 있는 하나, 형제 하나*/
+label + span {background: yellow;}
+/*일반 형제 결합자(~) : 코드위치상 밑에있는 형제들 모두 */
+label ~ span {color:blue; font-family: 600; }
+
+/*자손 결헙자(공백)  :자손 결합자 자식결합자 같이 쓰려면 자손결합자가 코드위치상 위에 있어야 함.*/
+.subject label{ color :  #ccc;}
+/*자식 결합자(>): 1단계*/
+.subject > label { color: tomato;}
+
+
+</style>
+
+</head>
+<body>
+
+<h3>Selector : 결합자(Combinator)</h3>
+
+<div class="box">
+	<div class="subject">
+		<label>프로그래밍</label>
+		<span>자바</span>
+		<span>C언어</span>
+		<span>코틀린</span>
+		<p>
+			<label>데이터베이스</label>
+			<span>오라클</span>
+			<span>mysql</span>
+			<span>빅데이터</span>
+		</p>
+	</div>
+	<div class="subject">
+		<label>웹</label>
+		<span>HTML</span>
+		<span>CSS</span>
+		<span>javascript</span>
+		<p>
+			<label>웹프로그램</label>
+			<span>JSP</span>
+			<span>PHP</span>
+			<span>ASP.NET</span>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>

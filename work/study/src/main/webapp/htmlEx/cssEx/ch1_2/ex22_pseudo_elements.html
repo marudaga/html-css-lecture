@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.cafe{padding: 20px;}
+.cafe > ul { list-style: none; padding: 0;}
+.cafe > ul li { margin: 10px 0;}
+.cafe > ul li.sale::before {
+content: "SALE!\A할인";/*\a:줄바꿈 강제성x(width가 크면 한줄로 표시됨)->white-space:pre*/
+display: inline-block;
+width: 30px; text-align: center;
+padding: 3px 6px; margin-right: 5px;
+font-size: x-small;
+border-radius: 4px;
+color: #fff; background: #f55;
+white-space: pre; /*강제 줄바꿈을 위해. width 가 크면 한줄로 표시 */
+}
+.java ol {padding: 0; }
+.java li {	list-style: none; counter-increment: chapter;} /*chapter의 카운터 값을 1 증가*/
+.java li::before{
+	content: "제" counter(chapter) "장"; /*chapter의 count 값을 표시 */
+}
+</style>
+
+</head>
+<body>
+
+<h3>카페 메뉴</h3> 
+<div class="cafe">
+	<ul>
+		<li class="sale">아메리카노 - 2,500원</li>
+		<li>에스프레소 - 4,500원</li>
+		<li>카페라떼 - 5,000원</li>
+		<li class="sale">카푸치노 - 5,500원</li>
+	</ul>
+</div>
+<hr>
+
+<h3>목록 카운터 증가</h3>
+<div class="java">
+	<ol>
+		<li>자바란 ?</li>
+		<li>기본 프로그램</li>
+		<li>자료형</li>
+		<li>제어문</li>
+	</ol>  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function send(){
+            alert("submit 버튼을 눌렀습니다.")
+        }
+    </script>
+    <!--
+        input 속성 
+        value:  초기값
+        readonly : 값을 변경할 수 없고 서버로 전송됨
+        disabled : 값을 변경할 수 없고 서버로 전송되지 않음 
+        hidden   : text와 유사하지만 화면이 표시되지 않음 (서버로 전송해야하는 경우 사용)
+        range : 범위 바형태
+        color, number(입력가능 클릭으로 증감 설정min,max,step) 등 
+        type="file" : 파일타입 필터링 ex.accept="image/png, image/jpg" or images/* 
+        label:for속성을 input의 id와 일치시키면 label눌러도 선택됨
+        <input, button> type속성: image, submit 은 서버로 데이터 전송가능,  form태그안에있어야함
+        type="button"은 서버로 전송기능x
+        
+        
+    -->
+</head>
+<body >
+    <form action="javascript.send();" name="myForm" method="post">
+        <p>
+            
+            value 속성 : <input type="text" name="input1" value="10" >
+        </p>
+
+        <p>
+            readonly  속성  : <input type="text" name="input2" value="20"
+            readonly="readonly">
+        </p>
+
+        <p>
+            disalbed 속성 : <input type="text" name="input3" value="30"
+            disabled="disalbed">
+        </p>
+        <p>
+            <input type="hidden" name="num" value="100">
+        </p>
+
+        <button>
+            <input type="image" src="../images/btn_submit.gif" style="vertical-align: top;">
+            <button type="submit" style="vertical-align: top;">등록하기</button>
+            <input type="submit" step="vertical-align: top;" value="등록하기" >
+
+            <button type="button" style="vertical-align: top;">일반버튼</button>
+        </p>
+    </form>
+
+</body>
+</html>

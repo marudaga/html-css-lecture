@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ul{list-style: none;padding: 0%;}
+/* ul의 첫번째 자식인li*/
+ul > li:nth-child(1){ font-weight: bold;} /*첫번째 요소가 1*/
+
+/*ul의 자식중 홀수번째 요소 n은 0부터 대입하여 계산 값이 0이하는 반영안됨*/
+ul > li:nth-child(2n+1){color:tomato;}
+/*ul의 자식 중 3의 배수 요소 (3,6,9)*/
+ul > li:nth-child(3n){background: yellow;}
+
+p:first-of-type{color:red;}
+/*p의 부모의 자식중에서 p요소만 고려했을때 p가 첫번째 자식인 경우.*/
+p:last-of-type{color:blue;}
+/*p의 부모의 자식중에서 p요소만 고려했을때 p가 마지막 자식인 경우.*/
+
+p:nth-of-type(n){color:green;}
+/*p의 부모의 자식중에서 p요소만 고려했을때 p가 n번째 자식인 경우.*/
+p:nth-last-of-type(n){color:blue;}
+/*p의 부모의 자식중에서 p요소만 고려했을때 p가 뒤에서 n번째 자식인 경우.*/
+
+</style>
+
+</head>
+<body>
+
+<h3> 구조 가상 클래스 </h3>
+<ul>
+	<li>자바</li>
+	<li>오라클</li>
+	<li>스프링</li>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>javascript</li>
+	<li>node.js</li>
+	<li>코틀린</li>
+	<li>하둡</li>
+	<li>몽고디비</li>
+</ul>
+<hr>
+
+<div>
+	<h4>프로그래밍</h4>
+	<p>자바</p>
+	<p>오라클</p>
+	<p>스프링</p>
+	<p>HTML</p>
+	<p>CSS</p>
+	<p>javascript</p>
+	<p>node.js</p>
+</div>
+
+</body>
+</html>

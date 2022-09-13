@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style  type="text/css"> 
+    *{
+        margin:0;padding:0;
+    }
+    body{
+        font-size:14px; font-family:  맑은 고딕, 나눔고딕, 돋움, sans-serif;
+    }
+    a{
+        color: #000; text-decoration: none; cursor: pointer;
+    }
+    a:active, a:hover{ text-decoration: underline; color: tomato;}
+
+    .body-container{
+        width: 700px; margin: 20px auto; padding: 15px 15px;
+    }
+    .body-container fieldset {
+        padding: 7px 7px;
+    }
+    .body-container p{
+        line-height: 210%;
+    }
+    </style>
+    <script type = "text/javascript">
+    function sendOk(){
+        let f = document.myForm;
+        let s; 
+
+        s = "아이디 : " + f.id.value;
+
+        alert(s);
+    }
+</script>
+    <title>Document</title>
+</head>
+<body>
+
+<div class ="body-container">
+    <h3> form  관련 태그</h3>
+    <!--폼태그가 있으면 javascrpit 없이 post가능
+    fieldset : 객체 그룹화 틀
+    label: inline
+    placeholder:안에 보이는 내용(입력된것 아님)
+    pattern:제약내용
+    input +type이 text :  한줄입력가능 
+    input 의 value는 초기값을 적어놓는 효과
+    type number이어도 문자열
+    onchange="form.sendButton.disabled != chekced" 동의해야 post가능
+    textarea : 여러줄 입력가능
+
+    submit  버튼과 reset버튼은 form태그안에 있어야 적용된다.
+    submit버튼: 서버로 데이터전송역할
+    reset 버튼: 양식태그의 상태를 초기값으로 설정
+    
+    radio는 동일한 name중 하나만 선택가능
+    checkbox는 다중 선택가능
+
+    
+    datalist: focus받았을 때 리스트 띄움 (다른 내용입력가능)
+    option 의 value : 서버로 전송되는 값(표시되는 값x), 없으면 text전송
+    select의 속성
+    multiple : 동시에 2개 이상 선택가능
+   
+    -->
+    <form name="myForm" action="javascript:sendOk();" method="post">
+        <fieldset>
+            <legend>필수 입력</legend>
+            <p>
+                <label> 아이디 : 
+                    <input type="text" name="id" style="width: 200px;"
+                    maxlength="10" 
+                    required="required"
+                    pattern="^[A-Za-z0-9]+$"
+                    placeholder="아이디를 입력하세요"
+                    >
+                </label>
+            </p>
+            <p style="padding-left: 30px;">
+                <label>
+                    <input type="password" name="pwd"
+                    required="required"
+                    placeholder="패스워드를 입력하세요">
+
+                </label>
+            </p>
+            <p>
+                <label> 이 름 :
+                    <input type="text">
+                </label>
+            </p>
+            <p>
+                <label> 지 역 : 
+                    <input type="text" name="city"
+                    required="required"
+                    value="서울">
+                </label>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>성별</legend>
+            <p>
+                <label>
+                    <input type="radio" name="gender" value="M">남자
+                    <input type="radio" name="gender" value="F" checked="checked">여자
+                </label>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>선택 입력</legend>
+            <p>
+                <label> 전화번호 : 
+                    <input type="tel" name="tel">
+                </label>
+            </p>
+            <p>
+                <label> 이메일 : 
+                    <input type="email" name="email">
+                </label>
+            </p>
+            <p>
+                <label> 생년월일 : 
+                    <input type="date" name="birth">
+                </label>
+            </p>
+            <p>
+                <label> 근무시작시간  : 
+                    <input type="time" name="stime">
+                </label>
+            </p>
+            <p>
+                <label> 나이 : 
+                    <input type="number" name="age" min="0" max="65">
+                </label>
+            </p>
+            <p>
+                <label> 학력 :
+                    <input type="text" name="hak" list="haks">
+                    <datalist id="haks">
+                        <option>대학원졸</option>
+                        <option>대졸</option>
+                        <option>고졸</option>
+                        <option>기타</option>
+                    </datalist>
+                </label>
+            </p>
+            <p>
+                <label> 희망부서
+                    <select name="dept"> 
+                        <option value="">:: 선택 ::</option>
+                        <option value="인사부">인사부</option>
+                        <option value="인사부" selected="selected">개발부</option>
+                        <option value="총무부">총무부</option>
+                        <option value="기타">상관없음</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label> 좋아하는 과목 :
+                    <select  name="subject" multiple="multiple" style="height: 100px;">
+                        <option>자바</option>
+                        <option>스프링</option>
+                        <option>오라클</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label> 취미 : 
+                    <input type="checkbox" name="hobby" value="운동">운동하기
+                    <input type="checkbox" name="hobby" value="요리">요리하기
+                    <input type="checkbox" name="hobby" value="게임">개임하기
+                    <input type="checkbox" name="hobby" value="영화">영화보기
+                    <input type="checkbox" name="hobby" value="음악">음악듣기
+                </label>
+            </p>
+            <p>
+                <label> 메모 : 
+                    <textarea rows="3" cols="60" name="memo"></textarea>
+                </label>
+            </p>
+        </fieldset>
+        <p style="text-align: center;">
+            <label> 약관동의
+                <input type="checkbox"
+                onchange="form.sendButton.disabled != chekced"
+                checked="checked">
+            </label>
+        </p>
+        <p style="text-align:center">
+            <button type="submit" name="sendButton">회원가입</button>
+            <button type="reset">다시입력</button>
+            <button type="button">가입취소</button>
+        </p>
+    </form>
+</div>
+</body>
+</html>

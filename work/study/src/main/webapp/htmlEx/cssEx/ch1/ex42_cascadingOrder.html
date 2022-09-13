@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* 명시도 !important  인라인 id */
+p{ color: red !important;}
+#p-blue{    color: blue;}
+
+div{ color:orange;}
+div.box{ color:black;}/* div이면서 클래스가 box인 요소*/
+.box{color:green;}
+.box2{color:gold;}
+</style>
+
+</head>
+<body>
+
+<h3> Cascading Order </h3>
+
+<p id="p-blue">red-명시도 예</p>
+
+<div>orange-명시도 예</div>
+<pre class="box">green-명시도 예</pre>
+<div class="box">black-명시도 예</div>
+<div class="box2">gold-명시도 예</div>
+
+</body>
+</html>

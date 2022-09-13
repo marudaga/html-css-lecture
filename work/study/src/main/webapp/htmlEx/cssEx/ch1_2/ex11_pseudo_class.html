@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+a:link{color:orange;}/*방문전 링크*/
+a:visited{ color: green;}/*방문후 링크*/
+a:hover {font-weight:bold;}
+a:active{color: blue;}
+
+input[type=text]:focus, input[type=password]:focus{
+	border:1px solid red; outline: none;/*자체 테두리제거해야 됨*/ 
+}
+</style>
+
+</head>
+<body>
+
+<h3>가상 클래스(Pseudo-classes)(특정상태) : 링크 셀렉터(Link pseudo-classes) </h3>
+
+<div>
+	<a href="#">링크</a> |
+	<a href="https://google.com">구글</a>
+</div>
+<div>
+	<p> <input type="text"> </p>
+	<p> <input type="password"> </p>
+	<p> <input type="button" value="확인"> </p>
+</div>
+
+</body>
+</html>

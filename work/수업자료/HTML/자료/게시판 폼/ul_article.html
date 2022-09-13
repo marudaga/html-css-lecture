@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+
+<style type="text/css">
+* { padding: 0; margin: 0; }
+*, ::after, ::before { box-sizing: border-box; }
+
+body {
+	font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
+	font-size: 14px;
+	color: #222;
+}
+
+a { color: #222; text-decoration: none; cursor: pointer; }
+a:active, a:hover { color: #f28011; text-decoration: underline; }
+
+/* form-control */
+.btn {
+	color: #333;
+	border: 1px solid #999;
+	background-color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-weight: 500;
+	cursor:pointer;
+	font-size: 14px;
+	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
+	vertical-align: baseline;
+}
+.btn:active, .btn:focus, .btn:hover {
+	background-color: #f8f9fa;
+	color:#333;
+}
+
+.form-control {
+	border: 1px solid #999; border-radius: 4px; background-color: #fff;
+	padding: 5px 5px; 
+	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
+	vertical-align: baseline;
+}
+.form-control[readonly] { background-color:#f8f9fa; }
+
+textarea.form-control { height: 170px; resize : none; }
+
+.form-select {
+	border: 1px solid #999; border-radius: 4px; background-color: #fff;
+	padding: 4px 5px; 
+	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
+	vertical-align: baseline;
+}
+.form-select[readonly] { background-color:#f8f9fa; }
+
+textarea:focus, input:focus { outline: none; }
+input[type=checkbox], input[type=radio] { vertical-align: middle; }
+
+.board { width: 600px; margin: 30px auto; }
+
+.title { width:100%; font-size: 16px; font-weight: bold; padding: 13px 0; }
+
+.board .board-article { width:100%; margin:10px auto 0; overflow: visible; }
+
+.board-article ul, .board-footer ul { clear: both; list-style: none; }
+.board-article ul li { border-bottom: 1px solid #ced4da; padding: 10px 5px; }
+.board-article ul:first-child li{ border-top: 2px solid #212529; text-align: center; }
+
+.board .col-left { float: left; width: 50%; }
+.board .col-right { float: right; width: 50%; text-align :right; }
+
+.board .article-content {
+    padding: 10px 20px;
+    min-height: 150px;
+	overflow: visible;
+	text-align:left;
+    word-break: break-all; /* 폭이 넘어가는 경우 모든 문자를 강제로 줄바꿈 할수 있음 */
+}
+.board .board-footer { clear:both; padding:10px 0; margin: 10px auto 0; }
+</style>
+
+</head>
+<body>
+
+<div class="board">
+	<div class="title">
+	    <h3><i class="fa-regular fa-clipboard"></i> 게시판</h3>
+	</div>
+	
+	<div class="board-article">
+		<ul>
+			<li>게시물 제목</li>
+		</ul>
+
+		<ul>
+			<li class="col-left">작성자 : 홍길동</li>
+			<li class="col-right">2021-09-15 | 10</li>
+		</ul>
+		<ul>
+			<li class="article-content">게시물 내용</li>
+		</ul>
+		<ul>
+			<li>이전글 : 이전글입니다.</li>
+			<li>다음글 : 다음글입니다.</li>
+		</ul>
+	</div>
+
+	<div class="board-footer">
+		<ul>
+			<li class="col-left">
+               <button type="button" class="btn"> 수정 </button>
+               <button type="button" class="btn"> 삭제 </button>
+			</li>
+			<li class="col-right">
+               <button type="button" class="btn"> 리스트 </button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
