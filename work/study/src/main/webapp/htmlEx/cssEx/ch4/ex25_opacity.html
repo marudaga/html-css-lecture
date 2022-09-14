@@ -4,7 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
+/*background-image: url("bg.png");띄어쓰기때문에 ""넣는건데 없어서 필요없다*/
+.bg-container:after{
+	content:"";/*after나 before은 내용없어도 content:""넣어줘야함 안하면 css작동안할수있음*/
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	background-image: url("bg.png");
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	z-index: -1;
+}
 
 </style>
 

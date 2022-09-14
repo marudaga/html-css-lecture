@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
+div{
+    width: 100%; height: 100px; margin-bottom: 20px;
+}
+/*linear-gradient(진행방향(to top or 45deg), 색상 퍼센트,색상 퍼센트)
+같은 색상 2번쓰면 그라데이션 효과없는 면 발생*/
+.box1{background: linear-gradient(to bottom, yellow, red);}
+.box2{background: linear-gradient(to top, yellow, red);}
+.box3{background: linear-gradient(to right, yellow, red);}
+.box4{background: linear-gradient(to left, yellow, red);}
+.box5{background: linear-gradient(120deg, yellow, red);}
+.box6{background: linear-gradient(45deg, yellow 12%,yellow,blue 20%,brown 50%, red 10%);}
 </style>
 
 </head>
@@ -17,7 +27,7 @@
 <div class="box3">to right</div>
 <div class="box4">to left</div>
 <div class="box5">45deg</div>
-<div class="box6"></div>
+<div class="box6" style="width: 300px;height: 300px;"></div>
 
 </body>
 </html>

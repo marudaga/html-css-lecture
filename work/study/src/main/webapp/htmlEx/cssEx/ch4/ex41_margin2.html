@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.box{
+    width: 100px;height: 50px;
+    border: 3px dotted gray;
+}
 
+.m1{ margin-bottom: 30px;}
+.m2{ margin-bottom: 15px;}
+.m3{ margin-top: 30px;}
 </style>
 </head>
 <body>
@@ -15,7 +22,10 @@
 <div class="box"></div>
 <hr>
 
-<!-- 이런 경우에는 첫번째 margin-bottom을 조정하거나, inline-block으로 설정 한다.  -->
+<!-- 
+    - 마진 겹침은 어떤 두 개 이상 블록 요소의 상하 마진이 겹칠 때 어느 한 쪽의 값만 적용
+    m2 m3 의 경우 margin-top이 30px로 더 크므로 top이 적용
+    이런 경우에는 첫번째 margin-bottom을 조정하거나, inline-block으로 설정 한다.  -->
 <div class="box m2"></div>
 <div class="box m3"></div>
 <hr>

@@ -4,14 +4,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
+    /*div의 폭지정안하면 text양 만큼의 폭만 나옴*/
+.box{
+    width: 150px; height: 150px; 
+    margin: 50px 0 0 300px;
+    border: 3px dotted gray;
+    background: orange;
+    position: relative;
+}
+.absolute-box{
+    position: absolute;
+    left:50px;
+    top:50px;
+    background: #333;
+    color: #eee;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150px;
+}
 
 </style>
 
 </head>
 <body>
 
-<h3>position:absolute - 요소가 문서의 일반적인 흐름을 따르지 않고, 페이지 레이아웃에 공간도 배정하지 않는다.</h3>
+<h3>position:absolute(절대적인 위치) - 요소가 문서의 일반적인 흐름을 따르지 않고, 페이지 레이아웃에 공간도 배정하지 않는다.</h3>
 
 <div class="box"><div class="absolute-box">parent-div</div></div>
 <div class="absolute-box">parent-body</div>

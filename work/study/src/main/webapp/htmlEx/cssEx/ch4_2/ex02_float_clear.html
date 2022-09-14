@@ -4,7 +4,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.box{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 20px;
+    border: 3px dotted gray;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+    font-weight: 900;
+}
 
+.left{ float:left; }
+.right{ float:right; }
 
 </style>
 
@@ -19,13 +32,15 @@
  - float된 요소의 부모 태그에 overflow:auto를 적용(단점 : 특정 브라우저에서 스크롤 바가 표시)
  - float된 요소의 부모 태그에 float을 또 설정(단점 : 가운데 배치 불가능)
  - float된 요소의 다음에 나오는 태그에 clear:both를 지정(단점 : clear:both가 적용된 요소에는 margin-top 적용 불가)
- - float된 요소의 부모 태그에 가상요소를 만들고 해당 요소에 clear:both를 지정
+ -*중요* float된 요소의 부모 태그에 가상요소를 만들고 해당 요소에 clear:both를 지정
+ div::before{clear:both}
 </pre>
 
 <div class="box left">1</div>
 <div class="box left">2</div>
 <div class="box left">3</div>
-<!-- float:left 속성이 유지되어 이상한 현상이 발생됨 -->
+
+<!-- float:left 속성이 유지되어 노란박스에 이상한 현상이 발생됨 -->
 <div style="width: 100px; height: 100px; background: yellow;"></div>
 
 <div style="clear: both;">가장 가까운 앞 요소에 설정된 float:left 또는 float:right 해제</div>

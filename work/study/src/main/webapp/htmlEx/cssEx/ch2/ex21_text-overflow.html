@@ -4,7 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
+.default{
+    width: 150px;height: 150px; padding: 10px; margin: 30px;
+    border: 3px dotted gray;
+}
+.box{
+    width: 150px; /*width지정해야함*/
+    height: 150px; padding: 10px; margin: 30px;
+    border: 3px dotted gray;
+    white-space: nowrap;/*자동 줄바꿈*/
+    overflow: hidden;/*반드시 visible이외의 값으로 지정*/
+}
+.clip {text-overflow: clip;}/*넘치면 잘라냄 비추*/
+.ellipsis {text-overflow: ellipsis;}/*넘치면...*/
 </style>
 
 </head>

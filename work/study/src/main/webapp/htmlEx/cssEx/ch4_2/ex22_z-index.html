@@ -4,13 +4,40 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.box{
+    width: 150px;
+    height: 150px;
+    border: 3px dotted gray;
+}
+
+.absolute-box{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.yellow {
+    background: yellow;
+}
+.orange{
+    background: orange;
+    left:100px; top:100px;
+}
+.green{
+    background: green;
+    left: 150px; top:150px
+}
+.blue{
+    background: blue;
+    left:180px; top:120px;
+}
+
 
 </style>
 
 </head>
 <body>
 
-<h3>z-index : position 속성이 static이 아닌 요소와 그 자존 요소의 Z축 순서를 지정</h3>
+<h3>z-index(뒤에 나온코드가 위로옴) : position 속성이 static이 아닌 요소와 그 자존 요소의 Z축 순서를 지정</h3>
 
 <div class="box yellow"></div>
 <div class="absolute-box orange"></div>

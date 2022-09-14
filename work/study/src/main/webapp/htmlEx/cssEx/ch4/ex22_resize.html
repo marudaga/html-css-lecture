@@ -4,7 +4,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+    /*
+    textarea는 크기조정이 가능한 입력창
+    contenteditable="true"로 div 도 입력창으로 변경가능
+    */
+.box{
+    width: 150px; height: 150px;
+    padding: 10px; margin: 50px;
+    border: 3px dotted gray;
+    overflow: hidden;
+}
 
+.ta{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 50px;
+}
+.b{ resize:both ;}
+.h{ resize: horizontal;}
+.v{ resize:vertical ;}
+.n{ resize: none;}
 </style>
 
 </head>
@@ -15,7 +35,7 @@
 <div class="box"><h3>default</h3></div>
 <div class="box b"><h3>both</h3></div>
 <div class="box h"><h3>horizontal</h3></div>
-<div class="box v"><h3>vertical</h3></div>
+<div class="box v" contenteditable="true"><h3>vertical</h3></div>
 
 <textarea class="ta">default</textarea>
 <textarea class="ta n">none</textarea>

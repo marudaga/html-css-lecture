@@ -1,0 +1,151 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;400;500;700;900&family=Open+Sans:wght@400;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR",sans-serif;
+}
+body{
+  height: 100vh;
+}
+header{
+  height: 110px;
+}
+h3 {
+  margin: 2em 0 1.5em 0;
+}
+
+nav {
+  width: 100%;
+  padding-left: 150px;
+  display: inline-block;
+  position: relative;
+  background: rgba(110, 0, 0);
+  color: white;
+  height: 110px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu > li {
+  position: relative;
+  float:left;
+}
+
+.main-menu > li:hover{
+border-bottom: 3px solid white;
+border-collapse: collapse;
+border-radius: 70%;
+}
+.main-menu > li > a {
+  font-size: 0.85rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: block;
+  padding: 14px 36px;
+  border-right: 1px solid rgba(110, 0, 0, 0.838);
+  text-shadow: 1px 1px 1px rgba(110, 0, 0, 0.838);
+
+}
+
+.main-menu > li:nth-child(1) > a {
+  border-left: 1px solid rgba(110, 0, 0, 0.838);
+  margin-left:-1px;
+}
+
+.sub-menu {
+  position: absolute;
+  display: inline-block;
+  opacity:0;
+  visibility:hidden;
+  left:50px;
+  width:100vw;
+}
+.sub-menu > li {
+  display: inline-block;
+  position: relative;
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(110, 0, 0, 0.838);
+}
+
+.sub-menu > li >  a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-menu > li:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sub-menu > li >  a:hover {
+ text-decoration: underline;
+}
+
+section {
+  background: #dadadf;
+  padding: 30px 50px;
+  position: relative;
+
+}
+.section1 .section2 {
+  display: inline;
+}
+img{
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border: 3px solid rgba(110, 0, 0, 0.18);
+  border-radius: 10%;
+}
+p{
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+
+}
+.section1 span ,.section2 span ,h3{
+  display: block;
+    color: #8f172b;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Georgia";
+    font-weight: 400;
+}
+b{ 
+  padding-top: 35px 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+.leftmenu{
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-right: 1px solid rgba(110, 0, 0, 0.838);
+}
+.leftmenu span:nth-child(-n+3){
+  font-size: 0.85rem;
+  display: inline-block;
+  color: white;
+  margin: 4px 3px;
+  vertical-align: top;
+}
+.leftmenu span:nth-child(n+4){
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255,0.3);
+  padding: 5px 12px;
+  margin: 0 3px;
+  display: inline-block;
+  color: white;
+	
+}

@@ -4,7 +4,28 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.box{
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background: url("bg5.png");
+    animation:  infinite ease-in-out ;
+    animation-name: slidein;
+    animation-duration: 1s;
+}
+@keyframes slidein {
+  from {
+    margin-top: 10%;
+  }
 
+  to {
+    margin-bottom: 10%;
+  }
+}
+.box{
+    width: 2200px;
+    height: 1500px;
+}
 </style>
 
 </head>

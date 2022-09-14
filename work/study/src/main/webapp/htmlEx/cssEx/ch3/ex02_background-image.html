@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
+.box{
+    width: 300px; height: 300px;
+    padding: 10px; margin: 30px;
+    border: 2px dotted gray;
+}
+.bg1 {background: url("bg1.png") no-repeat;}
+.bg2 {background: url("bg1.png") no-repeat, url("bg2.png");}/*,로 경우의 합 구분*/
+.bg3 {background: url("bg2.png") no-repeat left top,
+            url("bg3.png") no-repeat right top,
+            url("bg3.png") no-repeat left bottom,
+            url("bg3.png") no-repeat left top ;}
 </style>
 
 </head>

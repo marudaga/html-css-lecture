@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style type="text/css">
+:root{
+    --div-color : blue; 
+    /*
+    사용자 지정 속성(변수)  변수는 --로 시작
+    root: 는 문서 트리의 루트를 나타냄, html어디서나 지정 속성 접근 가능
+    */
+}
+div{
+    color : var(--div-color); /* var() 함수를 이용하여 사용자 정의 변수에 접근*/
+}
+</style>
+    <title>Document</title>
+</head>
+<body>
+  <h3>사용자 정의 css 속성(변수)</h3>  
+
+  <div>사용자 지정 css 속성 예제입니다.</div>
+</body>
+</html>
