@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 1000px;
+            height: 1400px;
+            margin: 50px;
+            background: white;
+            border-radius: 10px;
+            display: grid;
+            
+            /*4행 3열*/
+            grid-template-rows: repeat(3, 1fr);/*1/3씩 3번 반복*/
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            
+        }
+        .img1 {
+            font-weight: 900;
+            font-size: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+        
+        .text1{
+            height:35px;
+            padding: 18px 11px 15px 15px;
+        }
+        .text2{
+            font-size: smaller;
+            padding: 17px 11px 15px 15px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">파코니의 취업 도전기!</div>
+            <div class="text2">2022.09.15~2022.09.22</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">CGV특별관, 특별한 재개봉</div>
+            <div class="text2">2022.09.01~2022.09.30</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">개봉작 사용설명서</div>
+            <div class="text2">&nbsp</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">[공조:인터내셔날] 무비 스펙트럼프카드</div>
+            <div class="text2">2022.09.08~2022.10.02</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">VIP가 쏘는 영화 쿠폰팩![땡스VIP 데이]</div>
+            <div class="text2">2022.09.01~2022.10.09</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">CGV특별관, 특별한 재개봉</div>
+            <div class="text2">2022.09.01~2022.09.30</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">CGV특별관, 특별한 재개봉</div>
+            <div class="text2">2022.09.01~2022.09.30</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">CGV특별관, 특별한 재개봉</div>
+            <div class="text2">2022.09.01~2022.09.30</div>
+        </div>
+        <div class="img1">
+            <img src="img2.png">
+            <div class="text1">CGV특별관, 특별한 재개봉</div>
+            <div class="text2">2022.09.01~2022.09.30</div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

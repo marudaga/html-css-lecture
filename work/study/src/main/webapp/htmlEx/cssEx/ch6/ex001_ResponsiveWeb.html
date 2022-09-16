@@ -12,7 +12,7 @@
     웹 문서를 강제로 스크린 사이즈에 맞게 줌 아웃 하지 않음
   - content 속성
     width=device-width : 페이지의 너비를 기기의 스크린 너비로 설정.
-       즉, 렌더링 영역을 기기의 뷰포트의 크기와 같게 설정
+       즉, 렌더링 영역(화면에 보이는 영역)을 기기의 뷰포트의 크기와 같게 설정
     initial-scale=1.0 : 처음 페이지 로딩시 확대/축소가 되지 않은 원래 크기를 사용하도록 설정
        기본값은 1이며, 1보다 작으면 축소된 페이지, 1보다 크면 확대된 페이지를 표시
 -->
@@ -21,6 +21,20 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <style type="text/css">
+.box{
+  width: 300px; height: 300px;
+  margin: 30px auto;
+  border: 3px dotted #333;
+  padding: 10px;
+  background: #e6e6e6;
+}
+/*화면 폭이 0~ 600PX 인 경우. 브라우저 너비600이하인 경우
+범위 큰것을 먼저써야지 아래로 코드 읽으면서 덮어써지지않는다*/
+@media (max-width:600px){
+  .box{
+    display: none;
+  }
+}
 
 </style>
 </head>

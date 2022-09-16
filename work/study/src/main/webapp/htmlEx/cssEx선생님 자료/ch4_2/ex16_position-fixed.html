@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+*{ margin: 0; padding: 0; }
+
+.container {
+	width: 1200px; height: 1500px;
+	margin: 0 auto;
+	background: yellow;
+}
+
+.container-body {
+	position: relative;
+	left: 0; top: 50px; padding: 20px;
+}
+
+.fixed-box {
+	position: fixed; color: #e55c3c;
+	font-weight: bold;
+	text-align: center;
+	background: #2e303d;
+}
+
+.nav {
+	width: 1200px; height: 50px; margin: 0 auto;
+	line-height: 50px;
+}
+
+.box {
+	width: 150px; height: 150px;
+	left: 1100px; top:200px;
+	border: 3px dashed gray;
+	line-height: 150px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="nav fixed-box">메뉴</div>
+	<div class="container-body">
+		<h3>본문</h3>
+	</div>
+</div>
+<div class="box fixed-box">fixed-box</div>
+
+</body>
+</html>

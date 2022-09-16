@@ -7,7 +7,79 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <style type="text/css">
+/* calc()함수는 css 속성안에 계산식을 지정*/
+*{
+	margin: 0;
+	padding: 0; box-sizing: border-box;
+}
 
+header, main, footer{
+	min-width: 324px; max-width: 1588px;
+}
+
+header{ padding: 15px; text-align: center; }
+main::after{  content: ''; clear: both; display: block; }
+footer{ padding: 15px; text-align: center; }
+ul.box{ margin:0 auto; padding: 0; list-style: none; }
+.box > li { background: #eee; height: 200px;}
+.calc{  margin: -8px 0 0 -8px; overflow: hidden;}/*-8 여백이 있을 때만 마이너스가 먹힘*/
+.calc li {
+	margin: 8px 0 0 8px; width: calc(100.00% - 8px); /* 100% 너비에서 8px만큼 뺀 너비*/
+	float:left;
+}
+@media(min-width: 324px){
+	.calc li{
+		width: calc(50.00% - 8px);
+	}
+}
+
+@media( min-width: 482px){
+	.calc li{
+		width: calc(33.33% - 8px);
+	}
+}
+
+@media( min-width: 640px){
+	.calc li{
+		width: calc(25.00% - 8px);
+	}
+}
+
+@media( min-width: 798px){
+	.calc li{
+		width: calc(20.00% - 8px);
+	}
+}
+
+@media( min-width: 956px){
+	.calc li{
+		width: calc(16.66% - 8px);
+	}
+}
+
+@media( min-width: 1114px){
+	.calc li{
+		width: calc(14.25% - 8px);
+	}
+}
+
+@media( min-width: 1272px){
+	.calc li{
+		width: calc(12.50% - 8px);
+	}
+}
+
+@media( min-width: 1430px){
+	.calc li{
+		width: calc(11.11% - 8px);
+	}
+}
+
+@media( min-width: 1588px){
+	.calc li{
+		width: calc(10.00% - 8px);
+	}
+}
 </style>
 
 </head>

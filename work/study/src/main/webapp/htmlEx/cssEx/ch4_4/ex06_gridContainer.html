@@ -4,6 +4,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+* {box-sizing: border-box;}
+
+.container{
+  width: 600px; height: 600px;
+  margin: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 10px;
+
+  display: grid;
+
+  grid-template-rows: repeat(3, 100px);/*1/3씩 3번 반복*/
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-flow: row dense; /*각 행  축을 따라 차례로 배치  빈 영역 메움*/
+ 
+  align-content: center;/*수직 가운데*/
+  justify-content: center;/*수평*/
+}
+
+.item {
+  font-weight: 900;
+  font-size: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1 {background: rgb(255,100,70);}
+.item2 {background: rgb(255,165,70);}
+.item3 {background: rgb(50,205,50);}
+.item4 {background: rgb(255,105,180);}
+.item5 {background: rgb(30,145,255);}
+.item6 {background: rgb(170,170,170);}
+.item7 {background: rgb(170,85,170);}
+.item8 {background: rgb(170,85,225);}
+.item9 {background: rgb(240,0,0);}
 
 </style>
 

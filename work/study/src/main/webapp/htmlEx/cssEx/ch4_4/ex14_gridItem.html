@@ -4,7 +4,42 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.container{
+  width: 600px; height: 600px;
+  margin: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 10px;
 
+  display: grid;
+/*4행 3열*/
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(2,300px);
+ 
+}
+
+.item {
+  font-weight: 900;
+  font-size: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1 {background: rgb(255,100,70);}
+.item2 {background: rgb(255,165,70);}
+.item3 {background: rgb(50,205,50);}
+.item4 {background: rgb(255,105,180);}
+.item5 {background: rgb(30,145,255);}
+.item6 {background: rgb(170,170,170);}
+
+.item:nth-child(1){ order:1;}
+.item:nth-child(3){ order:5;}
+.item:nth-child(5){ order:-1;}
+/*숫자가 적을수록 앞에 배치 order 초기값:0(나머지는 다 0)*/
 </style>
 
 </head>

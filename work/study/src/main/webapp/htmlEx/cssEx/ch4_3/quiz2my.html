@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            word-break: break-all;
+            
+        }
+
+        body {
+            display: flex;
+            align-content: space-between;
+
+        }
+        .inimage{
+            display: flex;
+            position: absolute;
+            bottom:0px;
+            left: 20px;
+            color: white;
+            font-size: 50px;
+        }
+        .b1 {
+            display: flex;
+            padding: 20px;
+        }
+
+        .b3{
+            display: flex;
+            position:relative;
+        }
+        .b2 {
+            display: flex;
+            flex-direction: column;
+        }
+        .b3>img {
+            width: 200px;
+            height: 250px;
+            border-radius: 10%;
+            padding: 10px;
+        }
+        .b3 div:nth-child(2) img{
+            position: absolute;
+            top:20px;
+            right: 20px;
+            width:25px;
+            height:25px;
+            border-radius: 0px;
+        }
+        .b4  img{
+            width:20px;
+            height:20px;
+        }
+
+        .b4 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+        .b4 > span {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div class="b1">
+        <div class="b2">
+            <div class="b3">
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86155/86155_320.jpg" alt="공조2-인터내셔날"
+                    onerror="errorImage(this)">
+                <div>
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/15.png" alt="15세">
+                </div>
+                <div class="inimage">
+                    <div>1</div>
+                </div>
+            </div>
+            <div class="b4">
+                <strong>공조2-인터내셔날</strong>
+                <span> <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
+                        alt="Golden Egg great"> 95%  예매율 38.5%</span>
+                
+            </div>
+        </div>
+
+
+        <div class="b2">
+            <div class="b3">
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86154/86154_320.jpg" alt="늑대사냥"
+                    onerror="errorImage(this)">
+                <div>
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/18.png" alt="18세">
+                </div>
+                <div class="inimage">
+                    <div>2</div>
+                </div>
+            </div>
+            <div class="b4">
+                <strong>늑대사냥</strong>
+                <span> <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png"
+                        alt="Golden Egg Preegg"> 99% 예매율 11.1%</span>
+                
+            </div>
+        </div>
+
+
+        <div class="b2">
+            <div class="b3">
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000081/81478/81478_320.jpg" alt="알라딘"
+                    onerror="errorImage(this)">
+                    <div>
+                        <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/all.png" alt="ALL">
+                    </div>
+                <div class="inimage">
+                    <div>3</div>
+                </div>
+            </div>
+            <div class="b4">
+                <strong>알라딘</strong>
+                <span> <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
+                        alt="Golden Egg great"> 98% 예매율 6.5%</span>
+               
+            </div>
+        </div>
+
+        <div class="b2">
+            <div class="b3">
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭"
+                    onerror="errorImage(this)">
+                    <div><img src="https://img.cgv.co.kr/R2014/images/common/flag/age/12.png" alt="12세"></div>
+                <div class="inimage">
+                    <div>4</div>
+                </div>
+            </div>
+            <div class="b4">
+                <strong class="movieName">탑건-매버릭</strong>
+                <span> <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
+                        alt="Golden Egg great"> 99% 예매율 5.8%</span>
+                
+            </div>
+        </div>
+
+        <div class="b2">
+            <div class="b3">
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비"
+                    onerror="errorImage(this)">
+                <div><img src="https://img.cgv.co.kr/R2014/images/common/flag/age/12.png" alt="12세"></div>
+                <div class="inimage">
+                    <div>5</div>
+                </div>
+            </div>
+            <div class="b4">
+                <strong class="movieName">시맨틱 에러-더 무비</strong>
+                <span> <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
+                        alt="Golden Egg great"> 96% 예매율 4.5%</span>
+            
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

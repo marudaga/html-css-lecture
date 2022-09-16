@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* { box-sizing: border-box; }
+
+.container {
+	width: 800px;
+	margin: 50px;
+	background: #fff;
+	border: 10px solid #eee;
+	border-radius: 10px;
+	
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	grid-auto-rows:minmax(100px, auto); /* 최소, 최대 크기 */
+	grid-auto-flow: dense; /* 명시적으로 배치되지 않은 것은 자동으로 배치되도록 설정 */
+		/* dense : 배치중 나중에 크기가 작은 아이템이 존재하는 경우 그리드 영역 앞 부분의 남은 공간에 배치 */
+	grid-gap: 40px;
+}
+
+.item {
+	font-weight: 900;
+	font-size: 25px;
+	border: 1px solid #333;
+	border-radius: 3px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item:nth-child(1) {
+	grid-row-end:span 2;
+}
+.item:nth-child(2) {
+	grid-row-end:span 3;
+}
+.item:nth-child(5) {
+	grid-column-end:span 2;
+}
+
+</style>
+
+</head>
+<body>
+
+<h3>Grid Layout</h3>
+
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+</div>
+
+</body>
+</html>

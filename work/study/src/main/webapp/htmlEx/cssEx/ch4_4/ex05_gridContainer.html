@@ -4,7 +4,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+* {box-sizing: border-box;}
 
+.container{
+  width: 600px; height: 600px;
+  margin: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 10px;
+
+  display: grid;
+
+  grid-template-rows: repeat(3, 1fr);/*1/3씩 3번 반복*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row dense; /*각 행  축을 따라 차례로 배치  빈 영역 메움*/
+  grid-auto-columns: column dense;
+  /*행렬의 크기를 명시적으로 설정
+ 첫번째행 100px  마지막 100px
+ 첫번째 열100px  나머지 알아서
+  */
+}
+
+.item {
+  font-weight: 900;
+  font-size: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1 {background: rgb(255,100,70);}
+.item2 {background: rgb(255,165,70);}
+.item3 {background: rgb(50,205,50);}
+.item4 {background: rgb(255,105,180);}
+.item5 {background: rgb(30,145,255);}
+.item6 {background: rgb(170,170,170);}
+.item:nth-child(5){ grid-column: span 5; }
 </style>
 
 </head>

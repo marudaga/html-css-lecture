@@ -4,7 +4,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+* {box-sizing: border-box;}
 
+.container{
+  width: 600px; height: 600px;
+  margin: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 10px;
+
+  display: grid;
+
+  grid-template-rows: 200px 200px;/*명시적 2개의 행*/
+  grid-template-columns: 150px 150px;/*명시적 2개의 열*/
+  grid-auto-rows: 100px;/*기타 행*/
+  grid-auto-columns: 100px;/*기타 열*/
+}
+
+.item {
+  font-weight: 900;
+  font-size: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1 {background: rgb(255,100,70);}
+.item2 {background: rgb(255,165,70);}
+.item3 {background: rgb(50,205,50);}
+.item4 {background: rgb(255,105,180);}
+.item5 {background: rgb(30,145,255);}
+.item6 {background: rgb(170,170,170);}
+
+.item:nth-child(5){
+  grid-row:3/4;
+  grid-column:3/5;
+}
 </style>
 
 </head>

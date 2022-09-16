@@ -4,7 +4,62 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.container{
+  width: 800px;
+  margin: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 10px;
 
+  display: grid;
+/*4행 3열*/
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));/*repeat(개수, 최소최대)*/
+  grid-auto-rows: minmax(100px,auto);/*minmax(최소크기, 최대크기)*/
+  grid-auto-flow: dense;
+  /* 명시적으로 배치되지 않은 것은 자동으로 배치되도록 설정
+  dense: 배치중 크기가 작은 아이템이 있으면 그리드 영역 앞 부분의 남은 공간에 배치
+  */
+  grid-gap: 40px;;
+}
+
+.item {
+  font-weight: 900;
+  font-size: 25px;
+  border: 1px solid #333;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:nth-child(1){
+  grid-row-end:span 2;
+}
+
+.item:nth-child(2){
+  grid-row-end:span 3;
+}
+
+.item:nth-child(5){
+  grid-column-end:span 2;
+}
+.item1 {background: rgb(255,100,70);}
+.item2 {background: rgb(255,165,70);}
+.item3 {background: rgb(50,205,50);}
+.item4 {background: rgb(255,105,180);}
+.item5 {background: rgb(30,145,255);}
+.item6 {background: rgb(170,170,170);}
+
+.item1{
+  grid-column: 1/4; /*grid-column: 시작점/끝지점;*/
+}
+.item2{
+  grid-row: 2/4; /*2행부터 4행까지 (표처럼 생각 왼쪽 위 모서리를 0 그다음 모서리1 ) */
+}
+.item3{
+  grid-column: 2/ span 2;/*2열(2/)부터 2칸(span 2)*/
+}
 
 </style>
 

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+*{ box-sizing: border-box; }
+
+body { font-size: 14px; font-family: 맑은고딕, sans-serif; }
+.clear::after{content:''; display: block; clear: both;}
+
+header{  padding: 10px; text-align: center; background: #fff; }
+nav{ background: #b70202; }
+nav > .nav-menu > a{
+    float: left;
+    color: #fff;
+    text-decoration: non;
+    text-align: center;
+    padding: 12px 12px;
+    display: block;
+}
+
+nav > .nav-menu::after{ content: ''; display:block; clear: both; }
+
+nav > .nav-icon{ display: none; }
+
+main{  width: 100%;min-height: 500px;  }
+main .left{ width: 85%; float: left; background-color: #fff; min-height: inherit; padding: 10px;}
+main .left{ width: 15%; float: right; background: #0ff; padding: 10px;}
+
+footer{
+    background: #aaa; padding: 20px; text-align: center;
+}
