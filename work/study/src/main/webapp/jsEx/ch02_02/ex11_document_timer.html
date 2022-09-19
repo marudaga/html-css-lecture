@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+    window :브라우저 전체 전역객체(window.을 생략할 수 있다.)
+    -window 객체에는 time함수(시간후 실행, 반복설정),
+    prompt()
+    confirm()
+    dom:(document object model)
+*/
+        document.write("<h3>타이머 함수 예제</h3>");
+
+        setTimeout("alert('환영합니다. !!!')", 3000);//3초후에 한번 실행
+
+        function sub(){
+            document.write('<p>자바 스크립트</p>');
+        }
+
+        setInterval("sub();",2000);//2초에 시작, 2초마다 반복 무한반복
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

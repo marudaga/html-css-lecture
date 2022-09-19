@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a;
+
+        a=13;
+        console.log(a);
+
+        a = 013; //8진수
+        
+        console.log(a);//11
+
+        a = 0x13; //16진수
+        
+        console.log(a);//19
+
+        a = 0b1011;//2진수
+        
+        console.log(a);//11
+
+        a = 3.141592; //부동 소수점
+        console.log(a);
+
+        a = 3.1E+12 //부동소수점
+        console.log(a);
+        
+        a = 'seoul';//문자열 리터럴
+        console.log(a);
+
+        a = "서울"; //문자열 리터럴
+        console.log(a);
+
+        a = "c:\\temp"; //문자 이스케이프
+        console.log(a);
+
+        a = 'subject:\"java\" '; //문자이스케이프
+        console.log(a);
+
+        a = /ab+c/;//정규식 리터럴
+        console.log(a);
+
+        a = ['html','css',"javascript"];//배열 리터럴 홋따옴표 쌍따옴표 상관x
+        console.log(a);
+
+        a = {name:'이자바', age:20};//객체 리터럴
+        console.log(a);
+
+        var x = '홍'
+        var y = "자바";
+        var msg;
+
+        msg = `안녕하세요 ${x} ${y}님`;// 템플릿 리터러(${}표현식으로 처리된 값을 문자열로 변환)
+            //템플릿 리터럴은 반드시 백틱(`)을 사용한다.
+        console.log(msg);
+
+
+
+    
+
+
+    </script>
+</head>
+<body>
+    
+    <h3>리터널</h3>
+</body>
+</html>

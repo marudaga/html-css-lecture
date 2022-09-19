@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box{
+            width:300px; height: 300px;
+            border: 3px solid gray;
+            margin: 30px auto;
+        }
+    </style>
+    <script>
+        function bg(){
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            let s = `rgb(${r}, ${g}, ${b})`;
+
+            document.getElementById("box").style.backgroundColor = s;
+        }
+
+        setInterval("bg();",3000);
+    </script>
+</head>
+<body>
+    <h3>타이머 예제</h3>
+
+    <div id="box"></div>
+    
+</body>
+</html>

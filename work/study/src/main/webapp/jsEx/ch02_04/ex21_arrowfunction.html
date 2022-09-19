@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>함수 - arrow function</h3>
+
+    <script>
+        //함수표현식
+        var sub1 = function(args){
+            return args.length;
+        };
+        console.log(sub1('seoul')); //5  문자열의 길이 구하기
+
+        //화살표 함수(arrow function) (람다식과 유사)
+        var sub2 = (args) => {return args.length;};
+        console.log(sub2('seoul'));
+
+        //파라미터1개 -> 주변괄호 생략가능
+        var sub2 = args => {return args.length;};
+        console.log(sub2('seoul'));
+        
+        //화살표 함수의 유일한 식이 return이면 return ({})생략가능
+        var sub2 = args => args.length;
+        console.log(sub2('seoul'));
+
+        
+        //화살표 함수(arrow function) (람다식과 유사)
+        var sub2 = (args) => {return args.length;};//5
+        console.log(sub2('seoul'));
+
+        //파라미터1개 -> 주변괄호 생략가능
+        var sub3 = args => {return args.length;};//11
+        console.log(sub3('seoul korea'));
+        
+        //화살표 함수의 유일한 식이 return이면 return ({})생략가능
+        var sub4 = args => args.length;//4
+        console.log(sub4('java'));
+
+        setTimeout( () =>  alert('방가방가 ^o^b'),1000);
+            
+
+    </script>
+
+</body>
+</html>

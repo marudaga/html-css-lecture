@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var y, m;
+
+        //2024년 2월의 마지막 일자
+        y = 2024;
+        m = 2;
+        var lastDay = (new Date(y,m,0)).getDate();//11월0일 =10월 마지막일
+        console.log(lastDay);
+        
+        //전달의 마지막 일자
+        lastDay = (new Date(y, m-1,0)).getDate();
+        console.log(lastDay);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

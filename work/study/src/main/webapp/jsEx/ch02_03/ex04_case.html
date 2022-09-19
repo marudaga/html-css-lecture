@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function result(){
+            //Id로 접근
+            //let n = document.getElementById("score").value;
+            //선택자 접근
+            let n = document.querySelector("#score").value;
+            
+            let s;
+
+            if(! n|| isNaN(n)){
+                alert("점수는 숫자만");
+                document.querySelector("#score").focus();
+                return;
+            }
+
+            n = parseInt(n);
+
+            //Math.floor(x) : x를 넘지 않는 최대 정수
+
+            switch( Math.floor(n/10)){
+                case 10:
+                case 9:  s = "A"; break;
+                case 8:  s = "B"; break;
+                case 7:  s = "C"; break;
+                case 6:  s = "D"; break;
+                default: s = "F"; break;
+            }
+
+            alert(n + " ->" + s);
+
+        }
+    </script>
+</head>
+<body>
+
+    <h3>조건문</h3>
+
+    <p>
+        점수 : <input type="text" id="score">
+        <button type="button" onclick="result()">확인</button>
+    </p>
+    
+</body>
+</html>

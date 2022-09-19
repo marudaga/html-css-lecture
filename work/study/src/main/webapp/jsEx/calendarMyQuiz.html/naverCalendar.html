@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding: 0;
+        }
+        .tab{
+            display:flex;
+            border: 1px solid rgb(128, 128, 128);
+            background-color: rgb(240,243,247);
+            list-style: none;
+            height: 35px;
+            width: 750px;
+           
+        }
+        .tab li{
+            display: flex;
+            border: 1px solid rgb(180,180,180);
+            width: 150px;
+            height: 35px;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li class="tabMenu1"><a>달력</a></li>
+        <li class="tabMenu2"><a>양음력변환</a></li>
+        <li class="tabMenu3"><a>날짜계산</a></li>
+        <li class="tabMenu4"><a>전역일계산</a></li>
+        <li class="tabMenu5"><a>만나이계산</a></li>
+    </ul>
+    <div class="calendar">
+        <div class="thismonth" >
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="sun">일</th>
+                    <th >월</th>
+                    <th >화</th>
+                    <th >수</th>
+                    <th >목</th>
+                    <th >금</th>
+                    <th >토</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="calendar-week">
+                    <td class="prev sun"><a></a></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="lunar_area">
+            <input type="checkbox" class="" id="lunar">
+            <label for="lunar">음력표시</label>
+            <span></span>
+            <a>오늘날짜로</a>
+        </div>
+    </div>
+    <div class="date_calendar">
+        <dl>
+            <dt>기준년월일</dt>
+            <dd>
+                <p> 직접입력 또는 달력에서 날짜를 선택하세요.</p>
+            </dd>
+            <dd>
+                <input type="text" value="예)20020303" maxlength="10">
+                <a>초기화</a>
+            </dd>
+        </dl>
+        <pre>
+            * 기준 년월일을 입력하면, 기준일의 <span>요일</span>과,
+                기준일부터 오늘까지의 <span>날짜계산 결과</span> 및 <span>만 나이</span>가 표기됩니다.
+        </pre>
+        <hr>
+        <div class="col_txt1">기준일로부터</div>
+        <div>
+            <span><input type="text"></span>
+            <span class="col_txt2">일째 되는 날은</span>
+            <span><a>계산</a></span>
+            <span><input type="text"></span>
+        </div>
+        <div>
+            <span><input type="text"></span>
+            <span class="col_txt2">일은? </span>
+            <span><a>계산</a></span>
+            <span><input type="text"></span>
+        </div>
+        <div>
+            <span><input type="text"></span>
+            <span class="col_txt2">까지는 며칠째?</span>
+            <span><a>계산</a></span>
+            <span><input type="text"></span>
+        </div>
+
+    </div>
+    <!--전역계산일---------------------------------------->
+    <div></div>
+
+</body>
+</html>

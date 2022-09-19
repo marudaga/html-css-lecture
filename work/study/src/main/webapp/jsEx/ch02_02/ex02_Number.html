@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a, b;
+
+        a = '123';
+        b = Number(a);
+        console.log(b);//123
+        console.log(b === 123); //true
+
+        a = '123.45';
+        b = Number(a); //123.45
+        console.log(b);
+        
+        a = '1,234';
+        b = Number(a); //NaN
+        console.log(b);
+        
+        a = '123a';
+        b = Number(a);//NaN
+        console.log(b);
+
+        a = '';
+        b = Number(a);//0
+        console.log(b);
+
+        a = null;
+        b = Number(a);//0
+        console.log(b);
+        
+        a = NaN;
+        b = Number(a);//NaN
+        console.log(b);
+        
+        a = undefined;
+        b = Number(a);//NaN
+        console.log(b);
+        
+        a = '0x11';
+        b = Number(a);//17
+        console.log(b);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

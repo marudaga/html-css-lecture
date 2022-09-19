@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수안에서 선언할 때 let사용 유효범위가 함수범위로 지정
+        var a =10;//전역변수
+        function fun(){
+            a+=5;
+
+            b=5;// var, let을 이용하여 선언하지 않은 b변수는 전역변수가됨 사용x
+
+            if(true){
+                var x=5; //var로 선언한 변수의 유효범위는 if(true) 가 아닌 x선언함수
+            }
+
+            if(true){
+                let y = 10;//유효범위가 블럭
+            }
+            console.log(y) //에러
+        }
+        function sub(){
+            console.log("sub-a:" +a);
+            console.log("sub-b:" +b);
+        }
+        //함수 실행
+        fun();
+        sub();
+    </script>
+
+</head>
+<body>
+    <h3>변수의 유효 범위</h3>
+</body>
+</html>

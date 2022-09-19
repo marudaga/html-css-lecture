@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub1(){
+            let s = prompt('금이빨 씹어먹기전에 수식을 입력흐르', '');
+            let n = eval(s);
+            alert(s + ' = ' + n);
+        }
+        
+        function sub2(){
+            if(confirm('게시글 지울래 나랑살래!!!')){
+                sub3();
+            }
+        }
+        function sub3(){
+            alert('지웠다...');
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <p>
+        <button type="button" onclick="sub1();">계산기</button>
+        <button type="button" onclick="sub2();">삭제</button>
+    </p>
+    
+</body>
+</html>

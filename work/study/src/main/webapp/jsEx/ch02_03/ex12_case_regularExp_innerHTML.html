@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            font-weight:700;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>반복문</h3>
+    
+
+    <p>
+        <input type="text" id="num" placeholder="원하는 단">
+        <button type="button" onclick="result();">확인</button>
+    </p>
+    <hr>
+    <div id="resultLayout"></div>
+    <div class="title"></div>
+    <script>
+        function result(){
+            let dan, out;
+            
+            dan = document.querySelector('#num').value;
+            if( !/^[1-9]{1}$/.test(dan)){// / ... / 정규식 리터널
+                document.querySelector("#num").focus();
+                return;
+            }
+
+            dan = parseInt(dan);
+
+            //태그쓸때는 ''가 편함 태그안에 id""들어가야 할수도 있어서
+            out = '<p class="title">**' + dan + ' 단 </p>';
+            for(let n=1; n<=9;n++){
+                out+=dan + '*' + n+ "=" + (dan*n)  + "<br>";
+            }
+            
+            //innerHtml :요소에 html을 설정하거나 반환
+            document.querySelector("#resultLayout").innerHTML = out;
+        }
+    </script>
+    
+</body>
+</html>

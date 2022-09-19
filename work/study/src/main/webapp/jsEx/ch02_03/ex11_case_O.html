@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var s, n;
+
+        //while
+        s =0;
+        n = 0;
+        while(n< 100){
+            n++;
+            s+=n;
+        }
+        console.log('while:' +n+',' + s);
+
+        
+        //do~while
+        s =0;
+        n = 0;
+        do{ n++;
+            s+=n;
+        }
+        while(n< 100)
+        console.log('do while:' +n+',' + s);
+        
+        //for
+        s =0;
+        for( n =1; n< 100; n++){
+            s+=n;
+        }
+        console.log('for:' +n+',' + s);
+        
+    </script>
+</head>
+<body>
+    <h3>반복문</h3>
+</body>
+</html>

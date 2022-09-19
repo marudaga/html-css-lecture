@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var a, b;
+        //parseInt는  첫번째로 인식된 숫자 하나만 인식함 
+        a = "123";
+        console.log(a === 123); //false
+        console.log( a + 10); // 12310
+
+        b = parseInt(a); // 문자열(10진수)을 숫자로 변환
+        console.log( b === 123); //true
+        console.log(b + 10); //133
+
+         a = "1,234";
+         b = parseInt(a); //1
+         console.log(b);
+
+         a = '123a4';
+         b = parseInt(a); //123 문자이후 짜름
+         console.log(b);
+
+         a = 'a123';
+         b = parseInt(a); //NaN
+         console.log(b);
+         
+         
+         a = '123.12';
+         b = parseInt(a); //123 소수점 짜름
+         console.log(b);
+
+         a = '';
+         b = parseInt(a); //NaN
+         console.log(b);
+
+         
+         a = '      123';
+         b = parseInt(a); //123  숫자 앞의 공백무시
+         console.log(b);
+                  
+         a = '      1 2 3';
+         b = parseInt(a); //숫자이후 다른 공백나오면 문자나올때처럼 이후 짜름
+         console.log(b);
+
+                  
+         a = '123.12';
+         b = parseFloat(a); //
+         console.log(b);
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h3>내장 함수</h3>
+</body>
+</html>

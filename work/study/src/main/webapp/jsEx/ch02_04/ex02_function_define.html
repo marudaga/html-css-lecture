@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //호이스팅 :  함수선언을 나중에하고 먼저쓰는것
+        //함수 선언문에서의 함수 호이스팅(선언전 호출)
+        console.log(sub1(10,5));
+
+        function sub1(a, b){
+            return a+b;
+        }
+        
+        //함수 표현식에서의 함수 호이스팅 불가
+        //console.log(sub2(10, 20));
+        var sub2 = function(a, b){
+            return a+b;
+        };
+        console.log(sub2(10, 20));
+
+        //이벤트 처리
+        window.onload = function(){
+            alert("방가방가 **");
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n;
+//함수만들기
+        //함수 선언문 방식
+        function sub1(x, y){
+            let s = x + y;
+            return s;
+        }
+        //함수 호출
+        n = sub1(10, 5);
+        console.log(n);//15
+
+        //익명함수표현식 방식**
+        var sub2 = function(x, y){ 
+        return x + y;
+        };//수식이라서 ;붙인다.
+
+        //함수호출
+        var plus = sub2;
+        n = sub2(10, 20);
+        console.log(n); //30
+
+        n = plus(10, 20);
+        console.log(n);//30
+
+        //기명 함수 표현식 방식**
+        var sub3 = function add(x, y){
+            return x + y;
+        };
+
+        n = sub3(5, 20);
+        console.log(n);//25
+        console.log( add(15,20)); //에러. 함수 표현식으로 지정한 것은 한번만 쓰이고 사라지기때문에 add사용불가 에러
+        //기명 함수 표현식 방식이용한 재귀호출
+        var sub4 = function sum(n){
+            return n > 1? n + sum(n-1) : n;
+        };
+        console.log( sub4(10));
+
+        //즉시 실행 함수 - 정의함과 동시에 바로 함수를 실행** 자주씀
+        var s = (function(a, b){
+            return a+b;
+        })(5,7);
+        console.log(s); //12
+
+        (function(a, b){
+            console.log(a+b);
+        })(10,7); //17
+
+        //Function()생성자를 이용한 방식
+        var sub5 = new Function('x', 'y', 'return x+y;');
+        console.log(sub5(5,3));//8
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

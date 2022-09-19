@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var s1, s2;
+
+        s1 = "seoul korea";
+        s2 =s1.length;//문자열 길이;
+        //..length 같은 속성의 영어
+        console.log(s2);
+
+        s2 = s1.charAt(6);//문자열에서 index위치의 문자 반환.index는 0부터시작
+        console.log(s2);//'k'
+        //substring(시작인덱스이상, 마지막인덱스미만)
+        s2 = s1.substring(6,9);// start(s) 인데스에서end(e)-1인덱스까지의  문자열
+        console.log(s2);//'kor'
+
+        s2 = s1.substring(6);
+        console.log(s2);//'korea'
+
+        s2 = s1.substr(6,3);//substr(s인덱스부터[, 길이개수])
+        console.log(s2);//'kor'
+        
+        s2 = s1.substr(6);
+        //**substr(s인덱스부터[, 길이개수])
+        console.log(s2);//'korea'
+
+        s2 = s1.indexOf('o');//처음부터 해당 문자열의 인덱스 반환, 없으면 -1 반환
+        console.log(s2);//2
+
+        s2 = s1.lastIndexOf('o');//뒤에서부터 해당 문자열의 인덱스 반환 없으면 -1 반환
+        console.log(s2);//7
+
+        s2 = s1.indexOf('java');
+        console.log(s2);//-1 해당 문자가 없으면 -1
+
+        s2 = s1.toUpperCase();// 모든 영문자를 대문자로
+        console.log(s2);//SEOUL KOREA
+        
+        s2 = s1.toLowerCase();// 모든 영문자를 소문자로
+        console.log(s2);//seoul korea
+        //s1.startswith(s1이 해당문자로 시작하는가?)
+        //s1.endswith(s1이 해당문자로 끝나는가?)
+        console.log(s1 === 'seoul');//false
+        console.log(s1.startsWith("seoul"));//true
+        console.log(s1.startsWith("korea"));//false
+        console.log(s1.startsWith("korea", 6));//true
+        console.log(s1.endsWith("korea"));//true
+
+        s1 = '      자      바      ';
+        s2 = ':' + s1 + ':';
+        console.log(s2);
+        
+        s2 = ':' + s1.trim() + ':'; //왼쪽오른쪽 공백제거
+        console.log(s2);
+
+        s1 = 'javascript,html,css';
+        s2 = s1.split(',');//문자열을 구분자로 부분 문자열을 담은 배열을 반환
+        for(let n=0;n<s2.length;n++){
+            console.log(s2[n]);
+        }
+
+        s1 = '대한 우리대한 한국 대한';
+        s2 = s1.replace(/대한/, '大韓');//쓰지x, 첫번째 대한만 바뀜
+        console.log(s2);//大韓 우리대한 한국 대한
+
+        s2 = s1.replace(/대한/g, '大韓');//모든 대한 바꿈 g:모두
+        console.log(s2);//大韓 우리大韓 한국 大韓
+
+        s2 = s1.replaceAll('대한','大韓');//옛날버전 안됨 2021년 패치됨ECMA-262 12th(2021) 추가됨
+        console.log(s2);//大韓 우리大韓 한국 大韓
+        
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

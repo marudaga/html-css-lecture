@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a, b, c;
+
+        //+, -, *, /, %, ++, --
+
+        a = 1 / 2;//0.5
+        console.log(a);
+        
+        a = 1 / 2 + 1 /2;//1
+        console.log(a);
+        
+        a = 10 / 0; //infinity 
+        console.log(a);
+        if(a === Infinity){
+            console.log('0으로 나누었습니다.');
+        }
+
+        a = 2;
+        b = 10;
+        b = c ** b;//**거듭제곱
+        console.log(c);//1024
+
+        c = 2 ** 3 ** 2;// 우 결합성
+        console.log(c);
+
+        //c  = -2 **2;// 허용하지 않음 애매함
+        c  = (-2) **2;        
+        console.log(c);
+        
+        //문자열 결합
+        a = 'korea';
+        b = 'seoul';
+        c = a+b;
+        console.log(c);
+
+        a = '1.1';
+        b = '1.1';
+        c = a + b;// 1.11.1  문자 + 문자 => 문자, 문자 + 숫자 => 문자
+        console.log(c);
+
+        c = +a + +b;// 더하기빼고는 다 숫자로 바뀜(+부호연산자로 문자=> 숫자로 + 문자=>숫자 = 숫자)
+        console.log(c);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

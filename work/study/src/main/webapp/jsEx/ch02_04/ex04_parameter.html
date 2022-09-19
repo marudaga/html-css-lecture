@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add1(a, b){
+            return a+b;
+        }
+        console.log( add1(10)); //10 + undefined =>NaN
+        function add2(a, b){
+            //b = typeof b!=='undefined' ? b: 0;
+            b = b? b:0;
+            return a+b;
+        }
+        console.log(add2(10)); //10 + 0 =>10
+        console.log(add2(10, 5)); //10 + 5 =>15
+
+        //디폴트 매개변수
+        function add3(a,b=0){
+            return a+b;
+        }
+        console.log(add3(15));//15
+
+        function sub(x=1,y){
+            console.log(x,y);
+        }
+        sub();//1,undefined
+        //Rest 매개변수 : 부정인수 - 마지막 파라미터만 Rest 매개변수가 가능
+        function add4(...args){
+            let s=0;
+            for(let n=0; n<args.length; n++){
+                s +=args[n];
+            }
+            return s;
+        }
+        console.log( add4(1,2,3,4,5)); //15
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

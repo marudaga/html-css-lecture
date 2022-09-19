@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        function sendOk() {
+            const f = document.myForm;
+
+            if (! f.name.value) { //if(f.name.value === "")
+                alert("이름은 필수입력사항");
+                f.name.focus();
+                return;
+            }
+
+
+            if (! f.subject.value) {
+                alert("과목은 필수입력사항");
+                f.subject.focus();
+                return;
+            }
+            // isNaN(a) : 숫자가 아니면 참
+            //예외  isNaN('') => 거짓
+            if (! f.score.value || isNaN(f.score.value)) {
+                alert("점수은 필수입력사항");
+                f.score.focus();
+                return;
+            }
+            let s = f.name.value + ", " + f.subject.value + ":" + f.score.value;
+            alert(s);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>조건문</h3>
+
+    <form name="myForm">
+        <p> 이름 : <input type="text" name="name"></p>
+        <p> 과목 : <input type="text" name="subject"></p>
+        <p> 점수 : <input type="text" name="score"></p>
+        <p>
+            <button type="button" onclick="sendOk()">확인</button>
+        </p>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a,b;
+        //isFinite(a) 숫자형식 유무 확인
+        a = '123';
+        b = isFinite(a);//true
+        console.log(b);
+
+        a = '123.45';
+        b = isFinite(a);//true
+        console.log(b);
+
+        a = '123a';
+        b = isFinite(a);//false
+        console.log(b);
+
+        a = '1,234';
+        b = isFinite(a);//false
+        console.log(b);
+
+        a = '123';
+        b = isFinite(a);//false. 숫자로 이루어져 있지 않으면 true
+        console.log(b);
+
+        a = '1,234';
+        b = isFinite(a);//true
+        console.log(b);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

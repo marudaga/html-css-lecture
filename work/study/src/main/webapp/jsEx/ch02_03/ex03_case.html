@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function result(){
+            //Id로 접근
+            //let n = document.getElementById("num").value;
+            //선택자 접근
+            let n = document.querySelector("#num").value;
+            
+            let s;
+
+            n = parseInt(n);
+
+            if(n%2===0 && n%3===0){
+                s = "2와 3의 배수입니다.";
+            }else if(n%3 ===0){
+                s = "2의 배수입니다."
+            } else{
+                s = "2와 3의 배수가 아닙니다.";
+            }
+
+            alert(n + " ->" + s);
+        }
+    </script>
+</head>
+<body>
+
+    <h3>조건문</h3>
+
+    <p>
+        숫자 : <input type="text" id="num">
+        <button type="button" onclick="result()">확인</button>
+    </p>
+    
+</body>
+</html>

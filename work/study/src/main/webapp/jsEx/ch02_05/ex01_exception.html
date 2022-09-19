@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //클라이언트화면 : 프론트엔드 화면전체 콘솔창 포함
+        function sub(){
+            /*console.log(x);//에러
+            console.log('윗줄에서 에러가 발생하면 실행안됨');//실행안됨
+            */
+        //    try {
+        //     console.log(x);
+        //     console.log('실행안됨');
+        //    } catch (error) {
+        //     console.log('예외발생: '+ error);
+        //    }
+        //    console.log('실행 됨');
+
+        try {
+            console.log(x);
+            console.log('실행안됨');
+           } catch (error) {
+            console.log('예외발생: '+ error);
+           }finally{
+            console.log('예외발생 유무와 상관없이 실행')
+           }
+           console.log('실행 됨');
+
+           let n=5, s=0;
+           try {
+            if(n<10){
+                throw '10이상만 가능...'; //예외 발생시킴
+            }
+            
+            for(let a=1;a<=n; a++){
+                s+=a;
+            }
+            console.log('결과:'+s);
+           } catch (error) {
+            console.log(error);
+           }
+        }
+        sub();
+    </script>
+</head>
+<body>
+    <h3>예외 처리</h3>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:250px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // window.onload = function showClock(){//기명함수표현식에 사용x
+        function showClock(){
+        let now = new Date();
+        let y = now.getFullYear();
+        let m = now.getMonth() + 1;//getMonth() : 0~11
+        let d = now.getDate();
+        if(m<10) m = "0" + m;
+        if(d<10) d = "0" + d;
+
+        let hr = now.getHours();
+        let mn = now.getMinutes();
+        let sc = now.getSeconds();
+        if(hr<10) hr = "0" + hr;
+        if(mn<10) mn = "0" + mn;
+        if(sc<10) sc = "0" + sc;
+
+        let s = y + "-" + m  + "-" + d  + "    " + hr + ":" + mn + ":" +  sc; 
+
+        document.querySelector('#nowDate').value = s;
+
+        setTimeout("showClock()",1000);
+
+        }
+        // window.onload = function(){
+        //     showClock();
+        // };
+            window.onload = () => showClock();
+        //showClock();//<input type = 'text'...
+    </script>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="nowDate" readonly="readonly" style="border: none;" >
+    </div>
+</body>
+</html>

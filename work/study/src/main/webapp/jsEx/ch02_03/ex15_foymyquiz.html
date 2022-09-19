@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //변수 반드시 선언한다.
+        //속성이 틀리면(.다음에오는 것 에러 못찾음) 자동으로 해당 속성을 생성하기 때문에 에러가안뜸
+    </script>
+</head>
+<body>
+
+    <form name="myForm" action="javascript:result();">
+        <p>
+           <input type="radio" name="opt" value="1" checked="checked">합
+           <input type="radio" name="opt" value="2">짝수합
+           <input type="radio" name="opt" value="3">홀수합
+        </p>
+        <p>
+            <input type="number" name="num" style="width: 150px;"
+            min="0" required="required" placeholder="숫자를 입력하세요">
+            <button name="result1" type="button" onclick="result()">확인</button><!--submit type없으면 submit이 기본-->
+            <!--required submit 버튼이어야하고 form태그안에 있어야함-->
+        </p>
+    </form>
+    <hr>
+
+    <div id="resultLayout"></div>
+
+    <script>
+        function result(){
+            const f = document.myForm;
+            let s = 0;
+            let n = parseInt(f.num.value);
+             console.log(n);
+
+            switch(f.opt.value){//switch case에서 case 1은 값이 숫자로 1일때 를 표현한것
+                case '1': 
+                    for(i=1;i<=n;i++){
+                        s+=i;
+                    }                
+                    break;
+                case '2': 
+                for(i=0;i<=n;i+=2){
+                    if(i%2==0){
+                        s+=i;
+                    }else{
+                        continue;
+                    }
+                }     
+                break;
+                case '3': 
+                for(i=1;i<=n;i+=2){
+                        s+=i;
+                }    
+                break;
+            }
+            console.log(s);
+        }
+        
+    </script>
+</body>
+</html>

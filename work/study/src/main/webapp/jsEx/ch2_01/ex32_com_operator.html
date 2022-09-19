@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script>
+        //밑부분 논리연산자 확인*** 
+        var a, b,c;
+
+        a = '123';
+        b = 123;
+
+        console.log(typeof a);
+        console.log(typeof b);
+
+        console.log( a == b); //true
+        console.log( a === b); //false(동치)
+
+        
+        console.log( a != b); //false
+        console.log( a !== b); //true(동치)
+        //값이 0(number), ""(string), NULL(object), undefined, NaN(number)은 거짓
+        // null undefined nan은 문자열형태가 아니다
+        c = 0;
+        if( !c ){
+            console.log('참');
+        } else{
+            console.log('거짓');
+        }
+        c ='';
+        if( c ){
+            console.log('참');
+        } else{
+            console.log('거짓');
+        }
+
+        c = 'html' && 'css'; //css
+        console.log(c);
+        
+        c = 'html' && true; //true
+        console.log(c);
+        
+        c = false && 'css'; //false
+        console.log(c);
+        
+        c = true && 'css'; //css  true니까 우변 연산해서 css나옴
+        console.log(c);
+        
+        c = 'html' || 'css'; //html
+        console.log(c);
+        
+        c = 'html' || true; //html
+        console.log(c);
+        
+        c = false || 'css'; //css false라서 다음내용봄
+        console.log(c);
+        
+        c = true || 'css'; //true  true니까 우변 연산해서 css나옴
+        console.log(c);
+
+        c = 0 || 'css'; //css
+        console.log(c);
+        
+        c = 10 || 'css'; //10
+        console.log(c);
+    </script>
+</head>
+<body>
+    <h3>연산자</h3>
+</body>
+</html>

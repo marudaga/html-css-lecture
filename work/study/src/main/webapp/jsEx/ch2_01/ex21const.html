@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+    const PI = 3.141592;
+    //const sub=10;//에러, const는 이름과 함수명 같으면 안됨
+
+    function sub(){
+        console.log(PI);
+
+        //PI =3.14;//에러, 상수는 값 변경불가
+
+        const x =10;
+        // var x =20; // const는 같은 이름의 변수명 지정 불가
+        //const a; //에러. 상수는 선언과 동시에 초기화 필요
+
+        if(true){
+            const a=10;// const는 let과 블록 범위가 동일 if에서만 유효
+        }
+        var a = 200;
+        console.log(a);
+
+        const arr = ['HTML', 'CSS'] //배열
+        arr.push("JavaScript"); //배열 뒤에 요소 추가 가능
+        arr[0] = "html"; // 배열 요소 값 변경가능
+        console.log(arr);
+        //var arr =10; //에러
+        
+        const obj = {'subject':'java'};//object
+        console.log(obj.subject);//객체의 subject 속성값
+        
+        obj.subject = 'HTML'; //객체의 속성값 변경
+        console.log(obj.subject);
+
+        
+    }
+
+    sub();
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //문자로 만들어진것을 실행해주는 함수
+        function calc(){
+            var s = document.getElementById('inputs').value;
+
+            if(!s){
+                return;
+            }
+
+            var n = eval(s);
+
+            alert('결과:' + n);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="inputs" placeholder="수식을 입력하쇼">
+        <button type="button" onclick="calc();">확인</button>
+    </div>
+</body>
+</html>

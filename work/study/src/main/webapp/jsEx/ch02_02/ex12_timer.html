@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n=0;
+
+        function sub(){
+            n++;
+            document.write('<p>숫자 : ' + n + '</p>');
+        }
+
+        var timer = setInterval('sub();', 1000); // 1초마다 무한반복 (1초후에 시작)
+
+        setTimeout(function(){
+            clearInterval(timer); //타이머종료
+        }, 10000); //10초 후에 한번 실행
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var now = new Date();
+        var y = now.getFullYear();
+        var m = now.getMonth() + 1;//getMonth() : 0~11
+        var d = now.getDate();
+        var w = now.getDay(); //요일 0(일)~ 6(토)
+
+        var hr = now.getHours();
+        var mn = now.getMinutes();
+        var sc = now.getSeconds();
+
+        var ms = now.getTime(); //1970-01-01 00:00:00 부터 경과시간. 단지:ms
+
+        var s = y+'-'+m+'-'+d+'  '+hr+':'+mn+':'+sc;
+        console.log(s,w);
+        console.log(ms);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

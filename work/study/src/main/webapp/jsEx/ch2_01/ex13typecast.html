@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var a, b;
+//숫자를 문자로 String(a),문자를 숫자로 Number(a), boolean으로 Boolean(a)
+        a="123";
+        console.log(typeof(a));//string
+
+        b = a+ 10;
+
+        console.log(b);//12310
+
+        a = Number(a); //Number 함수를 이용하여 문자열을 숫자로 변환
+
+        b = a+ 10;
+        console.log(b);//133
+
+        a = String(a); //String으로 숫자를 문자열로 변환
+        console.log(typeof(a)); //string
+
+        a = "true"
+        console.log(typeof(a)); //string
+
+        a = Boolean(a); //Boolean으로 변환
+        console.log(typeof(a));//boolean
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(x){//외부함수
+            let n=10;
+
+            //내부함수(클로저)
+            function sub(y){
+                return n+x+y;//외부함수의 변수나 인수 접근 가능
+            }
+
+            return sub(3);//외부함수 안에서 내부 함수 호출
+        }
+
+        console.log(fun(2));//15
+
+        function fun2(x){
+            function sub2(y){
+                return x+y;
+            }
+
+            return sub2;
+        }
+
+        var fn = fun2(2);
+        var n = fn(3);
+        console.log(n);//5
+
+        n = fun2(10)(5);
+        console.log(n);//15
+    </script>
+</head>
+<body>
+    <h3>함수-closures :내부 함수는 크로저를 형성(내부함수=클로저 라고생각해도 무방</h3>
+    
+</body>
+</html>
