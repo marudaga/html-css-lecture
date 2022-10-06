@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout{width:300px; padding: 50px; text-align: center;}
+        .yb{background: yellow;}
+        .gb{background-color: green;}
+        .border{border: 5px dotted gray;}
+    </style>
+    <script>
+        window.addEventListener("load", ()=>{
+            document.querySelector(".btn1").addEventListener("click", ()=>{
+                //클래스 추가 
+
+                //기존에 있는 클래스는 지우고 yb만 설정
+                // document.querySelector(".layout").className = "yb";
+                //기존클래스 두고 추가
+                //classList:클래스 속성 컬랙션
+                // document.querySelector(".layout").classList.add("yb");
+                document.querySelector(".layout").classList.add("yb", "border");
+            });
+            document.querySelector(".btn2").addEventListener("click", ()=>{
+                //클래스 토글(마우스들어가면 색이 생기고 나가면 없어지고)
+                //classList.toggle("클래스명", 조건)
+                //인수가 하나인 경우 클래스가 없으면 추가하고 true반환, 있으면 제거하고 false반환
+                document.querySelector(".layout").classList.toggle("border");
+
+                /*
+                //n이 10보다 적으면 클래스 추가
+                let n = 5;
+                document.querySelector(".layout").classList.toggle("border", n<10);
+                */
+            });
+            document.querySelector(".btn3").addEventListener("click", ()=>{
+                //클래스제거 
+                // document.querySelector(".layout").classList.remove("yb");
+
+                document.querySelector(".layout").classList.remove("yb", "border");
+            });
+            document.querySelector(".btn4").addEventListener("click", ()=>{
+                //클래스 존재여부
+                let b = document.querySelector(".layout").classList.contains("border");
+                alert(b);
+            });
+            document.querySelector(".btn5").addEventListener("click", ()=>{
+                //클래스 교체 존재하는 클래스를 새로운 클래스로 교체(없으면 교체하지않음)
+                document.querySelector(".layout").classList.replace("yb", "gb");
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <h3>class 속성</h3>
+
+    <div class="layout">클래스 추가 및 삭제</div>
+    <hr>
+
+    <p>
+        <button type="button" class="btn1">클래스 추가</button>
+        <button type="button" class="btn2">클래스 토글</button>
+        <button type="button" class="btn3">클래스 제거</button>
+        <button type="button" class="btn4">border 클래스 존재여부</button>
+        <button type="button" class="btn5">클래스 교체</button>
+    </p>
+    
+
+</body>
+</html>

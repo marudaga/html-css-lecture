@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>정규식</h3>
+    
+    <script>
+        /*
+        
+        - 정규표현식.test(str) ex./[ab]/flag
+        문자열 속에 일치하는 문자열이 포함된 경우 true아니면 false
+
+        flag : g(replace), m, i(대소문자)포함
+        */
+        var p, s;
+    p = /ab+c/i;
+
+    s = 'xy abc 12';
+    console.log(p.test(s)); //true
+
+    s = 'xy ab 12';
+    console.log(p.test(s));//false    
+
+    //생성자 방식
+    p = new RegExp('ab+c', 'i');
+
+    s = 'xy Abbc 12';
+    console.log(p.test(s)); //true
+    </script>
+    
+</body>
+</html>

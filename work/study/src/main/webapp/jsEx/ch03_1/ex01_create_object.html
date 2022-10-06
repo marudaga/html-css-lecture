@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        
+            이름=key 값=value
+            객체 : key(문자열만가능)
+            자바스크립트는 프로토타입기반
+            map key는 모두가능
+            객체생성방법 
+            1. 이니셜라이저(call,apply,bind) 또는 리터널
+            2.생성자함수
+
+            객체 이니셜라이저 === 객체 리터널
+            
+        */
+
+//객체생성방법 3가지
+
+    //1.객체리터널을 이용한 객체 생성
+        var obj = {name:'홍길동', age:20};//속성:값
+        var obj = {'name':'홍길동','age':20};//가능
+        
+        console.log(typeof obj);//object
+        console.log(obj);//object
+
+        console.log(obj.name);//홍길동
+
+        //속성값 변경
+        obj.name = '김자바';
+        if(obj.age >= 19){
+            s = obj.name + '님은 성인 입니다.';
+        } else{
+            s = obj.name + '님은 미성년자 입니다.';
+        }
+        console.log(s);
+
+        //없는 속성 자동추가//자바에서는 에러(정적)
+        obj.city = '서울';
+        console.log(obj.city);
+
+    //2.객체리터널을 이용한 객체 생성 - 빈객체
+        var obj2 = {}; //빈객체
+        console.log(typeof obj2);
+
+        obj2.subject = '자바';//동적으로 속성 추가
+        console.log(obj2.city);
+
+    //3.객체 리터널을 이용한  객체 생성-메소드
+        var obj3 = {
+            name:'홍길동',
+            age:20,
+            state:function(){
+                return this.age>=19?'성인':'미성년자';
+            },
+            msg:function(){
+            //메소드에서 속성이나 다른 메소드 호춣할 때 this생략불가 
+                let s=`${this.name}님은 ${this.state()} 입니다.`;
+                console.log(s);
+            }
+        };
+
+        obj3.msg();
+        
+        
+    </script>
+    
+</body>
+</html>

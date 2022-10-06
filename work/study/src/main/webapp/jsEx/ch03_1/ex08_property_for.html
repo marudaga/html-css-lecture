@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="data:'base64,iVBORw0kGgo=">
+</head>
+<body>
+
+    <h3> 객체 - 프로퍼티 접근 및 나열</h3>
+    
+    <script>
+        var obj = {
+            name:'고고고',
+            result:function(){
+                return this.age>=19? '어른':'어린이';
+            }
+        };
+
+        //객체의 프로퍼티 접근
+        console.log(obj.name); //도트 표기법
+        console.log(obj['name']); //대괄호 표기법으로 접근
+
+        //메소드 접근
+        console.log(obj.result());//어린이
+
+        //객체의 프로퍼티 나열
+        for(let ob in obj){
+            //ob : 속성명
+            console.log(ob, obj[ob]);//name 고고고
+        }
+
+    </script>
+
+</body>
+</html>

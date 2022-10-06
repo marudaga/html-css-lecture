@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>메소드</h3>
+
+    <script>
+        const methodName = 'sayName';
+
+        class User{
+            constructor({name, age}){
+                this.name = name;
+                this.age = age;
+            }
+            // 메소드 이름을 임의의 표현식을 대괄호로 둘러쌓여 메소드 이름으로 사용가능
+            [methodName](){
+                return '나는' + this.name + '이다.';
+            }
+        }
+
+        console.log(new User({name:'홍길동', age:20}).sayName());
+
+
+    </script>
+    
+</body>
+</html>

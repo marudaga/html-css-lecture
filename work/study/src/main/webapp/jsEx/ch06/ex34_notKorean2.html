@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        </style>
+</head>
+<body>
+
+    <h3>한글 입력 제한</h3>
+
+    <p>한글 가능 : <input type="text"></p>
+    <button id="check" type="button"></button>
+    <p> 한글 제한 : <input type="text" class="notKorean" id="span"></p>
+    <p> 한글 제한 : <input type="text" class="notKorean"></p>
+    <p> 한글 제한 : <input type="text" class="notKorean"></p>
+
+    <p>한글 가능 : <input type="text"></p>
+
+    <script type="text/javascript"> 
+        const inputEls = document.querySelectorAll(".notKorean");
+
+        inputEls.forEach(function(item){
+            item.addEventListener("input", function(e){
+                let obj = e.currentTarget;
+                obj.value = obj.value.replace(/[\W]/g, ""); // \W:영숫자 아닌경우
+            });
+        });
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>객체 만들기 - 생성자함수</h3>
+
+    <script>
+        //생성자 함수
+        function User(name, age){
+            this.name  =name; //속성(프로퍼티)
+            this.age =age;
+
+            //메소드 
+            this.state = () => this.age >= 19 ? '성인': '미성년자';
+
+            this.msg = function(){
+                console.log(this.name + ":" + this.state() );
+            };
+        }
+
+        //객체생성
+        var obj = new User('김자바', 17);
+        obj.msg();
+
+    </script>
+    
+</body>
+</html>

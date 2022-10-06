@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>정규식 패턴</h3>
+
+    <script>
+        var s, p;
+
+        //. :문자 1개
+        p = /a.s/;
+        s = 'abs';
+
+        console.log(p.test(s));//true
+        s = 'as';
+        console.log(p.test(s));//false
+
+        //x* : 앞문자x 와 0개 이상 일치
+        p = /test a*b/;
+        s = 'test aab';
+        console.log(p.test(s));//true
+        s = 'test b';
+        console.log(p.test(s));//true
+        s = 'test ax';
+        console.log(p.test(s));//false
+        s = 'user aab';
+        console.log(p.test(s));//false
+
+        //.* : 0개이상 모든 문자, ^:~로 시작, $:로 끝나느
+        p = /^자바.*/;//자바로 시작
+        s = '자바 사랑';
+        console.log(p.test(s));//true
+        s = '이자바';
+        console.log(p.test(s));//false
+
+        p = /.*자바$/; //자바로 끝
+        s = '자바 사랑';
+        console.log(p.test(s));//false
+        s = '이자바';
+        console.log(p.test(s));//true
+
+        //자바로 시작하고 웹으로 끝나는 모든 문자
+        p =  /^자바.*웹$/;
+        s = '자바 스프링 서블릿';
+        console.log(p.test(s));//false
+        s = '자바 스프링 웹';
+        console.log(p.test(s));//true
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>키보드 관련 이벤트</h3>
+
+    <p> <input type="text" id="inputs"></p>
+    <hr>
+
+    <pre>
+         keydown 은 키보드 눌렀을때 keyup는 키보드에서 누르고 올라올 때
+        - ASCII 키 : a-z, A~Z, 0~9 , 엔터 등
+          발생하는 이벤트  : keywon - keypress - keyup
+          keydown, keyup : a키 또는 A키를 누르면 keyCode는 모두 65
+          keypress : a키는 97, A키는 65
+          keydown, keyup 이벤트는 keyCode 속성으로 대소문자를 구분할 수 없음
+          keypress 는 실제 눌러진 키코드를 반환
+          
+          //key를 제공하지 않는경우 keyCode를 사용
+          //key나 keyCode는 동일함
+
+        - F1 ~ F12, Alt, Ctrl, Shift 등 특수키
+        발생하는 이벤트  : keydown - keyup
+    </pre>
+    <div id="layout"></div>
+
+    <script>
+        const inputs = document.getElementById("inputs");
+        const layout = document.getElementById("layout");
+
+        //ASCII 관련키만 발생
+        inputs.onkeydown = function(e){
+            let keyCode = e.keyCode;
+            //a,A를 누르면 65
+            let key = e.key; //모든 무라우저가 지원하진않음
+            //a누르면 'a', A누르면 'A'
+            let s = "keydown:" + keyCode + ", " + key + "<br>";
+            layout.innerHTML = s;
+        };
+        //onkeypress
+        //ASCII 관련키만 발생
+        //a = 97   A를 누르면 65
+        inputs.onkeypress = function(e){
+            let keyCode = e.keyCode;
+            //a = 97   A를 누르면 65
+            let key = e.key; //모든 무라우저가 지원하진않음
+            //a누르면 'a', A누르면 'A'
+            let s = "keypress:" + keyCode + ", " + key + "<br>";
+
+            layout.innerHTML += s;
+        };
+
+        inputs.onkeyup = function(e){
+            let keyCode = e.keyCode;
+            //a, A를 누르면 65
+            let key = e.key; //모든 브라우저가 지원하진않음
+            //a누르면 'a', A누르면 'A'
+            let s = "keyup:" + keyCode + ", " + key + "<br>";
+
+            layout.innerHTML += s;
+        };
+    </script>
+
+    
+</body>
+</html>

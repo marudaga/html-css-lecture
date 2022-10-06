@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3> 배열 - filter </h3>
+
+    <script>
+        var a = [1,2,3,4,5,6,7,8,9,10];
+        var b=[];
+
+        //a 배열 요소의 값 중 홀수만 가지고 새로운 배열 만들기
+        // for(let i=0;i<a.length;i++){
+        //     if(a[i]%2){// ==안써도 0 아니면 참이기때문
+        //         b.push(a[i]);
+        //     }
+        // }
+
+        //방법 2 for each
+        // a.forEach(function(tiem){
+        //     if(item%2){
+        //         b.push(item);
+        //     }
+        // });
+        //방법3 foreach 화살표 함수
+        a.forEach(item =>{
+            if(item%2) b.push(item);
+        });
+        
+        //조건에 만족하는 요소만으로 새로운 배열 작성 - filter()
+        b = a.filter(function(item,index){//filter(function(item [, index]))
+            return item%2;// return 값이 참인것( 0이 아닌것, '', NaN, null,undefined 이 아닌것)만 return
+        });
+        
+        //filter 함수표현식
+        // b = a.filter((item,index) => item%2 );
+        console.log(b.join());
+
+    </script>
+</body>
+</html>

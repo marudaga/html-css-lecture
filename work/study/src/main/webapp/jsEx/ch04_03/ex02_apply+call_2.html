@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>apply(), call()</h3>
+    
+    <script>
+//객체  
+        var obj = {
+            name : '자바',
+            sayName : function(){
+                console.log(this.name);
+            }
+        };
+
+        var obj2 = {
+            name : '스프링'
+        };
+
+        obj.sayName(); //자바
+        obj.sayName.call(null); //춣력안됨. this가 null이므로
+        obj.sayName.call(obj); //자바
+
+        obj.sayName.call(obj2); //스프링
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>배열 -정렬</h3>
+    <script>
+        //sort() :기본적으로 문자의 유니코드 코드 포인터값에 
+        
+        var a =["BBA", "BC", "CC","ABC"];
+        a.sort(); //유니코드값의 사전식 정렬
+        console.log(a.join()); //ABC, BBA, BC, CC
+
+        var b = [55,7,10,35,40];
+        b.sort();//유니코드 사전식 배열
+        console.log(b.join());// 10,35,40,55,7
+
+        var c = ["BBA", "BC", "CC", "ABC"];
+        //오름차순 정렬.c.sort()만 해도 오름차순은 동일한 결과가 나옴
+        c.sort( function(x,y){
+            if(x>y) return 1;//1은 바뀜
+            else if(x<y) return -1;//-1과 0둘다 안바뀜 -1만써도 상관은 없다
+            else return 0;
+        });
+        console.log(c.join());//ABC,BBA, BC,CC
+
+        var d = ["BBA", "BC", "CC", "ABC"];
+        //내림차순 정렬.
+        d.sort( function(x,y){
+            if(x>y) return -1; //-1과 0둘다 안바뀜 -1만써도 상관은 없다
+            else if(x<y) return 1; 
+            else return 0;
+        });
+        console.log(d.join());//CC,BC,BBA,ABC
+
+        var e = [55,7,10,35,40];
+        //숫자 오름차순
+        /*e.sort(function(x,y){
+            return x-y;
+
+        });
+        */
+       e.sort( (x,y) => x-y );
+        console.log(e.join());//7,10,35,40,55
+
+        var f = [55,7,10,35,40];
+        //숫자 내림차순
+        /*f.sort(function(x,y){
+            return -(x-y);
+        });
+        */
+       f,sort((x,y)=>-(x-y));
+        console.log(f.join()); //55,40,35,10,7
+    </script>
+    
+</body>
+</html>

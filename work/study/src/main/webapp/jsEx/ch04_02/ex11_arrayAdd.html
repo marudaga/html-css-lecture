@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h3>배열 - 새로운 요소를 맨 앞 또는 가장 뒤에 추가</h3>
+    
+    <script>
+        //자바스크립트는 크기가 동적인 배열이다.
+        var a = [10, 20];
+
+        //요소추가
+        a[2] = 30; //존재하지 않는 인덱스에 데이터 추가
+        console.log(a.join()); // join() : 배열 전체를 문자열로 바꿈
+
+        
+        a[4] = 50;
+        console.log(a.join()); // 10, 20, 30,,50
+        console.log(a[3]) //undefined
+        console.log(a); //[10,20,30,empty,50], undefined는 콘솔에서 empty로 표시
+
+        a[1] = 200;//존재하는 인덱스에 값을 할당하면 변경 됨
+        console.log(a[1]); //10, 200, 30,,50
+
+    //---------------------------------------------
+    var b = [100,200];
+    b[b.length] = 300; // 가장뒤에 요소 추가(추천방법x)
+    b.push(300); // 가장뒤에 요소 추가, 길이를 반환 (추천방법)
+    console.log(b.join()); //100,200,300
+    
+    b.unshift(50); //맨 앞에 새로운 요소를 추가하고 길이 반환
+    console.log(b.join());//50,100,200,300
+    
+    var len = b.push(400);
+    console.log(b.join());//50,100,200,300,400
+    console.log(len);//5
+
+    </script>
+    
+</body>
+</html>

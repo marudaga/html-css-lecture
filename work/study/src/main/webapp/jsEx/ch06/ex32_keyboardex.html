@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function onlyNumber(e){
+            let key = e.key || e.keyCode;
+            //key를 제공하지 않는경우 keyCode를 사용
+            //key나 keyCode는 동일함
+
+            if(key < '0' || key > '9') {
+                e.preventDefault();//다음이벤트의 동작을 막음  (keydown,keypress,keyup등을 막음)
+            }
+        }
+
+        function onylAlph(e){
+            if((e.keyCode<65 || e.keyCode>90) && (e.keyCode<97 || e.keyCode>112)){
+                e.preventDefault();
+            }
+        }
+
+        function onlyAlphNum(e){
+            // \w :정규식(영숫자, _, $)
+            if(! /^\w{1}$/.test(e.key)) {
+                e.preventDefault();
+            }
+        }
+        
+        function onlyKorean(e){
+            if(e.keyCode<12592 || e.keyCode>12687){
+                e.preventDefault();
+            }
+        }
+
+        function deleteKorean(e){
+            //bs, tab, <, >, delete
+            if(e.keyCode ===8 || e.keyCode ===9 || e.keyCode === 37 || e.keyCode ===39 
+            		||e.keyCode ===46){
+                return;
+            }
+
+            let obj = e.currentTarget;
+
+            //자음, 모음, 한글을 제거
+            obj.value = obj.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
+        }
+
+        window.addEventListener("load", function(){
+            let inputEl;
+
+            inputEl = document.querySelector(".inputNum");
+            inputEl.addEventListener('keypress', e => onlyNumber(e));
+            inputEl.addEventListener('keyup', e => deleteKorean(e));
+
+            
+            inputEl = document.querySelector(".inputAlph");
+            inputEl.addEventListener('keypress', e => onylAlph(e));
+            inputEl.addEventListener('keyup', e => deleteKorean(e));
+
+            
+            inputEl = document.querySelector(".AlphaNum");
+            inputEl.addEventListener('keypress', e => onlyAlphNum(e));
+            inputEl.addEventListener('keyup', e => deleteKorean(e));
+
+
+            inputEl = document.querySelector(".inputKor");
+            inputEl.addEventListener('keypress', e => onlyKorean(e));
+
+            
+        });
+        
+    </script>
+</head>
+<body>
+
+    <h3> 키보드 예제</h3>
+
+    <p>숫자만 : <input type="text" class="inputNum"></p>
+    <p>영문만 : <input type="text" class="inputAlph"></p>
+    <p>영어,숫자만 : <input type="text" class="inputAlphNum"></p>
+    <p>한글만 : <input type="text" class="inputKor"></p>
+    
+</body>
+</html>

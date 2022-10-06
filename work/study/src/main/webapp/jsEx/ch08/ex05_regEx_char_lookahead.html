@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 정규식 - 문자</h3>
+
+    <script>
+        var s, p;
+
+        //하나 이상의 영숫자
+        // p = /^[a-zA-Z0-9]+$/;
+        p = /^[a-z0-9]+$/i;
+
+        //하나 이상의 영숫자 와 _
+        p = /^\w+$/;
+
+        //전방탐색(y=찾지만 반환하지않을 문자열):일치 영역을 발견해도 그 값을 반환하지 않는 패턴
+        // /^/이렇게만 해도 참으로 나옴 
+        // \:또는
+        //자바, 웹,java, web 존재여부
+        // p = /.*(?=자바|웹|java|web).*/;
+        p = /(?=자바|웹|java|web)a/;
+        // p = /(자바|웹|java|web){3}/;
+        s = 'a자바a';
+        console.log(p.test(s)); //true
+
+
+        //공백(탭) : \s
+        //영문자와 공백
+        p = /^[a-z\s]+$/i;
+        s = 'a b';
+        console.log(p.test(s));//true
+        s = 'a 1';
+        console.log(p.test(s))//false
+
+        //x(?=y) :x 다음에 y가 나오는 경우에만 x와 일치
+        //영문자로 시작하고 영숫자와 _ 가능
+        p = /^(?=[a-z])(\w)*$/i;
+        s = 'a';
+        console.log(p.test(s)); //true
+        s = '1a';
+        console.log(p.test(s)); //false
+        s = 'a1';
+        console.log(p.test(s)); //true
+
+        
+
+        //한글 : \uac00~\ud7a3,가~힣
+        //1이상의 한글만 가능
+         p = /^[가-힣]+$/
+         s = '가';
+         console.log(p.test(s)); //true
+        //
+    </script>
+
+    
+</body>
+</html>

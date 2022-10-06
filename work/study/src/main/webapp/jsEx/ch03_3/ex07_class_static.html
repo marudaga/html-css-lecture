@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h3> 클래스 -  static:  static 속성은 객체로 접근불가</h3>
+
+
+     <script>
+        class User{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            static subject = '자바';
+            static result(score) {
+                return score>80 ? '우수':'노력';
+            }
+        }
+
+        const obj = new User('가가가', 20);
+        //console.log(obj.subject); //에러. static 속성은 객체로 접근불가
+        console.log(User.subject);//자바
+        console.log(User.result(90));//우수
+     </script>
+    
+</body>
+</html>

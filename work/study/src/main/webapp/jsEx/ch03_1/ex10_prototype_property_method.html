@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>프로토타입에 속성또는 메소드 추가</h3>
+    
+    <script>
+        /*객체는 부모 객체의 속성또는 메소드를 상속가능
+        상속하는 부모객체를 프로토타입객체 또는 프로토타입이라함
+        prototype 프로퍼티(속성)
+        생성자에 존재하며 생성자로 생성되는 객체에서 물려주는 프로퍼티, 메소드를 가지고 있음
+        var obj = new User('자바');
+        에서 User() 생성자는 Obj라는 객체의 부모 역할을 한다.
+        */
+        function User(name){
+            this.name = name;//프로토타입에 추가
+            this.age = 20;//프로토타입에 추가. 기본값 가질수있음
+            this.state = function(){// 프로토타입에 추가
+                return this.age>=19? '성인':'미성년자';
+            };
+        }
+
+        console.dir(User);
+        // console.log(User);
+        
+        //프로토타입에 프로퍼티 추가
+        User.prototype.score = 80;
+
+        //프로토타입에 메소드 추가
+        User.prototype.msg = function(){
+            console.log(this.name+":" + this.state() + ":" + this.score);
+        };
+
+        var obj = new User('가가가');
+        console.log(obj.name, obj.age, obj.score);
+        obj.msg();
+
+
+    </script>
+    
+</body>
+</html>

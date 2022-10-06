@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{ margin: 10px;}
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        button {
+            cursor: pointer;
+        }
+        li > button:nth-child(n) {
+            padding: 3px;
+            margin:0 10px;
+            height: 30px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 20px;
+            align-content: center;
+        }
+        li > input {
+            padding: 3px;
+            margin:0 10px;
+            height: 30px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color : white;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="today"><button type="button" onclick="changeDate();">오늘</button></li>
+        <li class="week"><button type="button" onclick="changeDate();">1주일</button></li>
+        <li class="month"><button type="button" onclick="changeDate();">1개월</button></li>
+        <li class="3month"><button type="button" onclick="changeDate();">3개월</button></li>
+        <li class="6month"><button type="button" onclick="changeDate();">6개월</button></li>
+        <li class="year"><button type="button" onclick="changeDate();">1년</button></li>
+        <li class="sdate"><input type="text" id="sdate"></li>~
+        <li class="edate"><input id="edate"></li>
+        <li class=""><button type="button" onclick="search();">검색</button></li>
+    </ul>
+
+    <script>
+        function button(){
+            baseDate = document.querySelector("#baseDate").value;
+		    by = parseInt(baseDate.substring(0,4));
+            bm = parseInt(baseDate.substring(4,6));
+            bd = parseInt(baseDate.substring(6));
+	    	console.log(by+bm+bd);	
+        }
+        	
+    
+    </script>
+</body>
+</html>

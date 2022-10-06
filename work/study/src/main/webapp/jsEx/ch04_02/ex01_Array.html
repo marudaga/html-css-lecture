@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //배열 리터널을 이용한 1차원 배열 생성
+        var a1 = [];
+        var a2 = [10, 20, 30];
+        var a3 = [10 ,20, 30,];
+        var a4 = [10, 20,,30];
+
+        console.log(a1.length); // 0,length : 배열의 요소 수
+        console.log(a2.length); // 3
+        console.log(a3.length); // 3, 마지막, 는 무시
+        console.log(a4.length); // 4
+                            //10, 20,undefined,30
+
+        console.log(a2[0]); //10, 배열의 첨자는 0부터 시작
+        console.log(a2[2]); //30
+        console.log(a2[4]); //undefined, 첨자가 배열개수-1 보다 크면 undefined
+        //Array() 생성자를 이용한 배열 생성
+        var b1 = new Array();
+        var b2 = new Array(5);//크기가 5인 배열.  모든 요소는 undefined 값을 가짐
+        var b3 = new Array(3, 5); //크기가 2인 배열.Array[0]=3, Array[1]=5가 됨
+        console.log( b1.length); //0
+        console.log( b2.length); //5
+        console.log( b3.length); //2
+        console.log( b3[0]); //3
+        console.log( b3[1]); //5
+        
+    </script>
+</head>
+<body>
+    <h3>배열 선언 방법</h3>
+
+    <script>
+
+    </script>
+    
+</body>
+</html>

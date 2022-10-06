@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>클래스 - 상속</h3>
+
+    <script>
+        class Car{
+            constructor(name){
+                this.name = name;
+            }
+
+            speed(){
+                console.log(this.name + ": 시속 80" );
+            }
+
+            color(){
+                console.log(this.name + ": 검정색");
+            }
+        }
+
+        class Taxi extends Car {
+            constructor(name){
+                super(name); // super class 생성자 호출 
+            }
+
+            spend(){
+                super.speed();//부모 speed재정의
+                console.log(this.name + ": 시속 100");
+            }
+        }
+
+        const t = new Taxi('그랜저');
+        t.speed();
+        t.color();
+    </script>
+</body>
+</html>

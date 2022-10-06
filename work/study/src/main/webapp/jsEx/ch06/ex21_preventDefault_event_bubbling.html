@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{ background: #ccc; padding: 20px; display: block;}
+        .box2{ background: #aaa; padding: 20px; display: block;}
+        .box3 { background: #888; padding: 20px; display: block;}
+        .console { background: #47a; padding: 20px; margin: 50px 0; }
+    </style>
+</head>
+<body>
+
+    <h3>preventDefault</h3>
+    <pre>
+        - a href 속성 :  a 태그를 클릭하면  해당 페이지로 이동
+        - a 태그에 click 이벤트(ex. href, click 원래 href먼저고 click 이나옴)가 존재하는 경우 : 먼저 click 처리하고href 속성페이지로 이동
+        - preventDefault() : 해당 태그에서의 이벤트만 취소하고 상위영역의 이벤트는 실행
+        //이벤트의 기본 동작을 중단한다.
+        //(상위이벤트 전파되지만 href 속성이 무효화 된다)
+    </pre>
+    <hr>
+
+    <div class="box1"> 
+        div 영역
+        <p class="box2">
+            p영역
+            <a class="box3" href="https://google.com" target="_blank">a영역</a>
+        </p>
+    </div>
+
+    <div class="console"></div>
+
+    <script>
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+        const box3 = document.querySelector(".box3");
+        const console = document.querySelector(".console");
+
+        //div영역에 클릭 이벤트 설정
+        box1.addEventListener("click", function(){
+            console.innerHTML += "div 영역 클릭 <br>";
+        });
+
+        box2.addEventListener("click", function(){
+            console.innerHTML += "p 영역 클릭 <br>";
+        });
+
+        box3.addEventListener("click", function(e){
+            console.innerHTML += "a 영역 클릭 <br>";
+            //기본적으로 이벤트는 상위태그로 전파된다.
+            e.preventDefault();
+            //이벤트의 기본 동작을 중단한다.
+            //(상위이벤트 전파되지만 +href 속성이 무효화 된다)
+            // e.stopPropagation(); //일때와 비교
+            //href 속성은 정상작동, 상위이벤트는 전파x
+        });
+
+    </script>
+
+    
+</body>
+</html>

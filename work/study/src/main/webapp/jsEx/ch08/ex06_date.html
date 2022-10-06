@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>정규식</h3>
+    <script>
+        var s, p;
+
+        //날짜 : 2000-10-10, 2000.10.10, 2000/10/10/, 20001010, 2000-1010
+        p = /^[12]\d{3}[\-\.\/]?[01]]\d[\-\.\/]?[0-3][0-9]$/;
+        s = '2000.10.10';
+        console.log(p.test(s));
+
+        //이미지 파일
+        p = /(\.gif|\.jpg|\.jpeg|\.png)$/i;
+        s = 's.gif';
+        console.log(p.test(s));
+        //5~ 10자 문자로 영문자와 하나이상의 숫자나 특수문자 포함
+
+    </script>
+    
+</body>
+</html>

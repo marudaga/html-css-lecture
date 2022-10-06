@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3> document  객체</h3>
+    <!-- 폼 순서(source의 순서) (window창내에서의 순서x) -->
+    <form name="myForm">
+        <p>이름 : <input type="text" name="name"></p><!--이런 태그는 .value-->
+        <p>생일 : <input type="text" name="birth"></p>
+        <p>나이 : <input type="text" name="age" id="age"></p>
+        <p>
+            <button type="button" onclick="send();">확인</button>
+        </p>
+    </form>
+    <hr>
+    <div class="layout"></div><!--이런 태그만 innerHTML-->
+
+    <script>
+        function send(){
+            //폼 접근방법
+            const f = document.myForm; //이름으로 접근(form태그의 name속성)
+            console.log(f);
+            //폼 접근방법(비추) : const f = document.forms[0];//첫번째 폼 
+            
+            //form 아래의 name 객체 접근간으
+            let name = f.name.value;
+
+            //getElementsByName() 메소드로 name접근 (배열 형태)
+            let birth = document.getElementsByName("birth")[0].value;
+            //name속성: 같은 name여러개 있을수있다.
+
+            //getElementById()메소드 이용한 id 속성 접근(하나일때)
+            let age = document.getElementById("age").value;
+           
+            let s = "이름:"+name+"<br>생일:"+birth+"<br>나이:"+age;
+
+            //class 속성값으로 접근
+             const objBox1 = document.getElementsByClassName("layout")[0];
+            //CLASS 선택자로 접근
+             const objBox2 = document.querySelectorAll(".layout")[0];
+             const objBox3 = document.querySelector(".layout");
+
+            objBox.innerHTML = s;
+        }
+
+    </script>
+</body>
+</html>

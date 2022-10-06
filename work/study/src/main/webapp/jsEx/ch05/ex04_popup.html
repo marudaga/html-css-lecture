@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>window - 팝업(vsc에서 window.close 안됨)</h3>
+
+    <div>
+        <p><a href = "javascript:openWin()">팝업열기</a></p>
+        <p><a href = "javascript:closeWin()">팝업닫기</a></p>
+    </div>
+    
+    <script>
+        var win = null;
+        function openWin(){
+            let f;
+            let url = "https://naver.com";
+
+            f = "left=10, top=10, width=700, height=500";
+            win = window.open(url, "test", f);//test는 그냥이름
+
+        }
+
+        function closeWin(){
+            if( win ){
+                win.close();
+            }
+            win = null;
+        }
+
+    </script>
+</body>
+</html>

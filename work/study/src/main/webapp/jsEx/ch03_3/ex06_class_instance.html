@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>클래스 - instance 속성</h3>
+
+    <script>
+        /*class Rect{
+            constructor(w, h){//생성자
+                this.w = w;
+                this.h = h;
+            }
+        }
+
+        const obj = new Rect(10,5);// constructor바로 씀
+        console.log(obj.w = ":" + obj.h);
+        */
+
+        class Rect{
+            area(w, h){// 메소드 
+                this.w = w;//필드
+                this.h = h;
+
+                return this.w *this.h;
+            }
+        }
+        const obj = new Rect();
+        var s = obj.area(10,5);//메소드를 불러야만 만들어짐 (instance 속성(프로퍼티))
+        
+        console.log(obj.w + ":" + obj.h);
+        console.log(s);
+
+
+    </script>
+    
+</body>
+</html>

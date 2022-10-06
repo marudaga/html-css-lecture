@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3> form </h3>
+    <!--action: form 요소의 데이터를 서버에 보낼 때의 서버주소-->
+    <!--method:get 방식은 주소에 꼬리 붙여서 보낸다-->
+    <!-- method:안쓰면 기본이 get-->
+    <form  name="myForm" action="request.jsp" method="post" onsubmit="return check();">
+        <!--submit은 버튼을 눌러도 form에서 일어나는 일이다.
+        onsubmit: 폼(form)이 제출(submit)될 때 이벤트 발생.
+        -->
+        <p>이름 : <input type="text" name="name" ></p>
+        <p>과목 : <input type="text" name="subject"></p>
+        <!-- id 속성은 서버로 전송x-->
+        <!-- onsubmit속성은 form태그속성임-->
+        <!--return없으면 초기화안됨 유효성검사가 안됨-->
+        <p>점수 : <input type="text" name="score"></p>
+        <p>
+            <!-- <button type="submit" onclick="check();">서버로 전송</button> -->
+            <button type="submit"  >서버로 전송</button>
+            <input type="image"><!--서버로 2번전송됨-->
+        </p>
+    </form>
+
+    <script>
+        function check(e){
+            const f = document.myForm;
+
+            if(! f.name.value){
+                alert("이름...");
+                f.name.focus();
+                return false; // 서버로 전송되지 않음
+            }
+
+            if(! f.subject.value){
+                alert("과목...");
+                f.subject.focus();
+
+                return false; // 서버로 전송되지 않음
+            }
+
+            if(! /^\d+$/.test(f.score.value)){
+                alert("점수...");
+                f.score.focus();
+
+                return false; // 서버로 전송되지 않음
+            }
+
+            //submit 버튼은 절대로 submit()함수를 호출하면 안된다.
+            return true; //서버로 전송
+        }
+
+        
+        document.myForm.addEventListener("submit", function(e){
+            if(! check()){
+                e.preventDefault();
+            }
+        });
+        
+
+         document.myForm.addEventListener("submit", e => {
+            if(! check()){
+                e.preventDefault();
+            }
+        });
+    </script>
+    
+</body>
+</html>

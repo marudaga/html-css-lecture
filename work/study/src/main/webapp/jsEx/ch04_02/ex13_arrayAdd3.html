@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 배열 - 요소 삭제</h3>
+
+    <script>
+        var a = [10,20,30,40,50];
+        // 마지막 요소 제거 - length
+        a.length = a.length -1;
+        console.log(a.join()); //10,20,30,40
+
+        //모든 요소 제거 - length
+        a.length = 0;
+        console.log(a.length); //0
+
+        //pop() :마지막 요소 제거
+        var b = [10,20,30,40,50];
+        b.pop();//마지막 요소 제거 50
+        console.log(b.join());//10,20,30,40
+        console.log(b.length);//4
+
+        //pop() :마지막 요소 제거
+        var b = [10,20,30,40,50];
+        b.pop();//마지막 요소 제거 50
+        console.log(b.join());//10,20,30,40
+        console.log(b.length);//4
+
+        //shjft() : 처음 요소 제거
+        var c = [10,20,30,40,50];
+        c.shift();//처음 요소 제거하고 제거된 값을 반환
+        console.log(c.join());//20,30,40,50
+        console.log(c.length);//4
+
+        //delete() : (내용만 undefined로 바뀜). 배열의 길이는 줄지 않음
+        var d = [10,20,30,40,50];
+        delete(d[1]);
+        console.log(d.join());//20,30,40,50
+        console.log(d[1]);//undefined
+        console.log(d.length);//5
+
+
+        var e = [10,20,30,40,50];
+        e.splice(1,3);
+        console.log(e.length);//2
+        console.log(e.join());//10,50
+    </script>
+    
+</body>
+</html>

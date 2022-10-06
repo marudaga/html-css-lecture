@@ -1,0 +1,98 @@
+※ 서블릿 게시판 작성 흐름도
+
+-------------------------------
+-- 게시판 테이블 
+CREATE TABLE bbs (
+	num NUMBER NOT NULL,
+	name VARCHAR2(30) NOT NULL,
+	pwd VARCHAR2(50) NOT NULL,
+	subject	 VARCHAR2(300) NOT NULL,
+	content VARCHAR2(4000) NOT NULL,
+	ipAddr	VARCHAR2(50) NOT NULL,
+	reg_date DATE DEFAULT SYSDATE,
+	hitCount NUMBER DEFAULT 0,
+	CONSTRAINT pk_bbs_num PRIMARY KEY(num)
+);
+
+-- 게시판 시퀀스
+CREATE SEQUENCE bbs_seq
+INCREMENT BY 1
+START WITH 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+SELECT * FROM tab;
+SELECT * FROM seq;
+DESC bbs;
+
+---------------
+--URI 및 JSP
+cp: context path
+1. 게시판 리스트(uri명 list로 할지 list.do로 할지 정함)
+	URI : /cp/bbs/list.do
+	JSP : /WEB-INF/views/bbs/list.jsp ( web-inf는 접근 불가영역(forwarding으로 작성)
+
+2. 글쓰기 폼
+	URI : /cp/bbs/write.do
+	JSP : /WEB-INF/views/bbs/write.jsp 
+
+3. 글 등록
+	URI : /cp/bbs/write_ok.do : DB 테이블에 게시글 저장 -> list.do로 리다이렉트
+4. 글 보기
+	URI : /cp/bbs/article.do
+	JSP : /WEB-INF/views/bbs/article.jsp
+5. 글수정 폼
+	URI : /cp/bbs/update.do
+	JSP : /WEB-INF/views/bbs/write.jsp
+	
+6.글수정 완료 
+	URI : /cp/bbs/update_ok.do : DB 테이블의 해당 게시글 수정 -> list.do 로 리다이렉트
+7. 글삭제 
+	URI :  /cp/bbs/delete.do : DB 테이블의 해당 게시글 삭제 ->list.do 로 리다이렉트
+
+---------------------------------
+-- JSP 디자인
+
+--------------------------------
+-- 서블릿 작성
+----------------------------------
+-- DTO, DAO 작성 : insert부터 작성
+-------------------------------------
+--흐름도 및 파라미터
+1.글 리스트 
+	- 넘어오는 파라미터 : [페이지번호][, 검색컬럼, 검색값]
+	-글 리스트 --->글 리스트 : 페이지번호클릭(페이지번호, [검색컬럼, 검색값])
+	-글 리스트 --->글 리스트 : 검색버튼(검색컬럼, 검색값)
+	-글 리스트 --->글 리스트 : 초기화버튼(검색해제) 
+	-글 리스트 --->글쓰기폼 : 등록하기 버튼
+	-글 리스트 --->글보기 :글제목클릭(글번호, 페이지번호, [검색컬럼, 검색값])
+	
+2. 글쓰기폼
+	-넘어오는 파라미터 : 글번호, 페이지번호[, 검색컬럼, 검색값]???
+	- 글쓰기폼  ---> 등록하기 : 게시글을 테이블에 저장 --->글리스트로 리다이렉트
+	
+		폼데이터:이름,패스워드,제목,내용
+	
+	- 글쓰기폼 ---> 등록하기 :글리스트로 복귀
+	
+3. 글보기 
+	-넘어오는 파라미터 : 글번호, 페이지번호[, 검색컬럼, 검색값]
+	-글보기 ---> 글 리스트 : 리스트버튼(페이지번호 [, 검색컬럼, 검색값])
+	-글보기 ---> 글보기 : 이전글/다음글(이전/다음 글번호, 페이지번호[, 검색컬럼, 검색값])
+	-글보기 ---> 글수정폼 : 수정버튼(글번호, 페이지번호)
+	-글보기 ---> 글삭제 : 글삭제(글번호, 페이지번호 [, 검색컬럼, 검색값])
+	
+	
+4. 글수정폼
+	-넘어오는 파라미터 : 글번호, 페이지번호
+	-글수정폼 ---> 수정완료 : 해당 게시글를 테이블에서 수정 ---> 글 리스트( 글보기 )로 리다이렉트
+			  |
+			 폼데이터 : 이름, 패스워드,제목,내용, 글번호, 페이지번호
+			 
+	-글수정폼 ---> 수정취소 :글 리스트로 복귀
+	
+5. 글삭제
+	-넘어오는 파라미터 : 글번호, 페이지번호[, 검색컬럼, 검색값]
+	-해당 게시글를 테이블에서 삭제 ---> 글 리스트( 글보기 )로 리다이렉트(페이지번호[, 검색커럶, 검색값])
+	-

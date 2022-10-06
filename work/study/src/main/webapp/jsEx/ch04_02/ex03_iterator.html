@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>배열 순회(iterator)</h3>
+
+    <script>
+        var a = [10, 20  , 40, 0];
+
+        //배열 처음부터 끝까지
+        for(let i=0;i<a.length;i++){
+            console.log(a[i]); //10 20 undefined 40 0
+            
+        }
+        console.log('----------------------------');
+        //undefined 0안나오게
+        for(let i=0;i<a.length;i++){
+            if(a[i]){
+            console.log(a[i]); //10 20 40
+            }
+        }
+        console.log('----------------------------');
+
+        var b = [10, 20, 30];
+        for(let n of b){//ES6 추가된 컬렉션 반복 구문
+            console.log(n); //10 20 30
+        }
+        console.log('----------------------------');
+
+        for(let n in b){// 첨자만 반환
+            console.log(n); // 0 1 2
+        }
+        console.log('----------------------------');
+
+        for(let n in b){// 첨자만 반환
+            console.log(b[n]); // 10 20 30 
+        }
+        console.log('----------------------------');
+
+
+    </script>
+    
+</body>
+</html>

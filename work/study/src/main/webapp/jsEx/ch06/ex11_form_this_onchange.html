@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>form 요소 이벤트 헨들러에서의 this:이벤트를 발생시킨 요소</h3>
+    <form name="myForm">
+        <p> 이름 : <input type="text" name="name"></p>
+        <!--onchange 속성: 값이 변경할때 발생하는 이벤트-->
+        <p> 국어 : <input type="text" name="kor" onchange="validate(this);"></p>
+        <p> 영어 : <input type="text" name="eng" onchange="validate(this);"></p>
+        <p> 수학 : <input type="text" name="mat" onchange="validate(this);"></p>
+        <p> <button type="button" onclick="send();">확인</button></p>
+    </form>
+    
+    <script>
+        function send(){
+            const f = document.myForm;
+            let s;
+
+            const inputELS = document.querySelectorAll("form input[type=text]");
+            //foreach 는 break가 없어서 마지막만 포커스가 감
+            for(let obj of inputELS){
+                if(! obj.value){
+                    obj.focus();
+                    return;
+                }
+            }
+
+
+            s = f.name.value + ",";
+            s += f.kor.value + ",";
+            s += f.eng.value + ",";
+            s += f.mat.value;
+
+            alert(s);
+
+        }
+
+        function validate(obj){
+            if( !(obj.value)|| isNaN(obj.value) || parseInt(obj.value) <0 || parseInt(obj.value) > 100 ){
+                alert('점수는 0~ 100 만 가능');
+                obj.value ='';
+                obj.focus();
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

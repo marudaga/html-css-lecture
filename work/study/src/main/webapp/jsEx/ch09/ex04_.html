@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <p class="pc" ><span style="color:red;">자바</span></p>
+        <p class="pc2" ><span style="color:red;">자바</span></p>
+        <p class="pc3" ><span style="color:red;">자바</span></p>
+    </div>
+
+    <script>
+        const pc = document.querySelector(".pc");
+
+        var c1 = pc.firstChild.value;
+        var c2 = pc.innerText;
+        var c3 = pc.innerHTML;
+        console.log(c1);//null
+        console.log(c2);//자바
+        console.log(c3);//<span style="color:red;">자바</span>
+
+        var s = "<span style='color:red;'>자바스크립트</span>";
+        const pc2 = document.querySelector(".pc2");
+        const pc3 = document.querySelector(".pc3");
+
+        pc2.innerText = s;
+        pc3.innerHTML = s;
+    </script>
+    
+</body>
+</html>

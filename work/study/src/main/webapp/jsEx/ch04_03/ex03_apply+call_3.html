@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>apply(), call()</h3>
+
+    <script>
+        function sub(){
+            for(let i=0;i<arguments.length;i++){
+                console.log(arguments[i]);//1  자바  true
+            }
+        }
+        sub(1, '자바', true);
+        //join은 배열에 set
+        //arguments는 배열이 아니므로 join이 없다.
+        function sub2(){
+            // console.log(arguments.join()) };//
+            console.log(Array.prototype.join.call(arguments));
+        }
+        sub(1,'자바',true);//1  자바  true
+    </script>
+    
+</body>
+</html>

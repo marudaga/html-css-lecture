@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{ background: #ccc; padding: 20px; display: block;}
+        .box2{ background: #aaa; padding: 20px; display: block;}
+        .box3 { background: #888; padding: 20px; display: block;}
+        .console { background: #47a; padding: 20px; margin: 50px 0; }
+    </style>
+</head>
+<body>
+
+    <h3>stopPropagation</h3>
+    <pre>
+        - span 클릭 : span을 감싸고 있는 p태그 이벤트 클릭, div이벤트 클릭
+        즉.span의 onclick - p의 onclick - div의  onclick 순으로 이벤트 처리
+        - stopPropagation() : 상위로 이벤트 전파 막음
+        span을 클릭하면 p태그와 div태그에 이벤트가 전파되지 않음
+    </pre>
+    <hr>
+
+    <div class="box1"> 
+        div 영역
+        <p class="box2">
+            p영역
+            <span class="box3" >span 영역</span>
+        </p>
+    </div>
+
+    <div class="console"></div>
+
+    <script>
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+        const box3 = document.querySelector(".box3");
+        const console = document.querySelector(".console");
+
+        //div영역에 클릭 이벤트 설정
+        box1.addEventListener("click", function(){
+            console.innerHTML += "div 영역 클릭 <br>";
+        });
+
+        box2.addEventListener("click", function(){
+            console.innerHTML += "p 영역 클릭 <br>";
+        });
+
+        box3.addEventListener("click", function(e){
+            console.innerHTML += "span 영역 클릭 <br>";
+            //기본적으로 이벤트는 상위로 전파된다.
+            e.stopPropagation(); //일때와 비교/
+            //href 속성은 정상작동, 상위이벤트는 전파x
+        });
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>노드 찾기</h3>
+
+    <div>
+        <p><a>HTML</a></p>
+        <p class="css"><a>CSS</a></p>
+        <p>
+            <a>javascript</a>
+            <span>jquery</span>
+        </p>
+    </div>
+    <hr>
+
+    <div  class="ss">
+        <div class="s">
+            <div class="c1">javascript</div>
+            <div class="c2">css</div>
+        </div>
+        
+    </div>
+    
+    <script>
+        //자식노드 검색
+        var ps = document.getElementsByTagName("p");
+        var c2 = ps[2].children;//태그만 검색
+        //(필요x)var c1 = ps[2].childNodes;//text(문자열, 공백, 엔터도  검색됨)
+        var c3 = ps[2].getElementsByTagName("a");
+        var c4 = ps[2].getElementsByTagName("a")[0];
+        // console.log(c1)/;//NodeList(5) [#text, a, #text, span, #text]
+        console.log(c2);//HTMLCollection(2) [a, span]
+        console.log(c3);//HTMLCollection(1) [a]
+        console.log(c4);//[a]javascript</a>
+        
+        var dc = document.querySelector(".c1");
+        var p2 = dc.parentElement;// 부모노드(태그만)(비추)
+        var p3 = dc.parentElement.parentElement;//부모의 부모
+        //(필요x) var  p1 = document.parentNode; //부모노드. 빈공간을 포함
+        // console.log(p1);
+        console.log(p2);
+        console.log(p3);
+
+        //형제 검색
+
+        var s2 = dc.nextElementSibling; //태그만
+        //(비추) var s1 = dc.nextSibling; //텍스트 빈공간도 포함
+        // console.log(s1);
+        console.log(s2);
+
+        //텍스트
+        var t = s2.firstChild.nodeValue;
+        console.log(t); //css
+    </script>
+</body>
+</html>

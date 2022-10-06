@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>객체 - this</h3>
+    
+    <script>
+        var obj ={
+            name:'김자바',
+            sayName:function(){
+                console.log(this.name);
+                //메소드 안에서의 this는 sayName()메소드를 호출한 객체
+            }
+        };
+        obj.sayName();
+        //this있
+        function Test(name){
+            this.name = name; 
+            this.getName = () => {
+                console.log(this);
+                return this.name;
+            }
+        }
+        //생성자 함수(new로 선언, 첫글자 대문자)(obj2)에서의 this : 생성된 객체
+        var obj2 = new Test('호호호');
+        var s = obj2.getName();
+        console.log(s);
+        
+        var user = '이자바';//전역변수
+        console.log(window.user);//이자바
+        //객체에서의 this자기자신
+        //일반함수에서의 this : 전역객체(window)에 바인딩
+        //자바에서는 내부변수없으면 에러라면 여기선 전역객체가 있다.
+        var sayUser = function(){
+            let user=0;
+            console.log(this.user, user, window.user);//이자바 이자바 이자바
+        }
+        //일반함수:선언할 때 new사용하지 않은 함수
+        sayUser();
+        
+        //ex04에서 40번줄을 생성자함수로 바꾸려면 어떻게 해야하는건가요?
+    </script>
+    
+</body>
+</html>

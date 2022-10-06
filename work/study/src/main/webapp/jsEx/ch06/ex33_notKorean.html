@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        </style>
+</head>
+<body>
+
+    <h3>한글 입력 제한</h3>
+
+    <p>한글 가능 : <input type="text"></p>
+    <button id="check" type="button"></button>
+    <p> 한글 제한 : <input type="text" class="notKorean"></p>
+
+    <p>한글 가능 : <input type="text"></p>
+
+    <script type="text/javascript"> 
+        const inputEls = document.querySelector(".notKorean");
+
+        inputEls.forEach(function(item){
+            item.addEventListener("compositionstart", function(){
+                const self = this;
+                self.blur();//포커스를 없앰
+
+                //다음 리페인트 전 실행(페인트: 화면에 글자를 그려주는 함수)
+                requestAnimationFrame(function () {
+                self.focus();
+                });
+            });
+        });
+
+</script>
+    
+</body>
+</html>

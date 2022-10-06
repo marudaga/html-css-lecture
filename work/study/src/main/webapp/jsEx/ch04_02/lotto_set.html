@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- count는 1~5 사이의 수 각 게임 6개 로또번호-->
+    <!-- 정렬하여 출력-->
+    <h3>로또 1등을 향하여(혼자 1등)</h3>
+    <div style="width: 300px; margin:30px auto;">
+        <input type="text" id="count" placeholder="게임수">
+        <button type="button" onclick="result()">구매</button>
+    </div>
+    <hr>
+    <div id="resultLayout" style="width: 300px; margin: 0 auto;"></div>
+    <script>
+        function result(){
+            var a=[];
+            const objBox = document.querySelector("#resultLayout");
+            let count =  document.querySelector("#count").value;
+            let out = "";
+
+            if( ! /^[1-5]{1}$/.test(count)){
+                document.querySelector("#count").focus();//해당위치로 캐럿 focus(가리킴함
+                return;
+            }
+
+            count = parseInt(count);
+            
+            //1부터 45까지 중복없이 6개 뽑아서 출력
+            let num;
+            let set = new Set();
+            for(let n=1;n<=count;n++){
+                set.clear();
+
+                while(set.size < 6){
+                    num = Math.floor(Math.random() * 45) +1;
+                    set.add(num);
+                }
+
+                //Set을 배열로 변환
+                let nn = Array.from(set);
+                nn.sort( (a,b) => a-b);
+
+                out += n+ "번째 :" + nn.join() + "<br>";
+            
+            }
+
+            objBox.innerHTML = out;
+        
+        }
+    </script>
+</body>
+</html>

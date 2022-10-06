@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    //VSC에서 작동안함
+        function openFind(){
+            let f;
+            let url = "zipFind.html";
+
+            f = "left=30, top=30, width=700, height=500";
+
+            window.open(url, "zip", f);//윈도우 창 띄움
+        }
+    </script>
+</head>
+<body>
+
+
+    <div>
+        <form name="myForm">
+            <p><input type="text" name="name" placeholder="이름"></p>
+            <p><input type="text" name="zipNo" readonly="readonly" placeholder="우편번호">
+                <button type="button" onclick="openFind();">우편번호</button>
+                <br>
+                <input type="text" name="addr1" style="width: 250px;" readonly="readonly" placeholder="기본주소" >
+                <br>
+                <input type="text" name="addr2" step="width:250px;" placeholder="상세주소" >
+            </p>
+            <p><button type="button" onclick="send();">확인</button></p>
+        </form>
+    </div>
+    
+</body>
+</html>

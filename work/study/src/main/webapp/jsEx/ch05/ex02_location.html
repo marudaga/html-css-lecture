@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>location</h3>
+
+    <p><button type="button" onclick="sub()" >네이버</button></p>
+    <p><button type="button" onclick="sub2()" >구글</button></p>
+    <p><button type="button" onclick="location.href = 'https://www.daum.net';">다음</button></p>
+
+    <script>
+        function sub(){
+                location.href = "https://www.naver.com";
+            //뒤로가기가 가능
+        }
+
+        function sub2(){
+                location.replace("https://google.com");
+            //뒤로가기가 안됨
+        }
+
+    </script>
+    
+</body>
+</html>

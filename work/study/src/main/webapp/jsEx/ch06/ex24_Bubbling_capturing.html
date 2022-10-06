@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{ background: #ccc; padding: 20px; display: block;}
+        .box2{ background: #aaa; padding: 20px; display: block;}
+        .box3 { background: #888; padding: 20px; display: block;}
+        .console { background: #47a; padding: 20px; margin: 50px 0; }
+    </style>
+</head>
+<body>
+
+    <h3>Bubbling 과 Capturing</h3>
+    <pre>
+        - Bubbling : 요소이벤트 발생후 하위에서 상위이벤트 전파(기본)
+        - Capturing :요소에서 이벤트 발생하면 상위요소에서 하위로 이벤틑 전파
+    </pre>
+    <hr>
+
+    <div class="box1"> 
+        div 영역
+        <p class="box2">
+            p영역
+            <span class="box3" >span 영역</span>
+        </p>
+    </div>
+
+    <div class="console"></div>
+
+    <script>
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+        const box3 = document.querySelector(".box3");
+        const console = document.querySelector(".console");
+
+        //bubbling(기본) :box1.addEventListener("이벤트조건", 함수, false(bubbling));
+        // box1.addEventListener("click", function(){
+        //     console.innerHTML += "div 영역 클릭 <br>";
+        // }, false); //기본:false 가 생략되어있음
+
+        // box2.addEventListener("click", function(){
+        //     console.innerHTML += "p 영역 클릭 <br>";
+        // });
+
+        // box3.addEventListener("click", function(e){
+        //     console.innerHTML += "span 영역 클릭<br>";
+        // });
+
+        //Capturing : box1.addEventListener("이벤트조건", 함수, true(Capturing));
+        box1.addEventListener("click", function(){
+            console.innerHTML += "div 영역 클릭 <br>";
+        }, true); //기본:false 가 생략되어있음
+
+        box2.addEventListener("click", function(){
+            console.innerHTML += "p 영역 클릭 <br>";
+        }, true);
+
+        box3.addEventListener("click", function(e){
+            console.innerHTML += "span 영역 클릭<br>";
+        }, true);
+
+ 
+
+    </script>
+    
+</body>
+</html>

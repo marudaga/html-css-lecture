@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wb{ background-color: white; border: 1px solid #00f;}
+        .yb{ background-color: yellow; border: 1px solid tomato;}
+        form input[type=text], form input[type=password] { outline:none;}
+    </style>
+</head>
+<body>
+
+    <h3> focus, blur 이벤트</h3>
+
+    <form>
+        <p> <label>이름 : <input type="text" name="name" class="wb" 
+            onfocus="inputFocus(this)" onblur="inputBlur(this)">
+            </label>
+        </p>
+        
+        <p> <label>패스워드 : <input type="password" name="password" class="wb" 
+            onfocus="inputFocus(this)" onblur="inputBlur(this)">
+            </label>
+        </p>
+
+        
+        <p> <label>나이 : <input type="text" name="age" class="wb" 
+            onfocus="inputFocus(this)" onblur="inputBlur(this)">
+            </label>
+        </p>
+        <p>
+            <button type="button">확인</button>
+        </p>
+
+    </form>
+
+    <script>
+        function inputFocus(obj){
+         obj.className ="yb";   
+        }
+        function inputBlur(obj){
+            obj.className ="wb";
+        }
+    </script>
+
+
+    
+</body>
+</html>

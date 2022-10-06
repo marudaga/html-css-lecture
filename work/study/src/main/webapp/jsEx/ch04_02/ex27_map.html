@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Map 객체</h3>
+    <script>
+        var map = new Map();
+        map.set("java", 100);//map.set(키,값)
+        map.set("oracle",90);
+        map.set("html", 80);
+        map.set("css", 90);
+        map.set("oracle", 80);//키 중복 : 이전데이터 덮는다.
+
+        console.log(map.size);//4
+        console.log(map.has("css")); //false, 키 존재여부
+        console.log(map.get("oracle")); //키에 대한 값 반환
+        console.log(map.get("css")); //undefined
+
+        map.delete("spring"); //키와 값을 삭제
+
+        //*map에서의 향상된 for( of )문과 key value 순서(변수명은 상관없다.)
+        for(let [key, value] of map){
+            console.log(key + ":" + value);
+        }
+        console.log("-------------");
+
+        //*map에서의 (forEach)에서의 순서 value key 순서(반대임)
+        map.forEach((value,key) => console.log(key + ":" + value));
+        console.log("-------------");
+
+        map.clear();//엔트리 삭제
+        console.log(map.size);
+
+        //배열을 이용한 map선언
+        const map2 = new Map(
+            [
+                ['01','java'],
+                ['02','spring'],
+                ['03','oracle'],
+                ['01','html'] //set에서 키가 같으면 덮는다. 원래 중복은 허락안함
+            ]
+        );
+        
+        map2.forEach(( value, key) => console.log(key + ":" + value))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>배열 - 2차원 배열 </h3>
+
+    <script>
+        //Array() 생성자를 이용한 2차원 배열
+        var a = new Array(2); //행수
+        a[0] = new Array(3); //0행의 열수
+        a[1] = new Array(3); //1행의 열수
+
+        console.log(a.length); //2
+        console.log(a[0].length); //3
+
+        //배열 리터널을 이용한 2차원 배열
+        var b = [[1,2,3], [10,20,30]];
+        console.log(b.length); //2
+        console.log(b[0].length); //3
+        console.log(b[1][2]);//30
+        
+
+
+    </script>
+    
+</body>
+</html>

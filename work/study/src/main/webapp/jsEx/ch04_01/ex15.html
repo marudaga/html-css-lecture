@@ -11,8 +11,7 @@
         function isValidDate(data){
             if(data.length !== 8 && data.length !== 10) return false;
 
-            //let p  = /^[.\\\/]$/g;
-            let p = /[\.\/\\]/g;
+            let p = /[\.\-\\]/g;
             //let p  = /(\.)|(\-)|(\/)/g;
             //g : 정규식내용이 아니라 replace에서 전체를 교체할때 사용
             data = data.replace(p, '');
@@ -21,17 +20,77 @@
             p = /^[12][0]{3}[0-9]{2}[0-9]{2}$/;
             if(! p.test(data)) return false;
 
+            let y = parseInt(data.substring(0,4));
+            let m = parseInt(data.substring(4,6));
+            let d = parseInt(data.substring(6));
+
+            if(m < 1 || m > 12) return false;
+            
+            let lastDay = (new Date(y, m, 0)).getDate(); //해당월의 마지막일
+            if(d <1 || d> lastDay) return false;
+
             return true;
         }
-        function result() {
-            var date = document.querySelector("#date").value;
 
-            if(! isValidDate(date)){
-                document.querySelector("#date").focus();
+        //두 날짜 사이의 간셕(일)
+        function toDiffDays(startDate, endDate) {
+            let p = /(\.)|(\-)|(\/)/g;
+
+            startDate = startDate.replace(p, '');
+            endDate = endDate.replace(p, '');
+
+            if(! isValidDate(startDate)){
+                throw "날짜 형식이 올바르지 않습니다.";
+            }
+            
+            if(! isValidDate(endDate)){
+                throw "날짜 형식이 올바르지 않습니다.";
+            }
+
+            let sy = parseInt(endDate.substring(0,4));
+            let sm = parseInt(endDate.substring(4,6));
+            let sd = parseInt(endDate.substring(6));
+            
+            let ey = parseInt(endDate.substring(0,4));
+            let em = parseInt(endDate.substring(4,6));
+            let ed = parseInt(endDate.substring(6));
+
+            let sdate = new Date(sy, sm-1, sd);
+            let edate = new Date(ey, em-1, ed);
+
+            let st = sdate.getTime();
+            let et = edate.getTime();
+            
+            let dif = et - st;
+            let day =Math.floor(dif / (24*60*60*1000));
+
+            return day;
+            //return day + 1;//네이버
+
+        }
+        function result() {
+            var startDate = document.querySelector("#startDate").value;
+            var endDate = document.querySelector("#endDate").value;
+
+            try{
+                let n = toDiffDays(startDate,endDate);
+
+                alert("차이(일) : " + n );
+            } catch(e){
+                document.querySelector("#startDate").focus();
+                return;
+            }
+            
+            if(! isValidDate(startDate)){
+                document.querySelector("#startDate").focus();
+                return;
+            }
+            if(! isValidDate(endDate)){
+                document.querySelector("#endDate").focus();
                 return;
             }
 
-            alert(date);
+            alert(startDate);
         }
     </script>
 </head>
@@ -39,13 +98,16 @@
 <body>
     <h3>내장객체 - Date</h3>
 
+<!--두날짜 사이의 일자 계산하기-->
+<!-- 2022-09-20 ~ 2022-09-30 : 네이버는 11일 -->
+<!-- 2022-09-20 ~ 2022-09-30 : 10일 -->
     <div>
-        <input type="text" id="date" placeholder="날짜를 입력하세요">
+        <input type="text" id="startDate" placeholder="시작날짜"> ~
+        <input type="text" id="endDate" placeholder="끝날짜">
         <!--input type="date"를 하면 33일도 입력이되버림=> readonly로 막아야됨-->
         <button type="button" onclick="result();">확인</button>
         <!--자바스크립트 한줄은 ; 생략가능 result() 로 가능-->
     </div>
-
 
 </body>
 

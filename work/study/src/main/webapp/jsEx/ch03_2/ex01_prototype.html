@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3> 객체의 프로퍼티나 메소드 추가: prototype프로퍼티 이용</h3>
+
+    <script>
+        //Date 내장객체에 weekday() 메소드를 prototype에 추가
+        Date.prototype.weekday = function(){
+            let w = ['일','월','화', '수', '목', '금', '토'];
+            return w [this.getDay()];
+        }
+
+        var date = new Date();
+        console.log(date.weekday());
+
+        
+
+
+    </script>
+</body>
+</html>

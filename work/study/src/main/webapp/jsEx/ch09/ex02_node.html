@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub(e){
+            alert(e.target.firstChild.nodeValue);
+        }
+        window.addEventListener("load", function(){
+            const ps = document.querySelector("#subjectLayout").children;
+
+            for(let p of ps){
+                p.addEventListener("click", function(){// 화살표함수의 this는 윈도우 객체
+                    alert(this.firstChild.nodeValue);
+                });
+            }
+        });
+        function fun1(){
+            const div = document.getElementById("subjectLayout");
+            let str;
+
+            //속성 추가
+            div.setAttribute("title", "과목");
+
+            //style 속성 알아보기
+            str = div.getAttribute("style");
+
+            //자식노드수(공백도 노드의 자식으로 간주) (사용x)
+            // str += " \n자식노드수 : "  +div.childNodes.length;//7
+            // console.log(div.childNodes);//[text,p,text, p, text, p, text]공백도 자식으로 간주해버림
+
+            //children : 태그만 자식으로 간주
+            str += "\n자식노드수 : " +div.children.length; //3
+            console.log(div.children); //[p, p, p]
+            alert(str);
+        }
+
+        function fun2(){
+            //노드추가(마지막에)
+            const div = document.querySelector("#subjectLayout");
+
+            let node = document.createElement("p");
+            node.onclick = function(e) { sub(e); };
+            node.setAttribute("title", "추가된 과목...");
+            
+            let textNode = document.createTextNode("마지막...");
+            node.appendChild(textNode);
+
+            div.appendChild(node);
+        }
+        function fun3(){
+            const div = document.querySelector("#subjectLayout");
+
+            let node = document.createElement("p");
+            let textNode = document.createTextNode("앞...");
+            node.appendChild(textNode);
+
+            //가장앞에 추가
+            div.insertBefore(node, div.children[0]);        
+        }
+        function fun4(){
+            //가장 앞 노드 삭제
+            const div = document.querySelector("#subjectLayout");
+
+            if(div.children.length >=1){
+                div.removeChild(div.children[0]);
+            }
+        }
+
+        function fun5(){
+            //스타일 속성없애기
+
+            const div = document.querySelector("#subjectLayout");
+            
+            // div.style.border = "none";
+            div.style.removeProperty("border");
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>노드 추가 및 삭제</h3>
+
+    <div id="subjectLayout" style="width: 300px; height: 300px; border: 1px solid blue;">
+        <p>자바</p>
+        <p>안드로이드</p>
+        <p>프레임워크</p>
+    </div>
+    <hr>
+    
+    <div>
+        <p>
+            <button type="button" onclick="fun1()">노드정보</button>
+            <button type="button" onclick="fun2()">노드추가</button>
+            <button type="button" onclick="fun3()">특정노드앞의노드</button>
+            <button type="button" onclick="fun4()">노드삭제</button>
+            <button type="button" onclick="fun5()">스타일속성없애기</button>
+        </p>
+    </div>
+
+    
+</body>
+</html>

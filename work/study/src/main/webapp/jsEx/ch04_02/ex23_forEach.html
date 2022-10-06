@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> forEach</h3>
+    <script>
+        var a = [1,2,3,4,5];
+        var s=0;
+
+        a.forEach( function(item){
+            s += item;
+        });
+
+        console.log(s);//15
+
+        var b = [10,20,30,40,50];
+        b.forEach(function(item, index){ //item:각각요소값, index:첨자
+            console.log(item, index); // 10 0   20 1  30 2  40 3    50 4
+        }); 
+    </script>
+    
+</body>
+</html>

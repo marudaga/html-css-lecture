@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>배열 - 요소 중간에 추가</h3>
+    
+    <script>
+        // splice(start [, deleteCount [, item1, item2,...]])
+        //a.splice(시작위치(해당인덱스바로앞에 넣음),지울개수,추가할 요소, 추가할 요소)
+        //'문자' 형태로 넣어야함, 
+        //배열의 기존 요소를 삭제 , 교체, 새로운 요소 추가 
+        // start : 변경할 시작위치
+        // 가장 앞에 추가
+        var a = [10,20,30]; 
+        a.splice(0,0,'a', 'b');//a.splice(시작위치,몇개를 지우고,추가할 요소, 추가할 요소)
+        console.log(a.join()); //a,b,10,20,30
+
+        // 가장 뒤에 추가
+        var b = [10,20,30]; 
+        b.splice(b.length,0,'a', 'b');//a.splice(시작위치,몇개를 지우고,추가할 요소, 추가할 요소)
+        console.log(b.join()); //10,20,30,a,b
+
+        //중간에 추가
+        var c = [10,20,30]; // 1이면 index가 1앞에 넣음
+        c.splice(1,0,'a', 'b');//a.splice(시작위치,몇개를 지우고,추가할 요소, 추가할 요소)
+        console.log(c.join()); //10,a,b,20,30
+
+        //삭제하고 중간에 추가
+        var d = [10,20,30,40,50]; // index1에서 2개 삭제 a,b추가
+        d.splice(1,2,'a', 'b');//a.splice(시작위치,몇개를 지우고,추가할 요소, 추가할 요소)
+        console.log(d.join()); //10,a,b,40,50
+
+        //삭제
+        var e = [10,20,30,40,50]; // 20, 30만지움
+        e.splice(1,2);//a.splice(시작위치,몇개를 지우고,추가할 요소, 추가할 요소)
+        console.log(e.join()); //10,40,50
+        console.log(e.length);//3
+        
+    </script>
+</body>
+</html>

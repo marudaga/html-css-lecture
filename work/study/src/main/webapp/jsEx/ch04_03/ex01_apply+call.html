@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>apply(), call()</h3>
+    
+    <script>
+        //apply **
+        var sum = function(a,b,c){
+            return a+b+c;
+        }
+
+        var s;
+
+        //함수호출
+        //1) 일반적인 방법
+        s = sum(1,2,3);
+        console.log(s);
+
+        //2) apply() 함수: 함수를 호출 ex. Function.apply(this,배열)
+        s = sum.apply(null, [1,2,3]); //apply는 함수에 전달할 인자를 배열로 넘김
+        console.log(s);
+
+        //3) call() 함수 : 함수를 호출 ex. call(this,인자,인자,인자)
+        s = sum.call(null,1,2,3);//함수에 전달할 인자는 함수와 동일하게 넘김
+        console.log(s);
+        
+        var nn = [5,6,2,3,7];
+        // s = Math.max(nn);//NaN 안됨
+        s = Math.max(5,6,2,3,7); //7
+        s = Math.max.apply(null,nn);//7
+        s = Math.min.apply(null,nn);//2
+        console.log(s);
+
+
+    </script>
+
+</body>
+</html>

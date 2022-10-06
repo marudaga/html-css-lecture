@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{ width: 300px; height: 700px; border: 3px dotted gray;}
+    </style>
+</head>
+<body>
+
+    <h3>마우스 좌표</h3>
+
+    <div id="resultLayout" class="box"></div>
+
+    <script>
+    const objBox = document.querySelector("#resultLayout");
+
+    objBox.addEventListener("click", function(e){
+        let x = e.clientX; //document의 가장 왼쪽 지점부터 x 좌표(스크롤바 제외)
+        let y = e.clientY;
+
+        let x1 = e.pageX; // clintX와 동일하지만 스크롤바가 이동된 것 포함
+        let y1 = e.pageY;
+
+        let x2 = e.offsetX;// 이벤트가 발생된 객체 내에서의 x좌표
+        let y2 = e.offsetY;
+
+        let x3 = e.screenX;// 화면 가장 왼쪽 위 기준 x좌표
+        let y3 = e.screenY;
+
+        let s;
+        s = "client - x:" + x + ", y:" + y + "<br>";
+        s += "page - x:" + x1 + ", y:" + y1 + "<br>";
+        s += "offset - x:" + x2 + ", y:" + y2 + "<br>";
+        s += "screen - x:" + x3 + ", y:" + y3 + "<br>";
+
+
+        objBox.innerHTML = s;
+        
+    });
+
+    </script>
+
+    
+</body>
+</html>

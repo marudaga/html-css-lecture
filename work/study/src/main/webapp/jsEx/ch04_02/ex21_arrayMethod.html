@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>배열 관련 메소드</h3>
+    
+    <script>
+        var a = [10,20,30,20,40];
+        var n;
+
+        //요소의 인덱스. 없으면 -1
+        n = a.indexOf(20);
+        console.log("20 인덱스 : "  + n);
+        
+        //요소의 인덱스. 없으면 -1
+        n = a.indexOf(120);
+        console.log("20 인덱스 : "  + n);
+        
+        n = a.lastIndexOf(20);
+        console.log("20 인덱스 : "  + n);
+
+        //join :배열을 문자열로 바꿈
+        n = a.join();
+        console.log(n);
+
+        var b = [10,20,30,40,50];
+        var c = b.reverse(); //배열의 순서 반전 b자체도 반전되고 리턴도 반전된 배열
+        console.log(b.join());
+        console.log(c.join());
+        
+    </script>
+    
+</body>
+</html>

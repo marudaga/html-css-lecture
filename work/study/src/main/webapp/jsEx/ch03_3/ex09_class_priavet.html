@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>class - private : private메소드나 속성에 #붙인다.</h3>
+
+    <script>
+        class User{
+            // static private
+            static #A;
+            //instance private
+            #B;
+
+            constructor(){
+                this.#B = 100;
+            }
+
+            static fun(){
+                User.#A = 10;
+                return User.#A;
+            }
+
+            sub(){
+                return this.#B;
+            }
+
+            //private 메소드
+            #test(){
+                return 'hello...';
+            }
+
+            demo(){
+                return this.#test();
+            }
+        }
+
+        const obj = new User();
+        // console.log(User.#A);//에러
+        console.log(User.fun());//static은 프로그램 첨부터 실행해서 끝나면 종료
+        // console.log(User.sub());
+        console.log(obj.sub());
+
+
+
+
+    </script>
+    
+</body>
+</html>

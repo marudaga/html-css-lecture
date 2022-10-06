@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>change 이벤트(select문에서만 사용)</h3>
+
+<form name="memberForm">
+    <p>
+        <select name="selectEmail" onchange="changeEmail();">
+            <option value="">::선택::</option>
+            <option value="naver.com">네이버</option>
+            <option value="hanmail.net">한메일</option>
+            <option value="nate.com">네이트</option>
+            <option value="gmail.com">지메일</option>
+            <option value="direct">직접입력</option>
+        </select>
+        <input type="text" name="email1">@
+        <input type="text" name="email2" readonly="readonly">
+    </p>
+</form>
+    
+    <Script>
+        function changeEmail(){
+            const f = document.memberForm;
+
+            let s = f.selectEmail.value;
+            if(s != 'direct'){
+                f.email2.value = s;
+                f.email2.readOnly = true;
+                f.email1.focus();
+            } else{
+                f.email2.value = "";
+                f.email2.readOnly = false;
+                f.email2.focus();
+            }
+        }
+    </Script>
+</body>
+</html>

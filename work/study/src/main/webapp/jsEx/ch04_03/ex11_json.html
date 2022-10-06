@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트 객체
+        var obj = {name:"홍길동", kor:90,eng:80};
+
+        //자바스크립트 객체를 JSON형식의 문자열로 변환
+        var s = JSON.stringify(obj);
+        console.log(s);
+
+        s = '{"subject":"자바","score":80}';//JSON문자열
+        // 파싱한다 :JSON 문자열을 구문분석하여 그결과를 자바스크립트 값이나 객체로 반환
+        var job = JSON.parse(s);
+
+        console.log(job.subject);//자바
+        console.log(job.score);//80
+
+    </script>
+    
+</body>
+</html>

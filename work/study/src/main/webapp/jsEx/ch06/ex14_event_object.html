@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub(){
+            // event는 deprecated 되었으므로 사용하지 말것을 권장함
+            console.log(event); //event 객체는 발생된 이벤트에 대한 정보를 가지고 있는 객체
+            console.log(event.currentTarget); //이벤트를 발생시킨 객체(표준1)
+            console.log(event.target);//이벤트를 발생시킨 객체(표준2)
+            console.log(event.srcElement); //이벤트를 발생시킨 객체
+        }
+
+        function fun(e){
+            console.log(e);
+            console.log(event.currentTarget); 
+
+            //이벤트 발생시킨 객체
+            let obj = e.currentTarget;
+
+            //이벤트를 발생시키 객체의 태그명
+            let t = obj.tagName;
+
+            //이벤트를 발생시킨 객체의 id
+            let i = obj.id;
+
+            //이벤트를 발생시킨 객체의 ineerText
+            let s = obj.innerText;
+
+            let result = "이벤트 발생시킨 태그 : " + t + "<br>";
+            result += "아이디 :" + i + "<br>";
+            result += "텍스트 :" + s + "<br>";
+
+            document.getElementById("resultLayout").innerHTML = result;
+
+        }
+
+        window.addEventListener("load", function(){
+            let inputELS;
+            inputELS = document.querySelectorAll(".btn1");
+
+           /* 함수
+            inputELS.forEach(function(item){
+                item.addEventListener("click", event => fun(event));
+            });
+            */
+           //화살표함수
+           inputELS.forEach(item => item.addEventListener("click", event => fun(event)));
+        });
+    </script>
+</head>
+<body>
+    
+    <h3>이벤트를 발생시킨 객체</h3>
+
+    <p> <button type="button" onclick="sub();">확인</button></p>
+    <hr>
+
+    <p>
+        <button type="button" class="btn1" id="b1">자바</button>
+        <button type="button" class="btn1" id="b2">스프링</button>
+        <button type="button" class="btn1" id="b3">오라클</button>
+    </p>
+    <div class="resultLayout"></div>
+    <hr>
+    <script></script>
+</body>
+</html>

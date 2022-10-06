@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>정규식</h3>
+
+    <div>
+        
+    </div>
+    <script>
+        var s, p, a;
+
+        s = 'web 자바 jsp 자바 html';
+
+        pattern1 = /자바/;
+
+        a = s.replace(pattern1, 'java');//치환
+        console.log(a);//web java jsp 자바 html
+
+
+        pattern2 = /자바/g;
+
+        a = s.replace(pattern2, 'java');//전부치환1
+        // a = s.replace(pattern1, 'java');//전부치환2
+        console.log(a);//web java jsp java html
+        //HTML 문자를  기호로
+        function symboHtml(content){
+            if(! content) return content;
+            
+            content = content.replace(/</g, '&lt;');
+            content = content.replace(/>/g, '&gt;');
+            content = content.replace(/\"/g, '&quot;');
+            content = content.replace(/\'/g, '&#39;');
+            content = content.replace(/\(/g, '&$40;');
+            content = content.replace(/\)/g, '&#41;');
+
+            return content;
+        }
+        console.log(symboHtml('머선이리구<>'));
+
+        //기호를 특수문자로
+        function restoreHtml(content){
+            if(!content) return content;
+
+            content = content.replace(/&lt/g, '<');
+            content = content.replace(/&gt/g, '>');
+            content = content.replace(/&#40/g, '(');
+            content = content.replace(/&#41/g, ')');
+            content = content.replace(/&quot/g, '"');
+            content = content.replace(/&#39/g, '\'');            
+
+            return content;
+        }
+    </script>
+
+
+    
+</body>
+</html>

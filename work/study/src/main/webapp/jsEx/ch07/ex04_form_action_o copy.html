@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3> form </h3>
+    
+    <form  name="myForm" action="request.jsp" method="post" >
+        <!--submit은 버튼을 눌러도 form에서 일어나는 일이다.
+        onsubmit: 폼(form)이 제출(submit)될 때 이벤트 발생.
+        -->
+        <p>이름 : <input type="text" name="name" required="required"></p>
+        <p>과목 : <input type="text" name="subject" required="required"></p>
+        <p>점수 : <input type="text" name="score" required="required"  pattern="\d+"></p>
+        <p>
+            <button type="submit" onclick="send();" >서버로 전송</button>
+            <input type="image"><!--서버로 2번전송됨-->
+        </p>
+    </form>
+
+    <script>
+        function send(){
+            const f = document.myForm;
+
+            if(! f.name.value){
+                alert("이름...");
+                f.name.focus();
+                e.preventDefault();
+                return;
+            }
+
+            if(! f.subject.value){
+                alert("과목...");
+                f.subject.focus();
+                e.preventDefault();
+
+                return;
+
+            }
+
+            if(! /^\d+$/.test(f.score.value)){
+                alert("점수...");
+                f.score.focus();
+                e.preventDefault();
+
+                return;
+
+            }
+
+            f.submit(); //서브밋 버튼이 아닌 일반 버튼등을 이용하여 서버에 전송하는 경우
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3> form </h3>
+    <!--action: form 요소의 데이터를 서버에 보낼 때의 서버주소-->
+    <!--method:get 방식은 주소에 꼬리 붙여서 보낸다-->
+    <!-- method:안쓰면 기본이 get-->
+    <form  name="myForm" action="request.jsp" method="post" enctype="application/x-www-form-urlencoded">
+        <p>이름 : <input type="text" name="name"></p>
+        <p>과목 : <input type="text" ></p>
+        <!-- name 속성이 없으면 서버에서 받을수x-->
+        <p>점수 : <input type="text" name="score"></p>
+        <p>
+            <button type="submit">서버로 전송</button>
+            <button>서버로 전송</button>
+            <button type="button" onclick="send();">서버로 전송안됨 (js로 설정하면 서버로 2번전송됨</button>
+            <input type="image"><!--서버로 2번전송됨-->
+        </p>
+    </form>
+
+    <script>
+        function send(){
+            const f = document.myForm;
+            //input type="image"도 서버로 2번 전송됨
+            f.submit(); //submit 버튼이 아닌 button 등으로  서버로  전송할 때 호출
+            // submit 버튼에서 submit() 함수호출하면 서버로 2번 전송된다(DB에 두번 저장됨)
+        }
+    </script>
+    
+</body>
+</html>
