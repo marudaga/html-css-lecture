@@ -39,6 +39,8 @@ C:\Users\count_2hpcyd0\Downloads\web\html-css-lecture\work\.metadata\.plugins\or
 \study2\src\main\java
 C:\Users\count_2hpcyd0\Downloads\web\html-css-lecture\work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1237927603.index
 \study2\src\main\java
+C:\Users\count_2hpcyd0\Downloads\web\html-css-lecture\work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1064130183.index
+\study3\src\main\java
 C:\Users\count_2hpcyd0\Downloads\web\html-css-lecture\work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2628627422.index
 \study2\src\main\java
 C:\Users\count_2hpcyd0\Downloads\web\html-css-lecture\work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1597029053.index

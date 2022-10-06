@@ -509,7 +509,6 @@ public class BoardDAO {
 		String sql;
 		
 		try {
-			BoardDTO dto = new BoardDTO();
 			sql="DELETE FROM bbs WHERE num=? ";
 			pstmt = conn.prepareStatement(sql);
 			
@@ -517,8 +516,17 @@ public class BoardDAO {
 			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			throw e;
+		} finally {
+			if(pstmt!=null) {
+				try {
+					pstmt.close();
+				} catch (Exception e2) {
+				}
+			}
 		}
+		
 		
 	}
 		
